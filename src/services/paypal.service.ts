@@ -17,7 +17,7 @@ export const paypalService = {
       purchase_units: [
         {
           reference_id: cart.id,
-          description: `Zapateria Febo order — cart ${cart.id}`,
+          description: `Zapateria Genaro order — cart ${cart.id}`,
           amount: {
             currency_code: cart.currency || 'USD',
             value: cart.subtotal.toFixed(2),

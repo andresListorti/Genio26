@@ -4,7 +4,9 @@
       "PowerShell(npm install *)",
       "PowerShell(npm *)",
       "PowerShell($shoes = \\(Invoke-WebRequest -Uri \"http://localhost:3000/api/shoes\" -UseBasicParsing\\).Content | ConvertFrom-Json; $id = $shoes.data[0].id; \"Product ID: $id\"; $r = Invoke-WebRequest -Uri \"http://localhost:3001/products/$id\" -UseBasicParsing -TimeoutSec 30; \"STATUS: $\\($r.StatusCode\\)\"; \"Has size buttons: \" + \\($r.Content -match \"Talle\"\\); \"Has PayPal CTA: \" + \\($r.Content -match \"Comprar con PayPal\"\\); \"Has model name: \" + \\($r.Content -match $shoes.data[0].model\\))",
-      "PowerShell($r = Invoke-WebRequest -Uri \"http://localhost:3001/\" -UseBasicParsing; \\([regex]::Matches\\($r.Content,\".{30}FEBO.{30}|.{30}Febo.{30}\"\\) | ForEach-Object { $_.Value }\\) | Select-Object -First 8)"
+      "PowerShell($r = Invoke-WebRequest -Uri \"http://localhost:3001/\" -UseBasicParsing; \\([regex]::Matches\\($r.Content,\".{30}FEBO.{30}|.{30}Febo.{30}\"\\) | ForEach-Object { $_.Value }\\) | Select-Object -First 8)",
+      "Bash(node *)",
+      "Bash(npm run *)"
     ]
   }
 }

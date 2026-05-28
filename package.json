@@ -1,7 +1,7 @@
 {
-  "name": "zapateria-febo-api",
+  "name": "zapateria-genaro-api",
   "version": "1.0.0",
-  "description": "Shoe e-commerce API (Zapateria Febo) — Express + Firebase + PayPal",
+  "description": "Shoe e-commerce API (Zapateria Genaro) — Express + Firebase + PayPal",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",

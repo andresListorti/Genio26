@@ -27,7 +27,7 @@ app.use(express.json());
 
 app.get('/', (_req, res) => {
   res.json({
-    name: 'Zapateria Febo API',
+    name: 'Zapateria Genaro API',
     version: '1.0.0',
     docs: '/api/health',
   });
@@ -40,6 +40,6 @@ app.use(errorHandler);
 
 app.listen(env.port, () => {
   console.log(
-    `Zapateria Febo API listening on http://localhost:${env.port} (${env.nodeEnv})`,
+    `Zapateria Genaro API listening on http://localhost:${env.port} (${env.nodeEnv})`,
   );
 });

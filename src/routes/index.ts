@@ -6,7 +6,7 @@ import checkoutRoutes from './checkout.routes';
 const router = Router();
 
 router.get('/health', (_req, res) => {
-  res.json({ status: 'ok', service: 'zapateria-febo-api' });
+  res.json({ status: 'ok', service: 'zapateria-genaro-api' });
 });
 
 router.use('/shoes', shoeRoutes);
