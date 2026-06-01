@@ -6,7 +6,29 @@
       "PowerShell($shoes = \\(Invoke-WebRequest -Uri \"http://localhost:3000/api/shoes\" -UseBasicParsing\\).Content | ConvertFrom-Json; $id = $shoes.data[0].id; \"Product ID: $id\"; $r = Invoke-WebRequest -Uri \"http://localhost:3001/products/$id\" -UseBasicParsing -TimeoutSec 30; \"STATUS: $\\($r.StatusCode\\)\"; \"Has size buttons: \" + \\($r.Content -match \"Talle\"\\); \"Has PayPal CTA: \" + \\($r.Content -match \"Comprar con PayPal\"\\); \"Has model name: \" + \\($r.Content -match $shoes.data[0].model\\))",
       "PowerShell($r = Invoke-WebRequest -Uri \"http://localhost:3001/\" -UseBasicParsing; \\([regex]::Matches\\($r.Content,\".{30}FEBO.{30}|.{30}Febo.{30}\"\\) | ForEach-Object { $_.Value }\\) | Select-Object -First 8)",
       "Bash(node *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "WebFetch(domain:zapateriafebo.com)",
+      "Bash(cd /tmp)",
+      "Bash(curl -sL --max-time 25 \"https://zapateriafebo.com\" -o febo.html)",
+      "Bash(curl -sL --max-time 30 \"https://zapateriafebo.com/products.json?limit=250\" -o febo.json)",
+      "Bash(curl -sL --max-time 30 \"https://zapateriafebo.com/products.json?limit=250\" -o \"F:/Code/febo.json\")",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(echo \"tsc-exit:$?\")",
+      "Bash(curl -s \"http://localhost:3000/api/shoes\")",
+      "Bash(curl -s \"http://localhost:3000/api/shoes?gender=men\")",
+      "Bash(curl -s \"http://localhost:3000/api/shoes?gender=women\")",
+      "Bash(pkill -f \"ts-node-dev\")",
+      "Bash(pkill -f \"src/index.ts\")",
+      "Bash(curl -s --max-time 60 http://localhost:3001/cart -o /tmp/cart.html -w \"status=%{http_code}\\\\n\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s --max-time 60 http://localhost:3001/collections/men -o /tmp/men.html -w \"status=%{http_code}\\\\n\")",
+      "Bash(curl -s --max-time 60 http://localhost:3001/collections/women -o /tmp/women.html -w \"status=%{http_code}\\\\n\")",
+      "Bash(curl -s --max-time 60 http://localhost:3001/ -o /tmp/home.html -w \"status=%{http_code}\\\\n\")",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(npm install *)",
+      "PowerShell(Get-NetTCPConnection *)"
     ]
   }
 }

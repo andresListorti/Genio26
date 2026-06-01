@@ -8,6 +8,8 @@ export type OrderStatus =
   | 'FAILED'
   | 'REFUNDED';
 
+export type PaymentProvider = 'paypal' | 'mercadopago';
+
 export interface Order {
   id: string;
   cartId?: string;
@@ -16,8 +18,13 @@ export interface Order {
   subtotal: number;
   currency: string;
   status: OrderStatus;
+  provider: PaymentProvider;
   paypalOrderId?: string;
   paypalCaptureId?: string;
+  // Mercado Pago (Checkout Bricks)
+  mpPreferenceId?: string;
+  mpPaymentId?: string;
+  mpStatusDetail?: string;
   payerEmail?: string;
   createdAt: string;
   updatedAt: string;

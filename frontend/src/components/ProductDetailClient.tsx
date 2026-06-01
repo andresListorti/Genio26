@@ -1,12 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Loader2, ShoppingBag, ShieldCheck, Truck } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { formatMoney } from "@/lib/format";
 import type { Shoe } from "@/lib/types";
 
 export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
-  const { addItem, checkout, loading, error, cart } = useCart();
+  const { addItem, loading, error, cart } = useCart();
+  const router = useRouter();
   const [localError, setLocalError] = useState<string | null>(null);
 
   const colors = useMemo(
@@ -42,19 +45,23 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
     });
   };
 
-  const handleBuyNow = async () => {
+  const handleCheckout = async () => {
     setLocalError(null);
     if (!selectedColor || !selectedSize) {
       setLocalError("Seleccioná color y talle");
       return;
     }
-    await addItem({
-      shoeId: shoe.id,
-      size: selectedSize,
-      color: selectedColor,
-      quantity: 1,
-    });
-    await checkout();
+    // Payment lives exclusively on /cart — here we only add and route there.
+    await addItem(
+      {
+        shoeId: shoe.id,
+        size: selectedSize,
+        color: selectedColor,
+        quantity: 1,
+      },
+      { open: false },
+    );
+    router.push("/cart");
   };
 
   return (
@@ -65,7 +72,7 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
           {shoe.model}
         </h1>
         <p className="mt-4 text-2xl font-light">
-          ${shoe.price.toFixed(2)}{" "}
+          {formatMoney(shoe.price, shoe.currency)}{" "}
           <span className="text-xs uppercase tracking-widest text-muted">
             {shoe.currency}
           </span>
@@ -152,7 +159,7 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
       <div className="space-y-3 pt-2">
         <button
           type="button"
-          onClick={handleBuyNow}
+          onClick={handleCheckout}
           disabled={loading}
           className="w-full bg-foreground text-background py-4 text-sm tracking-[0.25em] uppercase hover:opacity-90 transition disabled:opacity-50 inline-flex items-center justify-center gap-3"
         >
@@ -161,7 +168,7 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
           ) : (
             <ShieldCheck size={16} />
           )}
-          Comprar con PayPal
+          Finalizar compra
         </button>
         <button
           type="button"

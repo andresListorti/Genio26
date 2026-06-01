@@ -24,6 +24,10 @@ export function shoeImage(opts: {
   width?: number;
 }): string {
   const { imageUrl, model, category, width } = opts;
+  // Local asset served from frontend/public (e.g. "/resources/Men.jpg").
+  if (imageUrl && imageUrl.startsWith("/")) {
+    return imageUrl;
+  }
   if (imageUrl && imageUrl.startsWith("https://images.unsplash.com")) {
     return imageUrl;
   }

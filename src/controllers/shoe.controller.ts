@@ -2,9 +2,14 @@ import { Request, Response, NextFunction } from 'express';
 import { shoeService } from '../services/shoe.service';
 
 export const shoeController = {
-  async list(_req: Request, res: Response, next: NextFunction) {
+  async list(req: Request, res: Response, next: NextFunction) {
     try {
-      const shoes = await shoeService.findAll();
+      const genderParam = String(req.query.gender ?? '').toLowerCase();
+      const gender =
+        genderParam === 'men' || genderParam === 'women'
+          ? (genderParam as 'men' | 'women')
+          : undefined;
+      const shoes = await shoeService.findAll(gender ? { gender } : undefined);
       res.json({ data: shoes });
     } catch (err) {
       next(err);
@@ -25,11 +30,17 @@ export const shoeController = {
 
   async create(req: Request, res: Response, next: NextFunction) {
     try {
-      const { brand, model, price, description, variants } = req.body ?? {};
+      const { brand, model, price, description, variants, gender } =
+        req.body ?? {};
       if (!brand || !model || typeof price !== 'number' || !description) {
         return res
           .status(400)
           .json({ error: 'brand, model, price, description are required' });
+      }
+      if (gender !== 'men' && gender !== 'women') {
+        return res
+          .status(400)
+          .json({ error: "gender is required and must be 'men' or 'women'" });
       }
       const shoe = await shoeService.create({
         brand,
@@ -39,6 +50,7 @@ export const shoeController = {
         currency: req.body.currency,
         imageUrl: req.body.imageUrl,
         category: req.body.category,
+        gender,
         variants: Array.isArray(variants) ? variants : [],
       });
       res.status(201).json({ data: shoe });

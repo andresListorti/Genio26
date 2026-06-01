@@ -30,5 +30,20 @@ export const env = {
     apiUrl: process.env.PAYPAL_API_URL ?? 'https://api-m.sandbox.paypal.com',
     webhookId: process.env.PAYPAL_WEBHOOK_ID ?? '',
     mode: (process.env.PAYPAL_MODE ?? 'sandbox') as 'sandbox' | 'live',
+    // PayPal does not support ARS. When the cart currency is unsupported we
+    // charge in USD using this rate (ARS per 1 USD). Override via env.
+    fallbackCurrency: process.env.PAYPAL_FALLBACK_CURRENCY ?? 'USD',
+    arsPerUsd: parseFloat(process.env.PAYPAL_ARS_PER_USD ?? '1000'),
+  },
+
+  // Optional until production tokens are provided. The token gates whether the
+  // Mercado Pago endpoints are active.
+  mercadopago: {
+    publicKey: process.env.MERCADOPAGO_PUBLIC_KEY ?? '',
+    accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN ?? '',
   },
 };
+
+/** True once a Mercado Pago access token is configured in the environment. */
+export const isMercadoPagoConfigured = (): boolean =>
+  Boolean(env.mercadopago.accessToken);

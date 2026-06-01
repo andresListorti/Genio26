@@ -5,6 +5,9 @@ export interface ShoeStockVariant {
   sku?: string;
 }
 
+/** Genaro collection a shoe belongs to. Drives /collections/men & /collections/women. */
+export type ShoeGender = 'men' | 'women';
+
 export interface Shoe {
   id: string;
   brand: string;
@@ -14,6 +17,7 @@ export interface Shoe {
   description: string;
   imageUrl?: string;
   category?: string;
+  gender: ShoeGender;
   variants: ShoeStockVariant[];
   createdAt: string;
   updatedAt: string;

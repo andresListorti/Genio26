@@ -3,6 +3,7 @@ import { firestore, collections } from '../config/firebase';
 import {
   Shoe,
   ShoeCreateInput,
+  ShoeGender,
   ShoeUpdateInput,
 } from '../models/shoe.model';
 
@@ -21,6 +22,7 @@ export const shoeService = {
       description: input.description,
       imageUrl: input.imageUrl,
       category: input.category,
+      gender: input.gender,
       variants: input.variants ?? [],
       createdAt: now,
       updatedAt: now,
@@ -29,9 +31,13 @@ export const shoeService = {
     return shoe;
   },
 
-  async findAll(): Promise<Shoe[]> {
-    const snap = await shoesCollection().orderBy('createdAt', 'desc').get();
-    return snap.docs.map((d) => d.data() as Shoe);
+  async findAll(filter?: { gender?: ShoeGender }): Promise<Shoe[]> {
+    const shoes = (await shoesCollection().orderBy('createdAt', 'desc').get())
+      .docs.map((d) => d.data() as Shoe);
+    if (filter?.gender) {
+      return shoes.filter((s) => s.gender === filter.gender);
+    }
+    return shoes;
   },
 
   async findById(id: string): Promise<Shoe | null> {

@@ -1,12 +1,50 @@
 import { v4 as uuidv4 } from 'uuid';
 import { firestore, collections } from '../config/firebase';
 import { Order, OrderStatus } from '../models/order.model';
-import { Cart } from '../models/cart.model';
+import { env } from '../config/env';
 import { cartService } from './cart.service';
 import { paypalService } from './paypal.service';
+import {
+  mercadoPagoService,
+  MercadoPagoBrickFormData,
+} from './mercadopago.service';
 import { shoeService } from './shoe.service';
 
 const ordersCollection = () => firestore.collection(collections.orders);
+
+/** Maps a Mercado Pago payment status onto our internal order status. */
+function mapMercadoPagoStatus(mpStatus: string): OrderStatus {
+  switch (mpStatus) {
+    case 'approved':
+      return 'COMPLETED';
+    case 'authorized':
+    case 'in_process':
+    case 'pending':
+      return 'APPROVED';
+    case 'refunded':
+    case 'charged_back':
+      return 'REFUNDED';
+    case 'cancelled':
+    case 'rejected':
+    default:
+      return 'FAILED';
+  }
+}
+
+/** Decrements stock for every line and clears the originating cart. */
+async function fulfillOrder(order: Order): Promise<void> {
+  for (const item of order.items) {
+    await shoeService.decrementStock(
+      item.shoeId,
+      item.size,
+      item.color,
+      item.quantity,
+    );
+  }
+  if (order.cartId) {
+    await cartService.clear(order.cartId).catch(() => undefined);
+  }
+}
 
 export const orderService = {
   async createFromCart(cartId: string, userId?: string): Promise<{
@@ -29,6 +67,7 @@ export const orderService = {
       subtotal: cart.subtotal,
       currency: cart.currency,
       status: 'CREATED',
+      provider: 'paypal',
       paypalOrderId: paypalOrder.id,
       createdAt: now,
       updatedAt: now,
@@ -37,6 +76,77 @@ export const orderService = {
 
     const approveUrl = paypalOrder.links.find((l) => l.rel === 'approve')?.href;
     return { order, approveUrl };
+  },
+
+  /**
+   * Creates a Mercado Pago order + Checkout preference for the cart. The
+   * returned preferenceId/publicKey drive the in-app Payment Brick.
+   */
+  async createMercadoPagoFromCart(
+    cartId: string,
+    userId?: string,
+  ): Promise<{ order: Order; preferenceId: string; publicKey: string }> {
+    const cart = await cartService.findById(cartId);
+    if (!cart) throw new Error(`Cart ${cartId} not found`);
+    if (cart.items.length === 0) throw new Error('Cart is empty');
+
+    const id = uuidv4();
+    const now = new Date().toISOString();
+    const order: Order = {
+      id,
+      cartId: cart.id,
+      userId: userId ?? cart.userId,
+      items: cart.items,
+      subtotal: cart.subtotal,
+      currency: cart.currency,
+      status: 'CREATED',
+      provider: 'mercadopago',
+      createdAt: now,
+      updatedAt: now,
+    };
+
+    const preferenceId = await mercadoPagoService.createPreference(order, cart);
+    order.mpPreferenceId = preferenceId;
+    await ordersCollection().doc(id).set(order);
+
+    return {
+      order,
+      preferenceId,
+      publicKey: env.mercadopago.publicKey,
+    };
+  },
+
+  /**
+   * Processes the Payment Brick submission for an existing Mercado Pago order.
+   * On approval, fulfills the order (stock + cart clear).
+   */
+  async processMercadoPagoPayment(
+    orderId: string,
+    formData: MercadoPagoBrickFormData,
+  ): Promise<Order> {
+    const order = await this.findById(orderId);
+    if (!order) throw new Error(`Order ${orderId} not found`);
+    if (order.provider !== 'mercadopago') {
+      throw new Error(`Order ${orderId} is not a Mercado Pago order`);
+    }
+
+    const payment = await mercadoPagoService.createPayment(order, formData);
+    const status = mapMercadoPagoStatus(payment.status);
+
+    if (status === 'COMPLETED') {
+      await fulfillOrder(order);
+    }
+
+    const updated: Order = {
+      ...order,
+      status,
+      mpPaymentId: payment.id,
+      mpStatusDetail: payment.statusDetail,
+      payerEmail: payment.payerEmail ?? order.payerEmail,
+      updatedAt: new Date().toISOString(),
+    };
+    await ordersCollection().doc(order.id).set(updated);
+    return updated;
   },
 
   async findById(id: string): Promise<Order | null> {

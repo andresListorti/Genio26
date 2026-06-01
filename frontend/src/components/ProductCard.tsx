@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Shoe } from "@/lib/types";
 import { shoeImage } from "@/lib/images";
+import { formatMoney } from "@/lib/format";
 
 export default function ProductCard({ shoe }: { shoe: Shoe }) {
   const img = shoeImage({
@@ -34,7 +35,7 @@ export default function ProductCard({ shoe }: { shoe: Shoe }) {
           </h3>
         </div>
         <p className="text-sm font-medium whitespace-nowrap pt-1">
-          ${shoe.price.toFixed(2)}
+          {formatMoney(shoe.price, shoe.currency)}
         </p>
       </div>
     </Link>

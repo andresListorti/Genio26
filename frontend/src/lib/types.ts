@@ -14,6 +14,7 @@ export interface Shoe {
   description: string;
   imageUrl?: string;
   category?: string;
+  gender: "men" | "women";
   variants: ShoeStockVariant[];
   createdAt: string;
   updatedAt: string;
@@ -39,6 +40,16 @@ export interface Cart {
   updatedAt: string;
 }
 
+export type OrderStatus =
+  | "CREATED"
+  | "APPROVED"
+  | "COMPLETED"
+  | "CANCELLED"
+  | "FAILED"
+  | "REFUNDED";
+
+export type PaymentProvider = "paypal" | "mercadopago";
+
 export interface Order {
   id: string;
   cartId?: string;
@@ -46,15 +57,13 @@ export interface Order {
   items: CartItem[];
   subtotal: number;
   currency: string;
-  status:
-    | "CREATED"
-    | "APPROVED"
-    | "COMPLETED"
-    | "CANCELLED"
-    | "FAILED"
-    | "REFUNDED";
+  status: OrderStatus;
+  provider?: PaymentProvider;
   paypalOrderId?: string;
   paypalCaptureId?: string;
+  mpPreferenceId?: string;
+  mpPaymentId?: string;
+  mpStatusDetail?: string;
   payerEmail?: string;
   createdAt: string;
   updatedAt: string;
@@ -63,4 +72,15 @@ export interface Order {
 export interface CheckoutResponse {
   order: Order;
   approveUrl?: string;
+}
+
+export interface MercadoPagoPreference {
+  order: Order;
+  preferenceId: string;
+  publicKey: string;
+}
+
+export interface MercadoPagoProcessResult {
+  order: Order;
+  status: OrderStatus;
 }

@@ -19,17 +19,24 @@ interface CartContextValue {
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
-  addItem: (input: {
-    shoeId: string;
-    size: number;
-    color: string;
-    quantity: number;
-  }) => Promise<void>;
+  addItem: (
+    input: {
+      shoeId: string;
+      size: number;
+      color: string;
+      quantity: number;
+    },
+    options?: { open?: boolean },
+  ) => Promise<void>;
   removeItem: (input: {
     shoeId: string;
     size: number;
     color: string;
   }) => Promise<void>;
+  updateQuantity: (
+    input: { shoeId: string; size: number; color: string; quantity: number },
+    nextQuantity: number,
+  ) => Promise<void>;
   clear: () => Promise<void>;
   checkout: () => Promise<void>;
 }
@@ -67,14 +74,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [cart]);
 
   const addItem = useCallback<CartContextValue["addItem"]>(
-    async (input) => {
+    async (input, options) => {
       setError(null);
       setLoading(true);
       try {
         const current = await ensureCart();
         const updated = await api.cart.addItem(current.id, input);
         setCart(updated);
-        setIsOpen(true);
+        // The cart page manages its own state; only auto-open the sidebar
+        // when adding from the catalog/product views.
+        if (options?.open !== false) setIsOpen(true);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to add item");
         throw err;
@@ -92,6 +101,38 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       try {
         const updated = await api.cart.removeItem(cart.id, input);
         setCart(updated);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [cart],
+  );
+
+  const updateQuantity = useCallback<CartContextValue["updateQuantity"]>(
+    async (input, nextQuantity) => {
+      if (!cart) return;
+      const target = { shoeId: input.shoeId, size: input.size, color: input.color };
+      setError(null);
+      setLoading(true);
+      try {
+        if (nextQuantity <= 0) {
+          setCart(await api.cart.removeItem(cart.id, target));
+          return;
+        }
+        const delta = nextQuantity - input.quantity;
+        if (delta === 0) return;
+        if (delta > 0) {
+          // No backend decrement endpoint exists, so increases add the delta...
+          setCart(await api.cart.addItem(cart.id, { ...target, quantity: delta }));
+        } else {
+          // ...and decreases clear the line and re-add the desired quantity.
+          await api.cart.removeItem(cart.id, target);
+          setCart(
+            await api.cart.addItem(cart.id, { ...target, quantity: nextQuantity }),
+          );
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to update item");
       } finally {
         setLoading(false);
       }
@@ -143,6 +184,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     closeCart: () => setIsOpen(false),
     addItem,
     removeItem,
+    updateQuantity,
     clear,
     checkout,
   };

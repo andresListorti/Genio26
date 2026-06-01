@@ -41,10 +41,16 @@ export default function Hero() {
                   />
                 </Link>
                 <Link
-                  href="#catalogo"
+                  href="/collections/men"
                   className="text-sm tracking-[0.2em] uppercase text-white/90 hover:text-white underline-offset-4 hover:underline"
                 >
                   Hombre
+                </Link>
+                <Link
+                  href="/collections/women"
+                  className="text-sm tracking-[0.2em] uppercase text-white/90 hover:text-white underline-offset-4 hover:underline"
+                >
+                  Mujer
                 </Link>
               </div>
             </div>

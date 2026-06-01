@@ -8,10 +8,51 @@ export interface PaypalOrderResult {
   links: Array<{ href: string; rel: string; method: string }>;
 }
 
+// Currencies PayPal accepts that Genaro may use. ARS is intentionally absent.
+const PAYPAL_SUPPORTED_CURRENCIES = new Set(['USD', 'EUR', 'GBP', 'BRL', 'MXN']);
+
+/**
+ * PayPal does not support ARS. Returns a converter that keeps supported
+ * currencies as-is, or converts to the configured fallback (USD) otherwise.
+ */
+function buildCurrencyConverter(cartCurrency: string): {
+  currencyCode: string;
+  convert: (amount: number) => number;
+} {
+  const code = (cartCurrency || 'USD').toUpperCase();
+  if (PAYPAL_SUPPORTED_CURRENCIES.has(code)) {
+    return { currencyCode: code, convert: (n) => Number(n.toFixed(2)) };
+  }
+  const rate = env.paypal.arsPerUsd > 0 ? env.paypal.arsPerUsd : 1000;
+  return {
+    currencyCode: env.paypal.fallbackCurrency,
+    // Floor at 0.01 so $1 ARS test products still produce a valid amount.
+    convert: (n) => Math.max(0.01, Number((n / rate).toFixed(2))),
+  };
+}
+
 export const paypalService = {
   async createOrder(cart: Cart): Promise<PaypalOrderResult> {
     const request = new paypalSdk.orders.OrdersCreateRequest();
     request.prefer('return=representation');
+
+    const { currencyCode, convert } = buildCurrencyConverter(cart.currency);
+    const lines = cart.items.map((item) => {
+      const unit = convert(item.unitPrice);
+      return {
+        name: `${item.brand} ${item.model}`,
+        description: `Size ${item.size} / ${item.color}`,
+        sku: `${item.shoeId}-${item.size}-${item.color}`,
+        unit_amount: { currency_code: currencyCode, value: unit.toFixed(2) },
+        quantity: String(item.quantity),
+        lineTotal: Number((unit * item.quantity).toFixed(2)),
+      };
+    });
+    // amount.value must equal the sum of converted line totals exactly.
+    const itemTotal = Number(
+      lines.reduce((acc, l) => acc + l.lineTotal, 0).toFixed(2),
+    );
+
     const body: any = {
       intent: 'CAPTURE',
       purchase_units: [
@@ -19,25 +60,19 @@ export const paypalService = {
           reference_id: cart.id,
           description: `Zapateria Genaro order — cart ${cart.id}`,
           amount: {
-            currency_code: cart.currency || 'USD',
-            value: cart.subtotal.toFixed(2),
+            currency_code: currencyCode,
+            value: itemTotal.toFixed(2),
             breakdown: {
               item_total: {
-                currency_code: cart.currency || 'USD',
-                value: cart.subtotal.toFixed(2),
+                currency_code: currencyCode,
+                value: itemTotal.toFixed(2),
               },
             },
           },
-          items: cart.items.map((item) => ({
-            name: `${item.brand} ${item.model}`,
-            description: `Size ${item.size} / ${item.color}`,
-            sku: `${item.shoeId}-${item.size}-${item.color}`,
-            unit_amount: {
-              currency_code: cart.currency || 'USD',
-              value: item.unitPrice.toFixed(2),
-            },
-            quantity: String(item.quantity),
-          })),
+          items: lines.map(({ lineTotal, ...item }) => {
+            void lineTotal;
+            return item;
+          }),
         },
       ],
     };

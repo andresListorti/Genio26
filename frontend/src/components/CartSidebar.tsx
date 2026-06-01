@@ -1,22 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { X, Trash2, Loader2 } from "lucide-react";
+import Link from "next/link";
+import { X, Trash2, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { useCart } from "@/context/CartContext";
 import { shoeImage } from "@/lib/images";
+import { formatMoney } from "@/lib/format";
 
 export default function CartSidebar() {
-  const {
-    cart,
-    isOpen,
-    closeCart,
-    removeItem,
-    checkout,
-    loading,
-    error,
-    itemCount,
-  } = useCart();
+  const { cart, isOpen, closeCart, removeItem, itemCount } = useCart();
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -104,7 +97,10 @@ export default function CartSidebar() {
                       </p>
                     </div>
                     <p className="text-sm font-medium whitespace-nowrap">
-                      ${(item.unitPrice * item.quantity).toFixed(2)}
+                      {formatMoney(
+                        item.unitPrice * item.quantity,
+                        cart?.currency,
+                      )}
                     </p>
                   </div>
                   <button
@@ -130,21 +126,24 @@ export default function CartSidebar() {
           <div className="flex justify-between text-sm">
             <span className="text-muted">Subtotal</span>
             <span className="font-medium">
-              ${(cart?.subtotal ?? 0).toFixed(2)} {cart?.currency ?? "USD"}
+              {formatMoney(cart?.subtotal ?? 0, cart?.currency)}
             </span>
           </div>
-          {error && <p className="text-xs text-red-600">{error}</p>}
-          <button
-            type="button"
-            disabled={!cart || cart.items.length === 0 || loading}
-            onClick={checkout}
-            className="w-full bg-foreground text-background py-3.5 text-sm tracking-[0.2em] uppercase hover:opacity-90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2"
+          <Link
+            href="/cart"
+            onClick={closeCart}
+            aria-disabled={!cart || cart.items.length === 0}
+            className={`w-full py-3.5 text-sm tracking-[0.2em] uppercase transition inline-flex items-center justify-center gap-2 ${
+              !cart || cart.items.length === 0
+                ? "bg-foreground/40 text-background pointer-events-none"
+                : "bg-foreground text-background hover:opacity-90"
+            }`}
           >
-            {loading && <Loader2 className="animate-spin" size={16} />}
-            Pagar con PayPal
-          </button>
+            Finalizar compra
+            <ArrowRight size={16} />
+          </Link>
           <p className="text-[10px] text-muted text-center tracking-wider uppercase">
-            Envíos a todo el país · 30 días de cambio
+            El pago se completa en la página de la bolsa · Envíos a todo el país
           </p>
         </div>
       </aside>

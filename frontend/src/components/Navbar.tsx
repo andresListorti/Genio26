@@ -18,10 +18,10 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-line">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-3">
         <nav className="hidden md:flex items-center gap-7 text-sm tracking-wide text-foreground/80 shrink-0">
-          <Link href="/" className="hover:text-foreground">
+          <Link href="/collections/men" className="hover:text-foreground">
             Hombre
           </Link>
-          <Link href="/" className="hover:text-foreground">
+          <Link href="/collections/women" className="hover:text-foreground">
             Mujer
           </Link>
           <Link href="/" className="hover:text-foreground">

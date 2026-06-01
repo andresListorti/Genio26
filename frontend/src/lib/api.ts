@@ -1,4 +1,10 @@
-import type { Cart, CheckoutResponse, Shoe } from "./types";
+import type {
+  Cart,
+  CheckoutResponse,
+  MercadoPagoPreference,
+  MercadoPagoProcessResult,
+  Shoe,
+} from "./types";
 
 export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:3000";
@@ -24,7 +30,10 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 export const api = {
   shoes: {
-    list: () => request<Shoe[]>("/api/shoes"),
+    list: (opts?: { gender?: "men" | "women" }) =>
+      request<Shoe[]>(
+        opts?.gender ? `/api/shoes?gender=${opts.gender}` : "/api/shoes",
+      ),
     get: (id: string) => request<Shoe>(`/api/shoes/${id}`),
   },
   cart: {
@@ -51,10 +60,27 @@ export const api = {
       request<Cart>(`/api/carts/${id}`, { method: "DELETE" }),
   },
   checkout: {
+    // PayPal
     createOrder: (cartId: string) =>
       request<CheckoutResponse>("/api/checkout/orders", {
         method: "POST",
         body: JSON.stringify({ cartId }),
       }),
+    // Mercado Pago (Checkout Bricks — seamless, in-app)
+    mercadopago: {
+      createPreference: (cartId: string) =>
+        request<MercadoPagoPreference>("/api/checkout/mercadopago", {
+          method: "POST",
+          body: JSON.stringify({ cartId }),
+        }),
+      process: (orderId: string, formData: unknown) =>
+        request<MercadoPagoProcessResult>(
+          "/api/checkout/mercadopago/process",
+          {
+            method: "POST",
+            body: JSON.stringify({ orderId, formData }),
+          },
+        ),
+    },
   },
 };
