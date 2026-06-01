@@ -38,6 +38,7 @@ interface CartContextValue {
     nextQuantity: number,
   ) => Promise<void>;
   clear: () => Promise<void>;
+  resetCart: () => void;
   checkout: () => Promise<void>;
 }
 
@@ -151,6 +152,17 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [cart]);
 
+  // Wipes the local cart after a completed purchase. The backend already
+  // empties the cart on approval (seamless path + webhook), so here we only
+  // drop the stored id and local state to give the buyer a fresh bag.
+  const resetCart = useCallback(() => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem(CART_ID_KEY);
+    }
+    setCart(null);
+    setError(null);
+  }, []);
+
   const checkout = useCallback(async () => {
     if (!cart || cart.items.length === 0) return;
     setLoading(true);
@@ -186,6 +198,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     removeItem,
     updateQuantity,
     clear,
+    resetCart,
     checkout,
   };
 

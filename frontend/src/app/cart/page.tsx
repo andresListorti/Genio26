@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
-  CheckCircle2,
   Loader2,
   Minus,
   Plus,
@@ -25,6 +25,7 @@ import type {
 import MercadoPagoBrick from "@/components/MercadoPagoBrick";
 
 export default function CartPage() {
+  const router = useRouter();
   const {
     cart,
     loading,
@@ -44,7 +45,6 @@ export default function CartPage() {
   const [mpPref, setMpPref] = useState<MercadoPagoPreference | null>(null);
   const [mpLoading, setMpLoading] = useState(false);
   const [mpError, setMpError] = useState<string | null>(null);
-  const [paidStatus, setPaidStatus] = useState<OrderStatus | null>(null);
 
   const selectMethod = (next: PaymentProvider) => {
     setMethod(next);
@@ -73,22 +73,33 @@ export default function CartPage() {
     }
   };
 
-  const onApproved = useCallback(
-    (status: OrderStatus) => {
-      setPaidStatus(status);
+  // After the Brick resolves, hand off to the dedicated result page (which
+  // shows the "thank you" / status copy and clears the local bag on success).
+  const goToResult = useCallback(
+    (variant: "success" | "pending" | "failure", status: OrderStatus) => {
+      const orderId = mpPref?.order.id;
       setMpPref(null);
-      // Backend already cleared the cart on approval; sync local state.
-      clear().catch(() => undefined);
+      const qs = new URLSearchParams({ status: status.toLowerCase() });
+      if (orderId) qs.set("order", orderId);
+      router.push(`/checkout/${variant}?${qs.toString()}`);
     },
-    [clear],
+    [mpPref, router],
   );
 
-  const onRejected = useCallback((status: OrderStatus) => {
-    setMpError(
-      `El pago no pudo completarse (${status.toLowerCase()}). Probá con otro medio.`,
-    );
-    setMpPref(null);
-  }, []);
+  const onApproved = useCallback(
+    (status: OrderStatus) => {
+      // COMPLETED → paid & fulfilled; APPROVED → accredited but still pending.
+      goToResult(status === "COMPLETED" ? "success" : "pending", status);
+    },
+    [goToResult],
+  );
+
+  const onRejected = useCallback(
+    (status: OrderStatus) => {
+      goToResult("failure", status);
+    },
+    [goToResult],
+  );
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 lg:py-20">
@@ -245,25 +256,7 @@ export default function CartPage() {
                 </div>
               </div>
 
-              {paidStatus ? (
-                <div className="border border-green-600/40 bg-green-50 text-green-800 p-4 text-sm flex items-start gap-3">
-                  <CheckCircle2 size={18} className="mt-0.5 shrink-0" />
-                  <div>
-                    <p className="font-medium">¡Pago aprobado!</p>
-                    <p className="text-xs mt-1">
-                      Gracias por tu compra en Genaro. Te enviamos la
-                      confirmación por correo.
-                    </p>
-                    <Link
-                      href="/"
-                      className="inline-block mt-3 text-xs uppercase tracking-[0.2em] underline underline-offset-4"
-                    >
-                      Volver al inicio
-                    </Link>
-                  </div>
-                </div>
-              ) : (
-                <>
+              <>
                   {/* Payment method selector */}
                   <div>
                     <p className="eyebrow mb-3">Medio de pago</p>
@@ -333,8 +326,7 @@ export default function CartPage() {
                       <ShieldCheck size={14} /> Pago seguro · 30 días de cambio
                     </li>
                   </ul>
-                </>
-              )}
+              </>
             </div>
           </aside>
         </div>

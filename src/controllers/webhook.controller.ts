@@ -64,4 +64,40 @@ export const webhookController = {
       next(err);
     }
   },
+
+  /**
+   * Mercado Pago payment notifications. MP sends `type=payment` (body or query)
+   * with the payment id; we fetch the payment, map its status and update the
+   * order. Always answers 200 quickly so MP doesn't retry on our processing.
+   */
+  async handleMercadoPago(req: Request, res: Response, next: NextFunction) {
+    try {
+      const body = (req.body ?? {}) as {
+        type?: string;
+        action?: string;
+        data?: { id?: string | number };
+      };
+      const query = req.query as { type?: string; 'data.id'?: string; id?: string };
+
+      const type = body.type ?? query.type ?? '';
+      const action = body.action ?? '';
+      const isPayment =
+        type === 'payment' || action.startsWith('payment.');
+      const paymentId = String(
+        body.data?.id ?? query['data.id'] ?? query.id ?? '',
+      );
+
+      if (!isPayment || !paymentId) {
+        // Merchant-order / test pings: acknowledge without processing.
+        return res.status(200).json({ received: true, applied: false });
+      }
+
+      const order = await orderService.handleMercadoPagoWebhook(paymentId);
+      res
+        .status(200)
+        .json({ received: true, applied: !!order, status: order?.status });
+    } catch (err) {
+      next(err);
+    }
+  },
 };

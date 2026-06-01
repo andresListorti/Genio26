@@ -10,6 +10,8 @@
     "seed": "ts-node-dev --transpile-only src/scripts/seed.ts",
     "check:paypal": "ts-node-dev --transpile-only src/scripts/check-paypal.ts",
     "check:mercadopago": "ts-node-dev --transpile-only src/scripts/check-mercadopago.ts",
+    "check:mercadopago:payment": "ts-node-dev --transpile-only src/scripts/check-mercadopago-payment.ts",
+    "verify": "npm run typecheck && npm run check:paypal && npm run check:mercadopago && npm run check:mercadopago:payment",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [

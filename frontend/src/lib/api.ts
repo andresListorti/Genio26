@@ -3,6 +3,7 @@ import type {
   CheckoutResponse,
   MercadoPagoPreference,
   MercadoPagoProcessResult,
+  Order,
   Shoe,
 } from "./types";
 
@@ -66,6 +67,9 @@ export const api = {
         method: "POST",
         body: JSON.stringify({ cartId }),
       }),
+    // Order lookup — used by the checkout result pages to confirm the outcome.
+    getOrder: (orderId: string) =>
+      request<Order>(`/api/checkout/orders/${orderId}`),
     // Mercado Pago (Checkout Bricks — seamless, in-app)
     mercadopago: {
       createPreference: (cartId: string) =>

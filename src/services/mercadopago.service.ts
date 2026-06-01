@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { getMercadoPago } from '../config/mercadopago';
+import { env } from '../config/env';
 import { Cart } from '../models/cart.model';
 import { Order } from '../models/order.model';
 
@@ -21,6 +22,7 @@ export interface MercadoPagoPaymentResult {
   status: string;
   statusDetail?: string;
   payerEmail?: string;
+  externalReference?: string;
 }
 
 export const mercadoPagoService = {
@@ -31,6 +33,11 @@ export const mercadoPagoService = {
   async createPreference(order: Order, cart: Cart): Promise<string> {
     const { preference } = getMercadoPago();
     const currencyId = (cart.currency || 'ARS').toUpperCase();
+    // `auto_return` requires a public success URL — Mercado Pago rejects
+    // localhost ("auto_return invalid. back_url.success must be defined"). The
+    // back_urls themselves work locally (the browser does the redirect), so we
+    // keep them always and only opt into auto_return on a public frontend URL.
+    const isLocalFrontend = /localhost|127\.0\.0\.1/.test(env.frontendUrl);
     const result = await preference.create({
       body: {
         items: cart.items.map((item) => ({
@@ -44,6 +51,17 @@ export const mercadoPagoService = {
         })),
         external_reference: order.id,
         statement_descriptor: 'GENARO',
+        // Where Mercado Pago sends the buyer back after the redirect flow
+        // (wallet / account money). `auto_return` skips the MP "volver" screen
+        // and bounces approved payments straight to our success page. MP appends
+        // payment_id / status / external_reference / merchant_order_id as query
+        // params, which the success page reads to confirm the order.
+        back_urls: {
+          success: `${env.frontendUrl}/checkout/success`,
+          failure: `${env.frontendUrl}/checkout/failure`,
+          pending: `${env.frontendUrl}/checkout/pending`,
+        },
+        ...(isLocalFrontend ? {} : { auto_return: 'approved' }),
       },
     });
     if (!result.id) {
@@ -90,6 +108,23 @@ export const mercadoPagoService = {
       status: result.status ?? 'pending',
       statusDetail: result.status_detail,
       payerEmail: result.payer?.email,
+      externalReference: result.external_reference ?? undefined,
+    };
+  },
+
+  /**
+   * Fetches a payment by id from Mercado Pago. Used by the webhook to resolve
+   * the authoritative payment status (and its external_reference → order id).
+   */
+  async getPayment(paymentId: string): Promise<MercadoPagoPaymentResult> {
+    const { payment } = getMercadoPago();
+    const result = await payment.get({ id: paymentId });
+    return {
+      id: String(result.id ?? paymentId),
+      status: result.status ?? 'pending',
+      statusDetail: result.status_detail,
+      payerEmail: result.payer?.email,
+      externalReference: result.external_reference ?? undefined,
     };
   },
 };

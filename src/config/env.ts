@@ -15,6 +15,13 @@ export const env = {
   port: parseInt(process.env.PORT ?? '3000', 10),
   nodeEnv: process.env.NODE_ENV ?? 'development',
 
+  // Public URL of the Genaro storefront (Next.js). Used to build Mercado Pago
+  // back_urls so the buyer returns to the right page after the redirect flow.
+  frontendUrl: (process.env.FRONTEND_URL ?? 'http://localhost:3001').replace(
+    /\/$/,
+    '',
+  ),
+
   firebase: {
     projectId: required('FIREBASE_PROJECT_ID'),
     clientEmail: required('FIREBASE_CLIENT_EMAIL'),

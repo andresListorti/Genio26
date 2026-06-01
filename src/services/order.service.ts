@@ -7,6 +7,7 @@ import { paypalService } from './paypal.service';
 import {
   mercadoPagoService,
   MercadoPagoBrickFormData,
+  MercadoPagoPaymentResult,
 } from './mercadopago.service';
 import { shoeService } from './shoe.service';
 
@@ -131,22 +132,48 @@ export const orderService = {
     }
 
     const payment = await mercadoPagoService.createPayment(order, formData);
-    const status = mapMercadoPagoStatus(payment.status);
+    return this.applyMercadoPagoPayment(order, payment);
+  },
 
-    if (status === 'COMPLETED') {
+  /**
+   * Applies a Mercado Pago payment outcome to an order and persists it. Fulfills
+   * (decrement stock + clear cart) exactly once, on the transition INTO
+   * COMPLETED — so the seamless Brick path and the async webhook can both call
+   * this for the same payment without double-fulfilling.
+   */
+  async applyMercadoPagoPayment(
+    order: Order,
+    payment: MercadoPagoPaymentResult,
+  ): Promise<Order> {
+    const status = mapMercadoPagoStatus(payment.status);
+    if (status === 'COMPLETED' && order.status !== 'COMPLETED') {
       await fulfillOrder(order);
     }
 
     const updated: Order = {
       ...order,
       status,
-      mpPaymentId: payment.id,
+      mpPaymentId: payment.id || order.mpPaymentId,
       mpStatusDetail: payment.statusDetail,
       payerEmail: payment.payerEmail ?? order.payerEmail,
       updatedAt: new Date().toISOString(),
     };
     await ordersCollection().doc(order.id).set(updated);
     return updated;
+  },
+
+  /**
+   * Resolves a Mercado Pago payment-notification webhook: fetches the payment,
+   * locates the order via external_reference, and applies the outcome. Returns
+   * null when the payment can't be tied to a Mercado Pago order (ignored).
+   */
+  async handleMercadoPagoWebhook(paymentId: string): Promise<Order | null> {
+    const payment = await mercadoPagoService.getPayment(paymentId);
+    const orderId = payment.externalReference;
+    if (!orderId) return null;
+    const order = await this.findById(orderId);
+    if (!order || order.provider !== 'mercadopago') return null;
+    return this.applyMercadoPagoPayment(order, payment);
   },
 
   async findById(id: string): Promise<Order | null> {

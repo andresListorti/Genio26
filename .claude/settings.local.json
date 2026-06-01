@@ -28,7 +28,9 @@
       "Bash(pkill -f \"next dev\")",
       "Bash(pkill -f \"next-server\")",
       "Bash(npm install *)",
-      "PowerShell(Get-NetTCPConnection *)"
+      "PowerShell(Get-NetTCPConnection *)",
+      "Bash(sed -E 's/=\\(.{0,6}\\).*/=\\\\1…\\(masked\\)/' f:/Code/.env)",
+      "Bash(sed -E 's/=\\(.{0,6}\\).*/=\\\\1…\\(masked\\)/' f:/Code/frontend/.env.local)"
     ]
   }
 }
