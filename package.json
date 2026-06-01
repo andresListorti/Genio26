@@ -9,6 +9,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "seed": "ts-node-dev --transpile-only src/scripts/seed.ts",
     "check:paypal": "ts-node-dev --transpile-only src/scripts/check-paypal.ts",
+    "check:mercadopago": "ts-node-dev --transpile-only src/scripts/check-mercadopago.ts",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
