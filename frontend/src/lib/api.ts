@@ -72,10 +72,17 @@ export const api = {
       request<Order>(`/api/checkout/orders/${orderId}`),
     // Mercado Pago (Checkout Bricks — seamless, in-app)
     mercadopago: {
-      createPreference: (cartId: string) =>
+      createPreference: (input: {
+        cartId: string;
+        userId?: string;
+        payerEmail?: string;
+        payerName?: string;
+        shippingAddress?: string;
+        shippingPhone?: string;
+      }) =>
         request<MercadoPagoPreference>("/api/checkout/mercadopago", {
           method: "POST",
-          body: JSON.stringify({ cartId }),
+          body: JSON.stringify(input),
         }),
       process: (orderId: string, formData: unknown) =>
         request<MercadoPagoProcessResult>(
@@ -85,6 +92,12 @@ export const api = {
             body: JSON.stringify({ orderId, formData }),
           },
         ),
+      // Called from the success/pending redirect URL to persist final status.
+      confirm: (paymentId: string) =>
+        request<Order>("/api/checkout/mercadopago/confirm", {
+          method: "POST",
+          body: JSON.stringify({ paymentId }),
+        }),
     },
   },
 };

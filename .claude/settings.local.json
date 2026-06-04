@@ -30,7 +30,14 @@
       "Bash(npm install *)",
       "PowerShell(Get-NetTCPConnection *)",
       "Bash(sed -E 's/=\\(.{0,6}\\).*/=\\\\1…\\(masked\\)/' f:/Code/.env)",
-      "Bash(sed -E 's/=\\(.{0,6}\\).*/=\\\\1…\\(masked\\)/' f:/Code/frontend/.env.local)"
+      "Bash(sed -E 's/=\\(.{0,6}\\).*/=\\\\1…\\(masked\\)/' f:/Code/frontend/.env.local)",
+      "Bash(Get-ChildItem -Force)",
+      "Bash(Select-Object -ExpandProperty Name)",
+      "Bash(Get-ChildItem \"F:\\\\Code\\\\src\\\\controllers\")",
+      "PowerShell(Get-Process *)",
+      "PowerShell(icacls *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['version']\\)\")",
+      "Bash(npx eslint *)"
     ]
   }
 }

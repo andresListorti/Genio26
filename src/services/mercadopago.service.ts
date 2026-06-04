@@ -29,8 +29,15 @@ export const mercadoPagoService = {
   /**
    * Creates a Checkout preference for the given order. The returned id feeds
    * the Bricks `initialization.preferenceId` so payment happens in-app.
+   *
+   * `payerInfo` is optional: when the buyer is authenticated we pre-fill name
+   * and email so Mercado Pago can skip that step in their UI.
    */
-  async createPreference(order: Order, cart: Cart): Promise<string> {
+  async createPreference(
+    order: Order,
+    cart: Cart,
+    payerInfo?: { email?: string; name?: string },
+  ): Promise<string> {
     const { preference } = getMercadoPago();
     const currencyId = (cart.currency || 'ARS').toUpperCase();
     // `auto_return` requires a public success URL — Mercado Pago rejects
@@ -62,6 +69,9 @@ export const mercadoPagoService = {
           pending: `${env.frontendUrl}/checkout/pending`,
         },
         ...(isLocalFrontend ? {} : { auto_return: 'approved' }),
+        ...(payerInfo?.email
+          ? { payer: { name: payerInfo.name, email: payerInfo.email } }
+          : {}),
       },
     });
     if (!result.id) {

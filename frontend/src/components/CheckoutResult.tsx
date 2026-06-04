@@ -56,28 +56,38 @@ export default function CheckoutResult({ variant }: { variant: CheckoutVariant }
   const [order, setOrder] = useState<Order | null>(null);
   const clearedRef = useRef(false);
 
-  // Clear the local bag exactly once when a purchase completes.
+  // On the success/pending redirect from Mercado Pago:
+  //  1. Call /confirm so the backend fetches the payment from MP, persists the
+  //     final status, and runs fulfillment (stock decrement + cart clear) if needed.
+  //  2. Clear the local bag exactly once so the buyer gets a fresh cart.
   useEffect(() => {
-    if (variant === "success" && !clearedRef.current) {
-      clearedRef.current = true;
+    if (variant === "failure") return;
+    if (clearedRef.current) return;
+    clearedRef.current = true;
+
+    // paymentId is set on MP redirect; absent on the seamless Brick path.
+    if (paymentId) {
+      void api.checkout.mercadopago
+        .confirm(paymentId)
+        .then((o) => setOrder(o))
+        .catch(() => undefined)
+        .finally(() => resetCart());
+    } else {
+      // Brick path already processed the payment server-side — just clear.
       resetCart();
     }
-  }, [variant, resetCart]);
+  }, [variant, paymentId, resetCart]);
 
-  // Best-effort: confirm the order so we can show its total and items.
+  // Best-effort order display when confirm didn't already set it.
   useEffect(() => {
-    if (!orderId) return;
+    if (!orderId || order) return;
     let active = true;
     api.checkout
       .getOrder(orderId)
-      .then((o) => {
-        if (active) setOrder(o);
-      })
+      .then((o) => { if (active) setOrder(o); })
       .catch(() => undefined);
-    return () => {
-      active = false;
-    };
-  }, [orderId]);
+    return () => { active = false; };
+  }, [orderId, order]);
 
   const { eyebrow, title, body, Icon, accent } = COPY[variant];
 

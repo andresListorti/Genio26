@@ -10,9 +10,8 @@ router.get('/orders/:orderId', checkoutController.getOrder);
 
 // Mercado Pago (Checkout Bricks — seamless, in-app)
 router.post('/mercadopago', checkoutController.createMercadoPagoPreference);
-router.post(
-  '/mercadopago/process',
-  checkoutController.processMercadoPagoPayment,
-);
+router.post('/mercadopago/process', checkoutController.processMercadoPagoPayment);
+// Confirms a payment after the MP redirect flow (success / pending back_url)
+router.post('/mercadopago/confirm', checkoutController.confirmMercadoPagoPayment);
 
 export default router;

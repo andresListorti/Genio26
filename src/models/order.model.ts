@@ -26,6 +26,9 @@ export interface Order {
   mpPaymentId?: string;
   mpStatusDetail?: string;
   payerEmail?: string;
+  // Shipping / buyer contact saved at order creation
+  shippingAddress?: string;
+  shippingPhone?: string;
   createdAt: string;
   updatedAt: string;
 }

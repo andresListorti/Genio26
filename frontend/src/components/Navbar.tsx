@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ShoppingBag, Search, User, X, Menu } from "lucide-react";
-import { Suspense, useState } from "react";
+import Image from "next/image";
+import { ShoppingBag, Search, User, X, Menu, LogOut, UserCircle } from "lucide-react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import SearchBar from "./SearchBar";
 
 const searchFallback = (
@@ -12,7 +14,26 @@ const searchFallback = (
 
 export default function Navbar() {
   const { itemCount, openCart } = useCart();
+  const { user, profile, loading, logout } = useAuth();
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setUserMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const initials = profile?.displayName
+    ? profile.displayName[0].toUpperCase()
+    : profile?.email
+      ? profile.email[0].toUpperCase()
+      : "U";
 
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-line">
@@ -57,13 +78,71 @@ export default function Navbar() {
           >
             {mobileSearchOpen ? <X size={18} /> : <Search size={18} />}
           </button>
-          <button
-            type="button"
-            className="hidden sm:block text-foreground/70 hover:text-foreground"
-            aria-label="Account"
-          >
-            <User size={18} />
-          </button>
+
+          {/* Auth area */}
+          {loading ? (
+            <div className="hidden sm:block w-5 h-5" />
+          ) : user ? (
+            <div ref={menuRef} className="relative hidden sm:block">
+              <button
+                type="button"
+                onClick={() => setUserMenuOpen((v) => !v)}
+                className="flex items-center gap-2 text-foreground/70 hover:text-foreground"
+                aria-label="Menú de usuario"
+                aria-expanded={userMenuOpen}
+              >
+                {profile?.photoURL ? (
+                  <Image
+                    src={profile.photoURL}
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="rounded-full object-cover"
+                  />
+                ) : (
+                  <span className="w-7 h-7 rounded-full bg-foreground text-background text-xs flex items-center justify-center font-medium select-none">
+                    {initials}
+                  </span>
+                )}
+              </button>
+
+              {userMenuOpen && (
+                <div className="absolute right-0 top-full mt-2 w-52 bg-background border border-line shadow-md z-50">
+                  <div className="px-4 py-3 text-sm text-muted border-b border-line truncate">
+                    {profile?.displayName ?? profile?.email}
+                  </div>
+                  <Link
+                    href="/profile"
+                    onClick={() => setUserMenuOpen(false)}
+                    className="w-full text-left px-4 py-2.5 text-sm hover:bg-surface flex items-center gap-2"
+                  >
+                    <UserCircle size={14} />
+                    Mi perfil
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      await logout();
+                      setUserMenuOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-2.5 text-sm hover:bg-surface flex items-center gap-2"
+                  >
+                    <LogOut size={14} />
+                    Cerrar sesión
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="hidden sm:block text-foreground/70 hover:text-foreground"
+              aria-label="Iniciar sesión"
+            >
+              <User size={18} />
+            </Link>
+          )}
+
           <button
             type="button"
             onClick={openCart}

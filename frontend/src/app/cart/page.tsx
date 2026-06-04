@@ -14,6 +14,7 @@ import {
   Truck,
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { shoeImage } from "@/lib/images";
 import { formatMoney } from "@/lib/format";
 import { api } from "@/lib/api";
@@ -36,6 +37,7 @@ export default function CartPage() {
     clear,
     checkout,
   } = useCart();
+  const { user, profile } = useAuth();
 
   const isEmpty = !cart || cart.items.length === 0;
   const currency = cart?.currency ?? "ARS";
@@ -63,7 +65,16 @@ export default function CartPage() {
     setMpError(null);
     setMpLoading(true);
     try {
-      setMpPref(await api.checkout.mercadopago.createPreference(cart.id));
+      setMpPref(
+        await api.checkout.mercadopago.createPreference({
+          cartId: cart.id,
+          userId: user?.uid,
+          payerEmail: user?.email ?? undefined,
+          payerName: profile?.displayName ?? undefined,
+          shippingAddress: profile?.address,
+          shippingPhone: profile?.phone,
+        }),
+      );
     } catch (err) {
       setMpError(
         err instanceof Error ? err.message : "No se pudo iniciar Mercado Pago.",

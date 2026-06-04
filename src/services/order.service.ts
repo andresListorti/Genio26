@@ -82,10 +82,19 @@ export const orderService = {
   /**
    * Creates a Mercado Pago order + Checkout preference for the cart. The
    * returned preferenceId/publicKey drive the in-app Payment Brick.
+   *
+   * Pass `options` to attach the authenticated buyer's identity and shipping
+   * details to the order document and to the MP Preference (pre-fills their UI).
    */
   async createMercadoPagoFromCart(
     cartId: string,
-    userId?: string,
+    options?: {
+      userId?: string;
+      payerEmail?: string;
+      payerName?: string;
+      shippingAddress?: string;
+      shippingPhone?: string;
+    },
   ): Promise<{ order: Order; preferenceId: string; publicKey: string }> {
     const cart = await cartService.findById(cartId);
     if (!cart) throw new Error(`Cart ${cartId} not found`);
@@ -96,17 +105,23 @@ export const orderService = {
     const order: Order = {
       id,
       cartId: cart.id,
-      userId: userId ?? cart.userId,
+      userId: options?.userId ?? cart.userId,
       items: cart.items,
       subtotal: cart.subtotal,
       currency: cart.currency,
       status: 'CREATED',
       provider: 'mercadopago',
+      ...(options?.shippingAddress ? { shippingAddress: options.shippingAddress } : {}),
+      ...(options?.shippingPhone ? { shippingPhone: options.shippingPhone } : {}),
+      ...(options?.payerEmail ? { payerEmail: options.payerEmail } : {}),
       createdAt: now,
       updatedAt: now,
     };
 
-    const preferenceId = await mercadoPagoService.createPreference(order, cart);
+    const preferenceId = await mercadoPagoService.createPreference(order, cart, {
+      email: options?.payerEmail,
+      name: options?.payerName,
+    });
     order.mpPreferenceId = preferenceId;
     await ordersCollection().doc(id).set(order);
 
