@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
+  LayoutDashboard,
   LogOut,
   Menu,
   Search,
@@ -84,6 +85,15 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
+            {profile?.role === "admin" && (
+              <Link
+                href="/admin"
+                className="flex items-center gap-1.5 font-medium text-amber-600 hover:text-amber-700 transition-colors"
+              >
+                <LayoutDashboard size={14} />
+                Admin
+              </Link>
+            )}
           </nav>
 
           {/* Hamburger — mobile only */}
@@ -154,6 +164,16 @@ export default function Navbar() {
                     <div className="px-4 py-3 text-sm text-muted border-b border-line truncate">
                       {profile?.displayName ?? profile?.email}
                     </div>
+                    {profile?.role === "admin" && (
+                      <Link
+                        href="/admin"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="w-full text-left px-4 py-2.5 text-sm hover:bg-surface flex items-center gap-2 text-amber-600 font-medium"
+                      >
+                        <LayoutDashboard size={14} />
+                        Panel admin
+                      </Link>
+                    )}
                     <Link
                       href="/profile"
                       onClick={() => setUserMenuOpen(false)}
@@ -292,6 +312,16 @@ export default function Navbar() {
                   {profile?.displayName ?? profile?.email}
                 </p>
               </div>
+              {profile?.role === "admin" && (
+                <Link
+                  href="/admin"
+                  onClick={closeMenu}
+                  className="flex items-center gap-2 text-sm py-1 text-amber-600 font-medium hover:text-amber-700"
+                >
+                  <LayoutDashboard size={14} />
+                  Panel admin
+                </Link>
+              )}
               <Link
                 href="/profile"
                 onClick={closeMenu}
