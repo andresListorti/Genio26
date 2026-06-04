@@ -7,9 +7,15 @@ import type { Shoe } from "@/lib/types";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Genaro · Colección Mujer",
+  title: "Colección Mujer",
   description:
-    "Calzado Genaro para mujer: botas, borcegos, mocasines y zapatos artesanales.",
+    "Calzado Genaro para mujer: botas, borcegos, mocasines y zapatos en cuero genuino. Diseño atemporal, hecho en Argentina.",
+  openGraph: {
+    title: "Colección Mujer | Genaro Calzado",
+    description:
+      "Botas, borcegos, mocasines y zapatos artesanales para mujer. Cuero genuino, hecho en Argentina.",
+    images: [{ url: "/resources/IaDama.jpeg", width: 1200, height: 900, alt: "Colección Mujer Genaro" }],
+  },
 };
 
 export default async function WomenCollectionPage() {

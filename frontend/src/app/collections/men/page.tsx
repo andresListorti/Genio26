@@ -7,9 +7,15 @@ import type { Shoe } from "@/lib/types";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Genaro · Colección Hombre",
+  title: "Colección Hombre",
   description:
-    "Calzado Genaro para hombre: zapatos, mocasines, zapatillas y botas artesanales.",
+    "Calzado Genaro para hombre: zapatos, mocasines, zapatillas y botas en cuero genuino. Construcción artesanal, envíos a todo el país.",
+  openGraph: {
+    title: "Colección Hombre | Genaro Calzado",
+    description:
+      "Zapatos, mocasines, zapatillas y botas artesanales para hombre. Cuero genuino, hecho en Argentina.",
+    images: [{ url: "/resources/Men.jpg", width: 1200, height: 900, alt: "Colección Hombre Genaro" }],
+  },
 };
 
 export default async function MenCollectionPage() {

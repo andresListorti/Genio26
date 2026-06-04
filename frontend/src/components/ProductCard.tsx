@@ -23,7 +23,7 @@ export default function ProductCard({ shoe }: { shoe: Shoe }) {
           src={img}
           alt={`${shoe.brand} ${shoe.model}`}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+          sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>

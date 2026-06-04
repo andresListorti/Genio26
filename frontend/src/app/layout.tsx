@@ -20,9 +20,53 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Zapatería Genaro · Calzado artesanal",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001",
+  ),
+  title: {
+    default: "Genaro | Calzado Artesanal Masculino y Femenino",
+    template: "%s | Genaro Calzado",
+  },
   description:
-    "Calzado artesanal desde 1962. Descubrí la nueva colección Otoño Invierno.",
+    "Zapatería Genaro — Calzado artesanal en cuero genuino desde 1962. Zapatos, botas, mocasines y zapatillas para hombre y mujer. Envíos a todo el país.",
+  keywords: [
+    "zapatería",
+    "calzado artesanal",
+    "zapatos cuero",
+    "botas cuero",
+    "mocasines",
+    "zapatillas cuero",
+    "calzado hombre",
+    "calzado mujer",
+    "genaro",
+    "zapatería argentina",
+    "cuero genuino",
+    "calzado premium",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    siteName: "Genaro Calzado",
+    title: "Genaro | Calzado Artesanal Masculino y Femenino",
+    description:
+      "Calzado artesanal en cuero genuino desde 1962. Zapatos, botas, mocasines y zapatillas.",
+    images: [
+      {
+        url: "/resources/Men.jpg",
+        width: 1200,
+        height: 900,
+        alt: "Genaro — Calzado Artesanal",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Genaro | Calzado Artesanal",
+    description:
+      "Calzado artesanal en cuero genuino desde 1962. Zapatos, botas, mocasines y zapatillas para hombre y mujer.",
+    images: ["/resources/Men.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
