@@ -37,7 +37,13 @@
       "PowerShell(Get-Process *)",
       "PowerShell(icacls *)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['version']\\)\")",
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(cmd /c \"dir /a F:\\\\Code\\\\frontend\\\\src\")",
+      "PowerShell(cmd /c \"dir /a /s F:\\\\Code\\\\frontend\\\\src\\\\app\\\\cart\")",
+      "PowerShell(cmd /c \"dir /a /s F:\\\\Code\\\\frontend\\\\src\\\\lib\")",
+      "PowerShell(cmd /c \"type F:\\\\Code\\\\frontend\\\\src\\\\lib\\\\api.ts\")",
+      "PowerShell(cmd /c \"type F:\\\\Code\\\\frontend\\\\src\\\\app\\\\cart\\\\page.tsx\")"
     ]
   }
 }
