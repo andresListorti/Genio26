@@ -68,6 +68,8 @@ export const mercadoPagoService = {
           failure: `${env.frontendUrl}/checkout/failure`,
           pending: `${env.frontendUrl}/checkout/pending`,
         },
+        // Allow up to 12 cuotas/installments (standard in Argentina)
+        payment_methods: { installments: 12 },
         ...(isLocalFrontend ? {} : { auto_return: 'approved' }),
         ...(payerInfo?.email
           ? { payer: { name: payerInfo.name, email: payerInfo.email } }

@@ -6,7 +6,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { CheckCircle, Clock, Loader2, Package, XCircle } from "lucide-react";
+import { CheckCircle, Clock, Loader2, Package, Truck, XCircle } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -359,9 +359,16 @@ function ProfileContent({
                       ? "artículo"
                       : "artículos"}
                   </span>
-                  <span className="text-sm font-medium">
-                    {formatMoney(order.subtotal, order.currency)}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    {order.shippedAt && (
+                      <span className="inline-flex items-center gap-1 text-xs text-green-700">
+                        <Truck size={11} /> Enviado
+                      </span>
+                    )}
+                    <span className="text-sm font-medium">
+                      {formatMoney(order.subtotal, order.currency)}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

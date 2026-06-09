@@ -10,6 +10,7 @@ import {
   MercadoPagoPaymentResult,
 } from './mercadopago.service';
 import { shoeService } from './shoe.service';
+import { emailService } from './email.service';
 
 const ordersCollection = () => firestore.collection(collections.orders);
 
@@ -45,6 +46,17 @@ async function fulfillOrder(order: Order): Promise<void> {
   if (order.cartId) {
     await cartService.clear(order.cartId).catch(() => undefined);
   }
+}
+
+/** Releases stock reservations for all items in an order. */
+async function releaseOrderReservations(order: Order): Promise<void> {
+  await Promise.all(
+    order.items.map((item) =>
+      shoeService
+        .releaseReservation(item.shoeId, item.size, item.color, item.quantity)
+        .catch(() => undefined),
+    ),
+  );
 }
 
 export const orderService = {
@@ -83,8 +95,8 @@ export const orderService = {
    * Creates a Mercado Pago order + Checkout preference for the cart. The
    * returned preferenceId/publicKey drive the in-app Payment Brick.
    *
-   * Pass `options` to attach the authenticated buyer's identity and shipping
-   * details to the order document and to the MP Preference (pre-fills their UI).
+   * Reserves stock for all items so no other buyer can claim the same units
+   * while this payment is in flight.
    */
   async createMercadoPagoFromCart(
     cartId: string,
@@ -99,6 +111,16 @@ export const orderService = {
     const cart = await cartService.findById(cartId);
     if (!cart) throw new Error(`Cart ${cartId} not found`);
     if (cart.items.length === 0) throw new Error('Cart is empty');
+
+    // Reserve stock before creating the order so we fail fast on unavailability
+    for (const item of cart.items) {
+      await shoeService.reserveStock(
+        item.shoeId,
+        item.size,
+        item.color,
+        item.quantity,
+      );
+    }
 
     const id = uuidv4();
     const now = new Date().toISOString();
@@ -155,14 +177,24 @@ export const orderService = {
    * (decrement stock + clear cart) exactly once, on the transition INTO
    * COMPLETED — so the seamless Brick path and the async webhook can both call
    * this for the same payment without double-fulfilling.
+   *
+   * On FAILED/REFUNDED: releases the previously-held stock reservation.
    */
   async applyMercadoPagoPayment(
     order: Order,
     payment: MercadoPagoPaymentResult,
   ): Promise<Order> {
     const status = mapMercadoPagoStatus(payment.status);
-    if (status === 'COMPLETED' && order.status !== 'COMPLETED') {
+    const wasCompleted = order.status === 'COMPLETED';
+
+    if (status === 'COMPLETED' && !wasCompleted) {
+      // decrementStock also clears the matching reservation
       await fulfillOrder(order);
+    } else if (
+      (status === 'FAILED' || status === 'REFUNDED') &&
+      order.status === 'CREATED'
+    ) {
+      await releaseOrderReservations(order);
     }
 
     const updated: Order = {
@@ -174,6 +206,12 @@ export const orderService = {
       updatedAt: new Date().toISOString(),
     };
     await ordersCollection().doc(order.id).set(updated);
+
+    if (status === 'COMPLETED' && !wasCompleted) {
+      emailService.sendOrderConfirmation(updated).catch(() => undefined);
+      emailService.sendAdminNotification(updated).catch(() => undefined);
+    }
+
     return updated;
   },
 
@@ -236,6 +274,12 @@ export const orderService = {
       updatedAt: new Date().toISOString(),
     };
     await ordersCollection().doc(order.id).set(updated);
+
+    if (status === 'COMPLETED') {
+      emailService.sendOrderConfirmation(updated).catch(() => undefined);
+      emailService.sendAdminNotification(updated).catch(() => undefined);
+    }
+
     return updated;
   },
 
@@ -243,6 +287,8 @@ export const orderService = {
    * Deletes any CREATED orders tied to a cart that the user has abandoned or
    * modified. Only removes CREATED status — APPROVED (in-bank processing),
    * COMPLETED, and terminal states are never touched.
+   *
+   * Also releases stock reservations held by those orders.
    */
   async cleanupPendingOrders(cartId: string): Promise<void> {
     const snap = await ordersCollection()
@@ -251,7 +297,13 @@ export const orderService = {
     if (snap.empty) return;
     const stale = snap.docs.filter((d) => d.data().status === 'CREATED');
     if (stale.length === 0) return;
-    await Promise.all(stale.map((d) => d.ref.delete()));
+    await Promise.all(
+      stale.map(async (d) => {
+        const order = d.data() as Order;
+        await releaseOrderReservations(order);
+        return d.ref.delete();
+      }),
+    );
   },
 
   async updateStatusByPaypalId(

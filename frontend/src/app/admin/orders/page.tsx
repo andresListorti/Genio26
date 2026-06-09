@@ -13,6 +13,7 @@ import {
   Loader2,
   Pencil,
   Trash2,
+  Truck,
   X,
   Package,
   CheckCircle2,
@@ -203,6 +204,25 @@ function OrdersDashboard() {
     }
   };
 
+  // ── Ship helper ────────────────────────────────────────────────────────────
+
+  const markAsShipped = async (order: Order) => {
+    const shippedAt = new Date().toISOString();
+    try {
+      await updateDoc(doc(db, "orders", order.id), {
+        shippedAt,
+        updatedAt: shippedAt,
+      });
+      setOrders((prev) =>
+        prev.map((o) =>
+          o.id === order.id ? { ...o, shippedAt, updatedAt: shippedAt } : o,
+        ),
+      );
+    } catch {
+      setPageError("No se pudo marcar como enviado. Intentá de nuevo.");
+    }
+  };
+
   // ── Delete helpers ─────────────────────────────────────────────────────────
 
   const handleDelete = async () => {
@@ -348,9 +368,18 @@ function OrdersDashboard() {
                             </button>
                             <button
                               type="button"
+                              onClick={() => void markAsShipped(order)}
+                              className={`transition-colors ${order.shippedAt ? "text-green-600" : "text-muted hover:text-foreground"}`}
+                              aria-label={order.shippedAt ? "Enviado" : "Marcar como enviado"}
+                              title={order.shippedAt ? `Enviado el ${fmtDate(order.shippedAt)}` : "Marcar como enviado"}
+                            >
+                              <Truck size={14} />
+                            </button>
+                            <button
+                              type="button"
                               onClick={() => setDeleteTarget(order)}
                               className="text-muted hover:text-red-600 transition-colors"
-                              aria-label="Eliminar orden"
+                              aria-label="Archivar orden"
                             >
                               <Trash2 size={14} />
                             </button>

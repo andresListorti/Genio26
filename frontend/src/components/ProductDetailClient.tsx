@@ -153,7 +153,8 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
             </p>
           ) : (
             sizesForColor.map((variant) => {
-              const out = variant.stock <= 0;
+              const available = variant.stock - (variant.reserved ?? 0);
+              const out = available <= 0;
               const active = selectedSize === variant.size;
               return (
                 <button

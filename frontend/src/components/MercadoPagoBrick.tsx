@@ -90,6 +90,7 @@ export default function MercadoPagoBrick({
                 creditCard: "all",
                 debitCard: "all",
                 mercadoPago: "all",
+                maxInstallments: 12,
               },
             },
             callbacks: {

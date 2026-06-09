@@ -2,6 +2,7 @@ export interface ShoeStockVariant {
   size: number;
   color: string;
   stock: number;
+  reserved?: number; // units held pending payment confirmation
   sku?: string;
 }
 
@@ -67,6 +68,7 @@ export interface Order {
   payerEmail?: string;
   shippingAddress?: string;
   shippingPhone?: string;
+  shippedAt?: string;
   createdAt: string;
   updatedAt: string;
 }

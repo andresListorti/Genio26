@@ -1,7 +1,49 @@
+import crypto from 'crypto';
 import { Request, Response, NextFunction } from 'express';
 import { paypalService } from '../services/paypal.service';
 import { orderService } from '../services/order.service';
+import { env } from '../config/env';
 import { OrderStatus } from '../models/order.model';
+
+// ─── MP signature verification ────────────────────────────────────────────────
+// Header format: x-signature: ts=<epoch_ms>;v1=<hmac_sha256_hex>
+// Signed string: id:<paymentId>;request-id:<x-request-id>;ts:<ts>
+// Secret: MERCADOPAGO_WEBHOOK_SECRET from the MP developer panel.
+
+function verifyMercadoPagoSignature(
+  signatureHeader: string,
+  requestId: string,
+  paymentId: string,
+): boolean {
+  const secret = env.mercadopago.webhookSecret;
+  if (!secret) return true; // dev: skip when no secret is configured
+
+  const parts: Record<string, string> = {};
+  for (const segment of signatureHeader.split(';')) {
+    const eq = segment.indexOf('=');
+    if (eq !== -1) parts[segment.slice(0, eq)] = segment.slice(eq + 1);
+  }
+  const ts = parts['ts'];
+  const v1 = parts['v1'];
+  if (!ts || !v1) return false;
+
+  const message = `id:${paymentId};request-id:${requestId};ts:${ts}`;
+  const expected = crypto
+    .createHmac('sha256', secret)
+    .update(message)
+    .digest('hex');
+
+  try {
+    return crypto.timingSafeEqual(
+      Buffer.from(v1, 'hex'),
+      Buffer.from(expected, 'hex'),
+    );
+  } catch {
+    return false;
+  }
+}
+
+// ─── PayPal helpers ───────────────────────────────────────────────────────────
 
 function mapEventToStatus(eventType: string): OrderStatus | null {
   switch (eventType) {
@@ -32,6 +74,8 @@ function extractPaypalOrderId(event: any): string | undefined {
   }
   return undefined;
 }
+
+// ─── Controller ───────────────────────────────────────────────────────────────
 
 export const webhookController = {
   async handlePaypal(req: Request, res: Response, next: NextFunction) {
@@ -66,9 +110,8 @@ export const webhookController = {
   },
 
   /**
-   * Mercado Pago payment notifications. MP sends `type=payment` (body or query)
-   * with the payment id; we fetch the payment, map its status and update the
-   * order. Always answers 200 quickly so MP doesn't retry on our processing.
+   * Mercado Pago payment notifications. Verifies the x-signature HMAC before
+   * processing to reject spoofed webhook calls. Always responds 200 quickly.
    */
   async handleMercadoPago(req: Request, res: Response, next: NextFunction) {
     try {
@@ -88,8 +131,17 @@ export const webhookController = {
       );
 
       if (!isPayment || !paymentId) {
-        // Merchant-order / test pings: acknowledge without processing.
         return res.status(200).json({ received: true, applied: false });
+      }
+
+      // Verify HMAC signature when a secret is configured
+      const signatureHeader = String(req.headers['x-signature'] ?? '');
+      const requestId = String(req.headers['x-request-id'] ?? '');
+      if (
+        signatureHeader &&
+        !verifyMercadoPagoSignature(signatureHeader, requestId, paymentId)
+      ) {
+        return res.status(400).json({ error: 'Invalid MP webhook signature' });
       }
 
       const order = await orderService.handleMercadoPagoWebhook(paymentId);

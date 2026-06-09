@@ -29,6 +29,8 @@ export interface Order {
   // Shipping / buyer contact saved at order creation
   shippingAddress?: string;
   shippingPhone?: string;
+  // Set by admin once the physical package has been dispatched
+  shippedAt?: string;
   createdAt: string;
   updatedAt: string;
 }

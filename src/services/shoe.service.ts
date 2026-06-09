@@ -93,11 +93,80 @@ export const shoeService = {
       variants[idx] = {
         ...variants[idx],
         stock: variants[idx].stock - quantity,
+        // Clear the matching reservation so available count stays consistent
+        reserved: Math.max(0, (variants[idx].reserved ?? 0) - quantity),
       };
       tx.update(ref, {
         variants,
         updatedAt: new Date().toISOString(),
       });
+    });
+  },
+
+  /**
+   * Reserves `quantity` units for an in-flight payment. Checks against
+   * available = stock − already-reserved to prevent overselling.
+   */
+  async reserveStock(
+    shoeId: string,
+    size: number,
+    color: string,
+    quantity: number,
+  ): Promise<void> {
+    const ref = shoesCollection().doc(shoeId);
+    await firestore.runTransaction(async (tx) => {
+      const snap = await tx.get(ref);
+      if (!snap.exists) throw new Error(`Shoe ${shoeId} not found`);
+      const shoe = snap.data() as Shoe;
+      const variants = [...shoe.variants];
+      const idx = variants.findIndex(
+        (v) => v.size === size && v.color === color,
+      );
+      if (idx === -1) {
+        throw new Error(
+          `Variant size=${size} color=${color} not found for shoe ${shoeId}`,
+        );
+      }
+      const available =
+        variants[idx].stock - (variants[idx].reserved ?? 0);
+      if (available < quantity) {
+        throw new Error(
+          `Insufficient available stock for shoe ${shoeId} size=${size} color=${color}`,
+        );
+      }
+      variants[idx] = {
+        ...variants[idx],
+        reserved: (variants[idx].reserved ?? 0) + quantity,
+      };
+      tx.update(ref, { variants, updatedAt: new Date().toISOString() });
+    });
+  },
+
+  /**
+   * Releases a previously-made reservation (payment failed, order cleaned up).
+   * Safe to call even when no reservation exists — will simply be a no-op.
+   */
+  async releaseReservation(
+    shoeId: string,
+    size: number,
+    color: string,
+    quantity: number,
+  ): Promise<void> {
+    const ref = shoesCollection().doc(shoeId);
+    await firestore.runTransaction(async (tx) => {
+      const snap = await tx.get(ref);
+      if (!snap.exists) return;
+      const shoe = snap.data() as Shoe;
+      const variants = [...shoe.variants];
+      const idx = variants.findIndex(
+        (v) => v.size === size && v.color === color,
+      );
+      if (idx === -1) return;
+      variants[idx] = {
+        ...variants[idx],
+        reserved: Math.max(0, (variants[idx].reserved ?? 0) - quantity),
+      };
+      tx.update(ref, { variants, updatedAt: new Date().toISOString() });
     });
   },
 };
