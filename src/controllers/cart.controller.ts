@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { cartService } from '../services/cart.service';
+import { orderService } from '../services/order.service';
 
 export const cartController = {
   async create(req: Request, res: Response, next: NextFunction) {
@@ -49,12 +50,11 @@ export const cartController = {
           .status(400)
           .json({ error: 'shoeId, size, color are required' });
       }
-      const cart = await cartService.removeItem(
-        String(req.params.id),
-        shoeId,
-        size,
-        color,
-      );
+      const cartId = String(req.params.id);
+      const cart = await cartService.removeItem(cartId, shoeId, size, color);
+      // Fire-and-forget: delete any CREATED orders for this cart so
+      // abandoned checkout stubs don't accumulate in Firestore.
+      orderService.cleanupPendingOrders(cartId).catch(() => undefined);
       res.json({ data: cart });
     } catch (err) {
       next(err);
@@ -63,7 +63,9 @@ export const cartController = {
 
   async clear(req: Request, res: Response, next: NextFunction) {
     try {
-      const cart = await cartService.clear(String(req.params.id));
+      const cartId = String(req.params.id);
+      const cart = await cartService.clear(cartId);
+      orderService.cleanupPendingOrders(cartId).catch(() => undefined);
       res.json({ data: cart });
     } catch (err) {
       next(err);

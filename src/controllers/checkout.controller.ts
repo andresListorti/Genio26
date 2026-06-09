@@ -37,6 +37,13 @@ export const checkoutController = {
       if (!cartId) {
         return res.status(400).json({ error: 'cartId is required' });
       }
+      // Second-layer: shipping data must be present before creating any order.
+      if (!shippingAddress?.trim() || !shippingPhone?.trim()) {
+        return res.status(422).json({
+          error: 'Dirección y teléfono de envío son requeridos para proceder con el pago.',
+          code: 'SHIPPING_REQUIRED',
+        });
+      }
       const result = await orderService.createMercadoPagoFromCart(cartId, {
         userId,
         payerEmail,

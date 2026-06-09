@@ -239,6 +239,21 @@ export const orderService = {
     return updated;
   },
 
+  /**
+   * Deletes any CREATED orders tied to a cart that the user has abandoned or
+   * modified. Only removes CREATED status — APPROVED (in-bank processing),
+   * COMPLETED, and terminal states are never touched.
+   */
+  async cleanupPendingOrders(cartId: string): Promise<void> {
+    const snap = await ordersCollection()
+      .where('cartId', '==', cartId)
+      .get();
+    if (snap.empty) return;
+    const stale = snap.docs.filter((d) => d.data().status === 'CREATED');
+    if (stale.length === 0) return;
+    await Promise.all(stale.map((d) => d.ref.delete()));
+  },
+
   async updateStatusByPaypalId(
     paypalOrderId: string,
     status: OrderStatus,

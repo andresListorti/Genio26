@@ -4,13 +4,27 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, ShoppingBag, ShieldCheck, Truck } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { formatMoney } from "@/lib/format";
 import type { Shoe } from "@/lib/types";
+import ProfileRequiredModal from "@/components/ProfileRequiredModal";
 
 export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
   const { addItem, loading, error, cart } = useCart();
+  const { user, profile } = useAuth();
   const router = useRouter();
   const [localError, setLocalError] = useState<string | null>(null);
+  const [profileModal, setProfileModal] = useState<
+    "not-logged-in" | "incomplete-profile" | null
+  >(null);
+
+  // Determines whether the current user is cleared to add items to the cart.
+  function getProfileBlock(): "not-logged-in" | "incomplete-profile" | null {
+    if (!user) return "not-logged-in";
+    if (!profile?.address?.trim() || !profile?.phone?.trim())
+      return "incomplete-profile";
+    return null;
+  }
 
   const colors = useMemo(
     () => Array.from(new Set(shoe.variants.map((v) => v.color))),
@@ -33,6 +47,11 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
 
   const handleAdd = async () => {
     setLocalError(null);
+    const block = getProfileBlock();
+    if (block) {
+      setProfileModal(block);
+      return;
+    }
     if (!selectedColor || !selectedSize) {
       setLocalError("Seleccioná color y talle");
       return;
@@ -47,6 +66,11 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
 
   const handleCheckout = async () => {
     setLocalError(null);
+    const block = getProfileBlock();
+    if (block) {
+      setProfileModal(block);
+      return;
+    }
     if (!selectedColor || !selectedSize) {
       setLocalError("Seleccioná color y talle");
       return;
@@ -65,6 +89,7 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
   };
 
   return (
+    <>
     <div className="space-y-8">
       <div>
         <p className="eyebrow">{shoe.brand}</p>
@@ -197,5 +222,13 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
         </p>
       )}
     </div>
+
+    {profileModal && (
+      <ProfileRequiredModal
+        reason={profileModal}
+        onClose={() => setProfileModal(null)}
+      />
+    )}
+    </>
   );
 }

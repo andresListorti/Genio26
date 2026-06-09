@@ -2,7 +2,6 @@
 
 import {
   collection,
-  deleteDoc,
   doc,
   getDocs,
   getDoc,
@@ -210,11 +209,16 @@ function OrdersDashboard() {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await deleteDoc(doc(db, "orders", deleteTarget.id));
+      // Mark as CANCELLED instead of deleting so the order moves to the
+      // archive (/admin/archive) and the history is preserved.
+      await updateDoc(doc(db, "orders", deleteTarget.id), {
+        status: "CANCELLED",
+        updatedAt: new Date().toISOString(),
+      });
       setOrders((prev) => prev.filter((o) => o.id !== deleteTarget.id));
       setDeleteTarget(null);
     } catch {
-      setPageError("No se pudo eliminar la orden. Intentá de nuevo.");
+      setPageError("No se pudo archivar la orden. Intentá de nuevo.");
       setDeleteTarget(null);
     } finally {
       setDeleting(false);
@@ -504,18 +508,18 @@ function OrdersDashboard() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-foreground/40">
           <div className="bg-background w-full max-w-sm p-6 border border-line">
             <h3 className="heading-display text-lg mb-2 flex items-center gap-2">
-              <XCircle size={18} className="text-red-500 shrink-0" />
-              Eliminar orden
+              <XCircle size={18} className="text-muted shrink-0" />
+              Archivar orden
             </h3>
             <p className="text-sm text-muted mb-1">
-              ¿Confirmás la eliminación de la orden de{" "}
+              ¿Confirmás el archivado de la orden de{" "}
               <strong className="text-foreground">
                 {deleteTarget.payerEmail ?? "este cliente"}
               </strong>
               ?
             </p>
             <p className="text-xs text-muted mb-6">
-              Usá esta acción una vez que el envío esté completamente entregado y no necesites mantener el registro activo.
+              La orden pasará a estado <strong>Cancelada</strong> y quedará visible en el Archivo para consulta histórica. No se borra ningún dato.
             </p>
             <div className="flex justify-end gap-3">
               <button
@@ -529,10 +533,10 @@ function OrdersDashboard() {
                 type="button"
                 onClick={() => void handleDelete()}
                 disabled={deleting}
-                className="flex items-center gap-2 bg-red-600 text-white text-sm uppercase tracking-widest px-5 py-2.5 hover:opacity-80 transition-opacity disabled:opacity-50"
+                className="flex items-center gap-2 bg-foreground text-background text-sm uppercase tracking-widest px-5 py-2.5 hover:opacity-80 transition-opacity disabled:opacity-50"
               >
                 {deleting && <Loader2 size={14} className="animate-spin" />}
-                Eliminar
+                Archivar
               </button>
             </div>
           </div>

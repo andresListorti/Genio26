@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
+  AlertTriangle,
   ArrowLeft,
+  ArrowRight,
   Loader2,
   Minus,
   Plus,
@@ -42,6 +44,13 @@ export default function CartPage() {
   const isEmpty = !cart || cart.items.length === 0;
   const currency = cart?.currency ?? "ARS";
 
+  // Profile gate: user must be logged in AND have address + phone to pay.
+  const profileBlock: "not-logged-in" | "incomplete-profile" | null = !user
+    ? "not-logged-in"
+    : !profile?.address?.trim() || !profile?.phone?.trim()
+      ? "incomplete-profile"
+      : null;
+
   // Dual payment: user picks Mercado Pago (Bricks, seamless) or PayPal.
   const [method, setMethod] = useState<PaymentProvider>("mercadopago");
   const [mpPref, setMpPref] = useState<MercadoPagoPreference | null>(null);
@@ -57,6 +66,7 @@ export default function CartPage() {
   // "Pagar ahora" fires the flow for the selected provider.
   const handlePay = async () => {
     if (!cart || isEmpty) return;
+    if (profileBlock) return; // blocked by banner below
     if (method === "paypal") {
       await checkout();
       return;
@@ -303,6 +313,32 @@ export default function CartPage() {
                     <p className="text-xs text-red-600">{error ?? mpError}</p>
                   )}
 
+                  {/* Profile incomplete / not logged in — block payment */}
+                  {profileBlock && (
+                    <div className="border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 flex items-start gap-3">
+                      <AlertTriangle size={15} className="shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-medium mb-0.5">
+                          {profileBlock === "not-logged-in"
+                            ? "Iniciá sesión para continuar"
+                            : "Completá tu perfil para pagar"}
+                        </p>
+                        <p className="text-xs text-amber-700">
+                          {profileBlock === "not-logged-in"
+                            ? "Necesitás una cuenta para procesar tu pedido."
+                            : "Agregá tu dirección y teléfono en Mi Perfil."}
+                        </p>
+                        <Link
+                          href={profileBlock === "not-logged-in" ? "/login" : "/profile"}
+                          className="inline-flex items-center gap-1 mt-2 text-xs font-medium text-amber-900 underline underline-offset-2 hover:text-foreground"
+                        >
+                          {profileBlock === "not-logged-in" ? "Iniciar sesión" : "Ir a mi perfil"}
+                          <ArrowRight size={11} />
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Mercado Pago brick renders here once the preference exists */}
                   {method === "mercadopago" && mpPref ? (
                     <MercadoPagoBrick
@@ -316,7 +352,7 @@ export default function CartPage() {
                   ) : (
                     <button
                       type="button"
-                      disabled={loading || mpLoading || isEmpty}
+                      disabled={loading || mpLoading || isEmpty || Boolean(profileBlock)}
                       onClick={handlePay}
                       className="w-full bg-foreground text-background py-4 text-sm tracking-[0.25em] uppercase hover:opacity-90 transition disabled:opacity-50 inline-flex items-center justify-center gap-3"
                     >

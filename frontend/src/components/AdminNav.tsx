@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronLeft, LogOut, Package, ShoppingBag } from "lucide-react";
+import { Archive, ChevronLeft, LogOut, Package, ShoppingBag } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
 const TABS = [
   { href: "/admin", label: "Productos", icon: Package },
   { href: "/admin/orders", label: "Órdenes", icon: ShoppingBag },
+  { href: "/admin/archive", label: "Archivo", icon: Archive },
 ];
 
 export default function AdminNav() {
