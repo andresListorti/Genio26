@@ -43,7 +43,9 @@
       "PowerShell(cmd /c \"dir /a /s F:\\\\Code\\\\frontend\\\\src\\\\app\\\\cart\")",
       "PowerShell(cmd /c \"dir /a /s F:\\\\Code\\\\frontend\\\\src\\\\lib\")",
       "PowerShell(cmd /c \"type F:\\\\Code\\\\frontend\\\\src\\\\lib\\\\api.ts\")",
-      "PowerShell(cmd /c \"type F:\\\\Code\\\\frontend\\\\src\\\\app\\\\cart\\\\page.tsx\")"
+      "PowerShell(cmd /c \"type F:\\\\Code\\\\frontend\\\\src\\\\app\\\\cart\\\\page.tsx\")",
+      "PowerShell(Get-ChildItem -Path \"F:\\\\Code\\\\frontend\" -Depth 2 | Where-Object { $_.PSIsContainer } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem -Path \"F:\\\\Code\\\\frontend\\\\src\" -Recurse -Depth 3 | Where-Object { -not $_.PSIsContainer } | Select-Object FullName)"
     ]
   }
 }

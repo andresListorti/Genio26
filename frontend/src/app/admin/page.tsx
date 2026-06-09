@@ -11,21 +11,19 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import {
-  ChevronLeft,
   Loader2,
-  LogOut,
   Pencil,
   Plus,
   Trash2,
   X,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { db } from "@/lib/firebase";
 import type { Shoe, ShoeStockVariant } from "@/lib/types";
+import AdminNav from "@/components/AdminNav";
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -128,9 +126,6 @@ export default function AdminPage() {
 // ─── Dashboard ───────────────────────────────────────────────────────────────
 
 function AdminDashboard() {
-  const { profile, logout } = useAuth();
-  const router = useRouter();
-
   const [shoes, setShoes] = useState<Shoe[]>([]);
   const [fetchLoading, setFetchLoading] = useState(true); // true on mount so table shows spinner
   const [pageError, setPageError] = useState<string | null>(null);
@@ -301,34 +296,7 @@ function AdminDashboard() {
 
   return (
     <div className="bg-surface min-h-full">
-      {/* Admin top bar */}
-      <div className="bg-background border-b border-line">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-14 flex items-center justify-between">
-          <span className="eyebrow text-foreground">Panel de administración</span>
-          <div className="flex items-center gap-5">
-            <Link
-              href="/"
-              className="flex items-center gap-1 text-sm text-muted hover:text-foreground"
-            >
-              <ChevronLeft size={14} />
-              Ver tienda
-            </Link>
-            <button
-              type="button"
-              onClick={async () => {
-                await logout();
-                router.replace("/");
-              }}
-              className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground"
-            >
-              <LogOut size={14} />
-              <span className="hidden sm:inline">
-                {profile?.email ?? "Salir"}
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
+      <AdminNav />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 py-10">
         {/* Section header */}

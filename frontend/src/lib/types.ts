@@ -65,6 +65,8 @@ export interface Order {
   mpPaymentId?: string;
   mpStatusDetail?: string;
   payerEmail?: string;
+  shippingAddress?: string;
+  shippingPhone?: string;
   createdAt: string;
   updatedAt: string;
 }
