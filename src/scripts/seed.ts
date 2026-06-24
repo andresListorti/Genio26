@@ -14,7 +14,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 155000,
     currency: 'ARS',
     description: 'El zueco Chicago es un auténtico clásico que se puede usar durante todo el año. Su plantilla es anatómica: brinda soporte y contención en el talón y el arco del pie. A la altura del empeine tiene una correa con hebilla para poder ajustarlo a gusto.',
-    imageUrl: '/resources/Men.jpg',
+    imageUrl: '/resources/img/1 - Zueco Chicago 1.png',
+    images: ['/resources/img/1 - Zueco Chicago 2.png'],
     category: 'zuecos',
     gender: 'men',
     variants: [
@@ -62,7 +63,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 115000,
     currency: 'ARS',
     description: 'TEMPO es una zapatilla ligera de tela con elásticos. Está realizada en género rústico, forrada en tela. La base color crudo está pegada y cosida. TEMPO es un calzado práctico y combinable, ideal para el fin de semana.',
-    imageUrl: '/resources/iaHombre.jpeg',
+    imageUrl: '/resources/img/2 - Zapatilla Tempo 1.png',
+    images: ['/resources/img/2 - Zapatilla Tempo 2.png'],
     category: 'zapatillas',
     gender: 'men',
     variants: [
@@ -128,7 +130,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 155000,
     currency: 'ARS',
     description: 'Doha es un zapato acordonado de vestir. Está confeccionado en cuero y cuenta con forro de tela. Su horma es clásica y elegante, ideal para ocasiones formales o uso profesional. La plantilla anatómica aporta comodidad durante todo el día, mientras que la base de goma brinda resistencia y agarre para uso frecuente.',
-    imageUrl: '/resources/hombremoca.jpg',
+    imageUrl: '/resources/img/3 - Zapato Doha Acordonado 1.png',
     category: 'zapatos',
     gender: 'men',
     variants: [
@@ -182,7 +184,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 155000,
     currency: 'ARS',
     description: 'Doha es un mocasín de vestir de líneas clásicas y elegantes. Está confeccionado en cuero y cuenta con forro de tela. La plantilla anatómica aporta confort y practicidad para uso prolongado, mientras que la base de goma ofrece flexibilidad y buena resistencia al desgaste.',
-    imageUrl: '/resources/iahombrefondo.jpeg',
+    imageUrl: '/resources/img/4 - Mocasin Doha 1.png',
     category: 'mocasines',
     gender: 'men',
     variants: [
@@ -236,7 +238,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 170000,
     currency: 'ARS',
     description: 'Dust es una bota Chelsea de gamuza. Está confeccionada en cuero gamuzado y posee elásticos laterales que facilitan el calce y aseguran un ajuste cómodo. Su diseño clásico y versátil permite combinarla fácilmente tanto con conjuntos informales como de vestir. La base de goma aporta comodidad y estabilidad para uso diario.',
-    imageUrl: '/resources/business-2049312_1280.jpg',
+    imageUrl: '/resources/img/5 - Bota Dust 1.png',
     category: 'botas',
     gender: 'men',
     variants: [
@@ -290,7 +292,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 210000,
     currency: 'ARS',
     description: 'MURAT es una bota de caña baja con elásticos. Está realizada en cuero vacuno liso y forrada en cuero. La horma redondeada y su suela liviana hacen de MURAT un calzo actual y cómodo para uso habitual.',
-    imageUrl: '/resources/footwear-1838767_1920.jpg',
+    imageUrl: '/resources/img/6 - Bota Murat 1.png',
     category: 'botas',
     gender: 'men',
     variants: [
@@ -350,7 +352,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 195000,
     currency: 'ARS',
     description: 'WALES es un mocasín de cuero con suela tipo truck . Está realizado en cuero vacuno y forrado en cuero. Su interior es muy suave y confortable. La base cuenta con una altura moderada y leve pendiente lo cual le aporta un plus de comodidad para uso frecuente. WALES es un calzada clásico reversionado y actualizado para un look contemporáneo.',
-    imageUrl: '/resources/Men.jpg',
+    imageUrl: '/resources/img/7 - Mocasin Wales 1.png',
     category: 'mocasines',
     gender: 'men',
     variants: [
@@ -404,7 +406,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 185000,
     currency: 'ARS',
     description: 'ALAMO es un zapato acordonado casual. Está realizado en cuero vacuno liso y forrado en cuero. Su diseño es simple y estilizado con una base liviana. ALAMO es un calzado cómodo pensado para vestir en el día a día.',
-    imageUrl: '/resources/iaHombre.jpeg',
+    imageUrl: '/resources/img/8 - Zapato Alamo 1.png',
     category: 'zapatos',
     gender: 'men',
     variants: [
@@ -458,7 +460,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 180000,
     currency: 'ARS',
     description: 'PAMPLONA es un zapato de vestir acordonado con suela de goma. Está realizado en cuero vacuno liso y forrado en cuero natural. La suela es de PU, un material liviano y flexible. La horma es cómoda y estilizada con puntera cuadrada. En la capellada cuenta con cuatro ojales para facilitar el calce, la apertura es prusiana por lo cual es cómodo en la zona del empeine. PAMPLONA es un zapato que además de vestir, resulta confortable y elegante para ser usado a diario.',
-    imageUrl: '/resources/hombremoca.jpg',
+    imageUrl: '/resources/img/9 - Zapato Pamplona 1.png',
     category: 'zapatos',
     gender: 'men',
     variants: [
@@ -512,7 +514,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 180000,
     currency: 'ARS',
     description: 'PALERMO es un zapato de vestir sin cordones con suela de goma. Está realizado en cuero vacuno liso y forrado en cuero vacuno natural. La suela es de PU, un material liviano y flexible. La horma es cómoda y estilizada con puntera cuadrada. En la zona del empeine cuenta con elásticos a ambos lados para facilitar el calce, mejorando la adaptabilidad al empeine. PALERMO es un zapato que además de vestir, resulta confortable y práctico para ser usado a diario.',
-    imageUrl: '/resources/iahombrefondo.jpeg',
+    imageUrl: '/resources/img/10 - Zapato Palermo 1.png',
     category: 'zapatos',
     gender: 'men',
     variants: [
@@ -566,7 +568,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 245000,
     currency: 'ARS',
     description: 'PARIS es un zapato elegante con suela de cuero. Está realizado en cuero vacuno y forrado en cuero natural. La suela es de cuero vacuno al tono. La horma es estilizada y la puntera termina ligeramente cuadrada. La capellada cuenta con cuatro ojales para facilitar el calce, la apertura es prusiana por lo cual es cómodo en la zona del empeine. PARIS es un zapato de vestir, distinguido, clásico y atemporal.',
-    imageUrl: '/resources/business-2049312_1280.jpg',
+    imageUrl: '/resources/img/11 - Zapato Paris 1.png',
+    images: ['/resources/img/11 - Zapato Paris 2.png'],
     category: 'zapatos',
     gender: 'men',
     variants: [
@@ -614,7 +617,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 255000,
     currency: 'ARS',
     description: 'YALE es una bota acordonada de caña baja. De estilo clásico, está realizada íntegramente en cuero vacuno y forrada en cuero. Tiene tres ojales y es de horma estilizada con puntera ligeramente cuadrada y bordes redondeados. La suela es de cuero y tienen un suelín de goma de caucho antideslizante. YALE es una bota elegante y versátil que luce bien con conjuntos más, o menos formales',
-    imageUrl: '/resources/footwear-1838767_1920.jpg',
+    imageUrl: '/resources/img/12 - Bota Yale 1.png',
     category: 'botas',
     gender: 'men',
     variants: [
@@ -656,7 +659,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 195000,
     currency: 'ARS',
     description: 'KRIPTON es una zapatilla de caña media con suela liviana. Está realizada en cuero vacuno con acabado mate y forrada en cuero. La suela viene pegada y cosida para mayor durabilidad. La horma es cómoda y la plantilla acolchada es desmontable. KRIPTON es una botita urbana combinable y casual para usar en el día a día.',
-    imageUrl: '/resources/Men.jpg',
+    imageUrl: '/resources/img/13 - Zapatilla Kripton 1.png',
     category: 'zapatillas',
     gender: 'men',
     variants: [
@@ -710,7 +713,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 210000,
     currency: 'ARS',
     description: 'NEON es un calzado intermedio entre una zapatilla y un borcego. Está realizada en cuero vacuno y forrado en cuero. En la zona del tobillo es acolchado y confortable. La suela de goma está pegada y cosida. La horma es clásica y se amolda al pie en función del ajuste a través de sus cordones. NEON es un calzado versátil ideal para usar todo el año.',
-    imageUrl: '/resources/iaHombre.jpeg',
+    imageUrl: '/resources/img/14 - Zapatilla Neon 1.png',
     category: 'zapatillas',
     gender: 'men',
     variants: [
@@ -764,7 +767,7 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 180000,
     currency: 'ARS',
     description: 'SAMARIO es una zapatilla urbana de cuero vacuno forrada en cuero. Tiene plantilla acolchada y desmontable, y su suela de goma, pegada y cosida, garantiza resistencia y durabilidad. Con cordones de algodón encerado y ojales metálicos, es un modelo clásico y atemporal, ideal para uso frecuente.',
-    imageUrl: '/resources/hombremoca.jpg',
+    imageUrl: '/resources/img/15 - Zapatilla Zamario 1.png',
     category: 'zapatillas',
     gender: 'men',
     variants: [

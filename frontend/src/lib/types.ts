@@ -14,6 +14,7 @@ export interface Shoe {
   currency: string;
   description: string;
   imageUrl?: string;
+  images?: string[];
   category?: string;
   gender: "men" | "women";
   variants: ShoeStockVariant[];

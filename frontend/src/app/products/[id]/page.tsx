@@ -95,25 +95,31 @@ export default async function ProductPage({
             />
           </div>
           <div className="grid grid-cols-3 gap-2 sm:gap-3">
-            {[800, 600, 500].map((w, i) => (
-              <div
-                key={i}
-                className="relative aspect-square bg-surface overflow-hidden"
-              >
-                <Image
-                  src={shoeImage({
-                    imageUrl: shoe.imageUrl,
-                    model: shoe.model,
-                    category: shoe.category,
-                    width: w,
-                  })}
-                  alt=""
-                  fill
-                  sizes="(max-width: 640px) 30vw, 200px"
-                  className="object-cover opacity-90"
-                />
-              </div>
-            ))}
+            {[0, 1, 2].map((i) => {
+              const thumbUrl =
+                i === 0 && shoe.images?.[0]
+                  ? shoe.images[0]
+                  : shoeImage({
+                      imageUrl: shoe.imageUrl,
+                      model: shoe.model,
+                      category: shoe.category,
+                      width: 800 - i * 150,
+                    });
+              return (
+                <div
+                  key={i}
+                  className="relative aspect-square bg-surface overflow-hidden"
+                >
+                  <Image
+                    src={thumbUrl}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 30vw, 200px"
+                    className="object-cover opacity-90"
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
 
