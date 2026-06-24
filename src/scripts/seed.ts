@@ -131,6 +131,7 @@ const sampleShoes: ShoeCreateInput[] = [
     currency: 'ARS',
     description: 'Doha es un zapato acordonado de vestir. Está confeccionado en cuero y cuenta con forro de tela. Su horma es clásica y elegante, ideal para ocasiones formales o uso profesional. La plantilla anatómica aporta comodidad durante todo el día, mientras que la base de goma brinda resistencia y agarre para uso frecuente.',
     imageUrl: '/resources/img/3 - Zapato Doha Acordonado 1.png',
+    images: ['/resources/img/3 - Zapato Doha Acordonado 2.png'],
     category: 'zapatos',
     gender: 'men',
     variants: [

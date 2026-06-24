@@ -21,6 +21,7 @@ export const shoeService = {
       currency: input.currency ?? 'USD',
       description: input.description,
       imageUrl: input.imageUrl,
+      ...(input.images ? { images: input.images } : {}),
       category: input.category,
       gender: input.gender,
       variants: input.variants ?? [],
