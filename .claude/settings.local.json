@@ -47,7 +47,9 @@
       "PowerShell(Get-ChildItem -Path \"F:\\\\Code\\\\frontend\" -Depth 2 | Where-Object { $_.PSIsContainer } | Select-Object FullName)",
       "PowerShell(Get-ChildItem -Path \"F:\\\\Code\\\\frontend\\\\src\" -Recurse -Depth 3 | Where-Object { -not $_.PSIsContainer } | Select-Object FullName)",
       "Bash(Find F:\\\\Code\\\\frontend\\\\src\\\\app -type d)",
-      "Bash(dir /s/b \"F:\\\\Code\\\\frontend\\\\src\\\\app\")"
+      "Bash(dir /s/b \"F:\\\\Code\\\\frontend\\\\src\\\\app\")",
+      "PowerShell(Get-ChildItem \"F:\\\\Code\\\\frontend\" -Recurse -Exclude \"node_modules\",\".next\" | Where-Object { -not $_.FullName.Contains\\(\"node_modules\"\\) -and -not $_.FullName.Contains\\(\".next\"\\) } | Select-Object FullName, PSIsContainer | Sort-Object PSIsContainer -Descending | Select-Object -First 60)",
+      "PowerShell(Get-ChildItem \"F:\\\\Code\\\\frontend\\\\src\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | Sort-Object FullName)"
     ]
   }
 }
