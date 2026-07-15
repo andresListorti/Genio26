@@ -822,7 +822,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 275000,
     currency: 'ARS',
     description: 'Ziggy es una bota texana de cuero gamuzado con un toque contemporáneo. Está realizada de manera artesanal en cuero gamuzado vintage y su forro es de cuero. La suela de cuero aporta elegancia y refuerza su estilo legítimo. Se calza de manera directa y cuenta con tiradores a ambos lados.',
-    imageUrl: '/resources/IaDama.jpeg',
+    imageUrl: '/resources/img/mujer/16 - Bota Ziggy.png',
+    images: ['/resources/img/mujer/16- Bota Ziggy lateral.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -864,7 +865,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 195000,
     currency: 'ARS',
     description: 'Ride es una bota baja con elásticos laterales. Está confeccionada en cuero gamuzado y forrada en cuero. Los elásticos facilitan un calce ágil. La base de goma con leve inclinación aporta comodidad y funcionalidad para el uso diario.',
-    imageUrl: '/resources/iadama2.jpeg',
+    imageUrl: '/resources/img/mujer/17 - Bota Ride 1.png',
+    images: ['/resources/img/mujer/17 - Bota Ride Arriba.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -906,7 +908,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 195000,
     currency: 'ARS',
     description: 'Jefry es una bota de caña media con plataforma confeccionada en charol de cuero vacuno y forrada en cuero. La base posee taco y plataforma forrados en el mismo material que la capellada. Se calza mediante un cierre metálico negro en la cara interna de la caña.',
-    imageUrl: '/resources/woman-2179062_1920.jpg',
+    imageUrl: '/resources/img/mujer/18 - Bota Jefrey 1.png',
+    images: ['/resources/img/mujer/18 - Bota Jefry 2.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -954,7 +957,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 195000,
     currency: 'ARS',
     description: 'Talbot es un mocasín clásico reversionado con una plataforma actual y liviana. Está realizado en cuero vacuno color negro y forrado en cuero natural. La base (de altura media) es de PU, un material ultra liviano. En la capellada tiene la vincha clásica. Es un producto atemporal ideal para usar durante la media estación. Se destaca al complementarlo con medias de fantasía para un look más vanguardista.',
-    imageUrl: '/resources/fashion-1284496_1280.jpg',
+    imageUrl: '/resources/img/mujer/19 - Mocasin Talbot 1.png',
+    images: ['/resources/img/mujer/19 - Mocasin Talbot 2.png'],
     category: 'mocasines',
     gender: 'women',
     variants: [
@@ -1002,7 +1006,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 350000,
     currency: 'ARS',
     description: 'Nevil es una bota de caña alta con taco medio. Está confeccionada en cuero vacuno vintage y forrada en cuero. Su caña recta, sin cierres ni elásticos, permite acomodarla con caída natural. La base artesanal incorpora una plataforma moderada y taco de madera. La puntera es cuadrada.',
-    imageUrl: '/resources/shoes-756616_1280.jpg',
+    imageUrl: '/resources/img/mujer/20 - Botal Nevil 1.png',
+    images: ['/resources/img/mujer/20 - Bota Nevil 2.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -1044,7 +1049,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 210000,
     currency: 'ARS',
     description: 'Ara es un zapato abotinado con cordones y taco de madera. Está confeccionado en cuero vacuno con acabado patinado y forrado en cuero. Se ajusta mediante cordones de algodón encerado. La base artesanal se destaca por su taco de madera tallado con diseño geométrico.',
-    imageUrl: '/resources/IaDama.jpeg',
+    imageUrl: '/resources/img/mujer/21 Zaparto Ara 1.png',
+    images: ['/resources/img/mujer/21 - Zapato Ara 3.png'],
     category: 'zapatos',
     gender: 'women',
     variants: [
@@ -1086,7 +1092,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 200000,
     currency: 'ARS',
     description: 'Burma es un zapato acordonado estilo wallabee confeccionado en cuero gamuzado y forrado en cuero. La base de goma es cómoda y flexible para uso frecuente, mientras que sus cordones permiten un ajuste personalizado.',
-    imageUrl: '/resources/iadama2.jpeg',
+    imageUrl: '/resources/img/mujer/22 - Zapato Burma 2.png',
+    images: ['/resources/img/mujer/22 Zapato Burma Arriba.png'],
     category: 'zapatos',
     gender: 'women',
     variants: [
@@ -1128,7 +1135,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 180000,
     currency: 'ARS',
     description: 'Sandro es un mocasín de cuero con pompón y forro de cuero. Su estilo clásico dota cualquier conjunto de elegancia a la vez que resulta práctico y fácil de llevar.',
-    imageUrl: '/resources/woman-2179062_1920.jpg',
+    imageUrl: '/resources/img/mujer/23 - Mocasin sandro.png',
+    images: ['/resources/img/mujer/23 - Mocasin sandro 2.png'],
     category: 'mocasines',
     gender: 'women',
     variants: [
@@ -1176,7 +1184,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 250000,
     currency: 'ARS',
     description: 'Casia es una bota clásica de líneas elegantes. Está confeccionada en cuero gamuzado y forrada en cuero. Su horma es femenina y estilizada. El taco, forrado en el mismo material y de altura media, equilibra elegancia y comodidad.',
-    imageUrl: '/resources/fashion-1284496_1280.jpg',
+    imageUrl: '/resources/img/mujer/24 Bota Casia 2.png',
+    images: ['/resources/img/mujer/24 Casia arriba.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -1230,7 +1239,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 240000,
     currency: 'ARS',
     description: 'Luján es una bota básica de caña alta con cierre interno. Está realizada en cuero vacuno con terminación semi abrillantada y forrada en cuero. Su diseño clásico se complementa con una base de goma de altura moderada y puntera redonda.',
-    imageUrl: '/resources/shoes-756616_1280.jpg',
+    imageUrl: '/resources/img/mujer/25 Lujan.png',
+    images: ['/resources/img/mujer/25 lujan arriba.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -1272,7 +1282,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 195000,
     currency: 'ARS',
     description: 'CARDIF es un mocasín clásico reversionado con una plataforma actual y liviana. Está realizado en cuero vacuno color marrón y forrado en cuero natural. La base (de altura media) es de PU, un material ultra liviano. En la capellada tiene el característico fleco estilo Oxford. CARDIF es un producto atemporal ideal para usar durante la media estación. Se destaca al complementarlo con medias de fantasía para un look más vanguardista.',
-    imageUrl: '/resources/IaDama.jpeg',
+    imageUrl: '/resources/img/mujer/26 Cardif.png',
+    images: ['/resources/img/mujer/26 Cardif Arriba.png'],
     category: 'mocasines',
     gender: 'women',
     variants: [
@@ -1326,7 +1337,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 210000,
     currency: 'ARS',
     description: 'Camil es un zapato abotinado de charol con diseño picado, inspirado en los clásicos tipo Oxford. Está confeccionado en charol de cuero y forrado en cuero. La horma es ligeramente estilizada y la puntera presenta un picado artesanal. La base aporta elegancia y comodidad.',
-    imageUrl: '/resources/iadama2.jpeg',
+    imageUrl: '/resources/img/mujer/27 - Camil.png',
+    images: ['/resources/img/mujer/27 - Camil arriba.png'],
     category: 'zapatos',
     gender: 'women',
     variants: [
@@ -1368,7 +1380,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 270000,
     currency: 'ARS',
     description: 'Bruna es un borcego acordonado de líneas limpias y diseño atemporal. Está realizado en cuero vacuno, forrado en cuero y cuenta con lengüeta de gamuza al tono. Su calce es cómodo y su suela Genaro® tipo ruta de caucho con entresuela de goma eva aporta aislamiento, resistencia y agarre. Como todo cuero natural, ganará carácter con el uso.',
-    imageUrl: '/resources/woman-2179062_1920.jpg',
+    imageUrl: '/resources/img/mujer/28 Bruna.png',
+    images: ['/resources/img/mujer/28 Bruna Arriba.png'],
     category: 'borcegos',
     gender: 'women',
     variants: [
@@ -1422,7 +1435,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 220000,
     currency: 'ARS',
     description: 'Ziper es una bota de caña baja con cierre frontal confeccionada y forrada en cuero. La base de caucho con diseño tipo ruta aporta durabilidad y un carácter inconfundible. La horma es ceñida al pie y confortable para uso frecuente.',
-    imageUrl: '/resources/fashion-1284496_1280.jpg',
+    imageUrl: '/resources/img/mujer/29 zipper.png',
+    images: ['/resources/img/mujer/29 zipper 2.png'],
     category: 'botas',
     gender: 'women',
     variants: [
@@ -1470,7 +1484,8 @@ const sampleShoes: ShoeCreateInput[] = [
     price: 100000,
     currency: 'ARS',
     description: 'COLMAR es un mocasín confeccionado en pelo con base de goma color caramelo. Su capellada estampada marca la diferencia y suma personalidad al diseño. Forrado íntegramente en cuero y con horma estilizada, combina lo clásico con un toque actual.',
-    imageUrl: '/resources/shoes-756616_1280.jpg',
+    imageUrl: '/resources/img/mujer/30 colmar.png',
+    images: ['/resources/img/mujer/30 Colmar cart.png'],
     category: 'mocasines',
     gender: 'women',
     variants: [

@@ -17,6 +17,21 @@ const BY_MODEL_CART: Record<string, string> = {
   "Zapatilla Kripton":"/resources/img/13 - Zapatilla Kripton 1.png",
   "Zapatilla Neon":   "/resources/img/14 - Zapatilla Neon 1.png",
   "Zapatilla Samario":"/resources/img/15 - Zapatilla Zamario 1.png",
+  "Bota Ziggy":       "/resources/img/mujer/16 - Bota Ziggy.png",
+  "Bota Ride":        "/resources/img/mujer/17 - Bota Ride 1.png",
+  "Bota Jefry":       "/resources/img/mujer/18 - Bota Jefrey 1.png",
+  "Mocasin Talbot":   "/resources/img/mujer/19 - Mocasin Talbot 1.png",
+  "Bota Nevil":       "/resources/img/mujer/20 - Botal Nevil 1.png",
+  "Zapato Ara":       "/resources/img/mujer/21 Zaparto Ara 1.png",
+  "Zapato Burma":     "/resources/img/mujer/22 - Zapato Burma 2.png",
+  "Mocasin Sandro":   "/resources/img/mujer/23 - Mocasin sandro.png",
+  "Bota Casia":       "/resources/img/mujer/24 Bota Casia 2.png",
+  "Bota Lujan":       "/resources/img/mujer/25 Lujan.png",
+  "Mocasin Cardif":   "/resources/img/mujer/26 Cardif.png",
+  "Zapato Camil":     "/resources/img/mujer/27 - Camil.png",
+  "Borcego Bruna":    "/resources/img/mujer/28 Bruna.png",
+  "Bota Ziper":       "/resources/img/mujer/29 zipper.png",
+  "Mocasin Colmar":   "/resources/img/mujer/30 colmar.png",
 };
 
 const BY_MODEL: Record<string, string> = {

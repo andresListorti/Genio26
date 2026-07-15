@@ -49,7 +49,18 @@
       "Bash(Find F:\\\\Code\\\\frontend\\\\src\\\\app -type d)",
       "Bash(dir /s/b \"F:\\\\Code\\\\frontend\\\\src\\\\app\")",
       "PowerShell(Get-ChildItem \"F:\\\\Code\\\\frontend\" -Recurse -Exclude \"node_modules\",\".next\" | Where-Object { -not $_.FullName.Contains\\(\"node_modules\"\\) -and -not $_.FullName.Contains\\(\".next\"\\) } | Select-Object FullName, PSIsContainer | Sort-Object PSIsContainer -Descending | Select-Object -First 60)",
-      "PowerShell(Get-ChildItem \"F:\\\\Code\\\\frontend\\\\src\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | Sort-Object FullName)"
+      "PowerShell(Get-ChildItem \"F:\\\\Code\\\\frontend\\\\src\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | Sort-Object FullName)",
+      "WebSearch",
+      "Bash(git -C frontend status)",
+      "Bash(mkdir -p \"F:/Code/frontend/public/resources/img/mujer\")",
+      "Bash(cp \"F:/Code/resources/img/mujer/\"*.png \"F:/Code/frontend/public/resources/img/mujer/\")",
+      "Bash(npx ts-node-dev *)",
+      "Bash(echo \"backend pid $!\")",
+      "Bash(echo \"frontend pid $!\")",
+      "Bash(curl -s http://localhost:3000/api/shoes)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3001/resources/img/mujer/30%20colmar.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3001/resources/img/mujer/16%20-%20Bota%20Ziggy.png\")",
+      "Bash(curl -s http://localhost:3001/collections/women -o /tmp/women.html -w \"http_status=%{http_code}\\\\n\")"
     ]
   }
 }
