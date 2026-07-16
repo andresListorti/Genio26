@@ -61,6 +61,11 @@ export const env = {
     // Admin inbox that receives new-order notifications.
     adminEmail: process.env.RESEND_ADMIN_EMAIL ?? '',
   },
+
+  // Optional — error tracking is disabled when unset (e.g. local dev without a DSN).
+  sentry: {
+    dsn: process.env.SENTRY_DSN ?? '',
+  },
 };
 
 /** True once a Mercado Pago access token is configured in the environment. */

@@ -1,3 +1,4 @@
+import { Sentry } from './config/sentry';
 import express from 'express';
 import cors from 'cors';
 import { env } from './config/env';
@@ -36,6 +37,7 @@ app.get('/', (_req, res) => {
 app.use('/api', apiRoutes);
 
 app.use(notFoundHandler);
+Sentry.setupExpressErrorHandler(app);
 app.use(errorHandler);
 
 app.listen(env.port, () => {

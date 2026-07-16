@@ -60,6 +60,7 @@ Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 frontend for Z
 NEXT_PUBLIC_API_BASE_URL      # Backend URL (default: http://localhost:3000)
 NEXT_PUBLIC_APP_URL           # Public frontend URL for OG metadata
 NEXT_PUBLIC_FIREBASE_*        # Firebase client config keys
+NEXT_PUBLIC_SENTRY_DSN        # Sentry error tracking — leave empty to disable
 ```
 
 ### Styling

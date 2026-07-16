@@ -85,7 +85,18 @@
       "Bash(powershell -NoProfile -Command \"Stop-Process -Id 27856 -Force\")",
       "Bash(rm -rf /f/Code/frontend/.next)",
       "Bash(curl -s http://localhost:3001/login -o /dev/null -w \"login: %{http_code}\\\\n\")",
-      "Bash(curl -s http://localhost:3001/register -o /dev/null -w \"register: %{http_code}\\\\n\")"
+      "Bash(curl -s http://localhost:3001/register -o /dev/null -w \"register: %{http_code}\\\\n\")",
+      "Bash(firebase --version)",
+      "Bash(npx firebase-tools *)",
+      "Bash(firebase login:list *)",
+      "Bash(npm view *)",
+      "Bash(npm audit *)",
+      "Bash(powershell -NoProfile -Command 'Get-CimInstance Win32_Process -Filter \"Name='\\\\''node.exe'\\\\''\" | Where-Object { $_.CommandLine -match '\\\\''ts-node-dev'\\\\'' -and $_.CommandLine -match '\\\\''src.index.ts'\\\\'' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }')",
+      "Bash(curl *)",
+      "Bash(powershell -NoProfile -Command \"Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess\" 2>&1)",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 19644 -Force\")",
+      "PowerShell(fsutil fsinfo *)",
+      "PowerShell(attrib *)"
     ]
   }
 }
