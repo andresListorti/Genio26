@@ -9,12 +9,16 @@ This project uses **Next.js 16**, which has breaking changes vs. prior versions.
 ## Commands
 
 ```bash
-npm run dev    # Start on http://localhost:3001 (Turbopack)
-npm run build  # Production build
-npm run lint   # ESLint
+npm run dev         # Start on http://localhost:3001 (Turbopack)
+npm run build       # Production build
+npm run lint        # ESLint
+npm run test        # Vitest unit tests (run once)
+npm run test:watch  # Vitest in watch mode
 ```
 
-No test suite exists.
+### Testing
+
+Vitest + Testing Library, jsdom environment (`vitest.config.ts` + `vitest.setup.ts`). Tests live next to the code as `*.test.tsx`. `firebase/auth` and `firebase/firestore` are mocked at the package boundary (via `vi.hoisted` + `vi.mock`) rather than through `src/lib/firebase.ts` directly, since `AuthContext` imports SDK functions straight from those packages. Coverage today: `CartContext`, `AuthContext`. Components and pages are not yet covered.
 
 ## Architecture
 

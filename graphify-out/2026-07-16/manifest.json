@@ -1,7 +1,7 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1784089963.2637343,
-    "ast_hash": "3185cc9feeacf720af132f285b8e8d3a",
+    "mtime": 1784176728.520798,
+    "ast_hash": "94745f1776d548d3d63cd65f85db5f9a",
     "semantic_hash": ""
   },
   "frontend/eslint.config.mjs": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "src/services/order.service.ts": {
-    "mtime": 1781040758.7763708,
-    "ast_hash": "ee1ca4f127b720c6875a59de568c7ed1",
+    "mtime": 1784177496.9475346,
+    "ast_hash": "49c0763d59c1dd0f95986584b0ef3b24",
     "semantic_hash": ""
   },
   "src/services/paypal.service.ts": {
@@ -365,8 +365,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1782349176.9838898,
-    "ast_hash": "43d1d567cf09329378a01735de022ba4",
+    "mtime": 1784090088.8662965,
+    "ast_hash": "da08152c50c17290cc8a6f69a7a1b714",
     "semantic_hash": ""
   },
   "frontend/AGENTS.md": {
@@ -1312,6 +1312,31 @@
   "resources/shoes_-_11284 (720p) (1).mp4": {
     "mtime": 1725890491.388344,
     "ast_hash": "7da5f89124708b5dc54b2873ee54bc41",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1784090088.869918,
+    "ast_hash": "f234d62d03c34ea8ee2d6f54cc222300",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.fulfillment.ts": {
+    "mtime": 1784177456.5034847,
+    "ast_hash": "50d2fe9e3e23e2008ad8ee7987208868",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.mercadopago.ts": {
+    "mtime": 1784177493.0194209,
+    "ast_hash": "3a2251e62c947c62f8ceebb829294499",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.paypal.ts": {
+    "mtime": 1784177464.5506577,
+    "ast_hash": "3a90bbda6cc6d3145f915b09a21bfcdb",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.repository.ts": {
+    "mtime": 1784177450.0517924,
+    "ast_hash": "33fe1e892ef36d4ac4fafb60fcb2c922",
     "semantic_hash": ""
   }
 }

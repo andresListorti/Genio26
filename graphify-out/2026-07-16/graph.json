@@ -780,8 +780,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "frontend_src_app_cart_page_cartpage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "cartpage()"
     },
     {
@@ -978,8 +978,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_login_page",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -989,8 +989,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "frontend_src_app_login_page_geterrormessage",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "geterrormessage()"
     },
     {
@@ -1000,8 +1000,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "frontend_src_app_login_page_googleicon",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "googleicon()"
     },
     {
@@ -1011,8 +1011,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "frontend_src_app_login_page_loginpage",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "loginpage()"
     },
     {
@@ -1044,8 +1044,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -1055,8 +1055,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page_getshoe",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "getshoe"
     },
     {
@@ -1066,8 +1066,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page_generatemetadata",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "generatemetadata()"
     },
     {
@@ -1077,8 +1077,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page_productpage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "productpage()"
     },
     {
@@ -1154,8 +1154,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_register_page",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -1165,8 +1165,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "frontend_src_app_register_page_geterrormessage",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "geterrormessage()"
     },
     {
@@ -1176,8 +1176,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "frontend_src_app_register_page_googleicon",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "googleicon()"
     },
     {
@@ -1187,8 +1187,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "frontend_src_app_register_page_registerpage",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "registerpage()"
     },
     {
@@ -1231,8 +1231,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_cartsidebar",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "cartsidebar.tsx"
     },
     {
@@ -1242,8 +1242,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "frontend_src_components_cartsidebar_cartsidebar",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "cartsidebar()"
     },
     {
@@ -1319,8 +1319,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "frontend_src_components_checkoutresult_checkoutresult",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "checkoutresult()"
     },
     {
@@ -1462,8 +1462,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "frontend_src_components_mercadopagobrick_mercadopagobrickprops",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 1,
+      "community_name": "types.ts",
       "norm_label": "mercadopagobrickprops"
     },
     {
@@ -1484,8 +1484,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_navbar",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "navbar.tsx"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "frontend_src_components_navbar_nav_links",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "nav_links"
     },
     {
@@ -1506,8 +1506,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "frontend_src_components_navbar_navbar",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "navbar()"
     },
     {
@@ -1517,8 +1517,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_productcard",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "productcard.tsx"
     },
     {
@@ -1528,8 +1528,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "frontend_src_components_productcard_productcard",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "productcard()"
     },
     {
@@ -1539,8 +1539,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_productdetailclient",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "productdetailclient.tsx"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "frontend_src_components_productdetailclient_productdetailclient",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "productdetailclient()"
     },
     {
@@ -1594,8 +1594,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_searchbar",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "searchbar.tsx"
     },
     {
@@ -1605,8 +1605,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "frontend_src_components_searchbar_searchbar",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "searchbar()"
     },
     {
@@ -1682,8 +1682,8 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_useauth",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "useauth()"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_cartprovider",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 1,
+      "community_name": "types.ts",
       "norm_label": "cartprovider()"
     },
     {
@@ -1737,8 +1737,8 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_usecart",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "usecart()"
     },
     {
@@ -1836,8 +1836,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_format",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "format.ts"
     },
     {
@@ -1847,8 +1847,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_format_locale_by_currency",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "locale_by_currency"
     },
     {
@@ -1858,8 +1858,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "frontend_src_lib_format_formatmoney",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "formatmoney()"
     },
     {
@@ -1869,8 +1869,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_images",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "images.ts"
     },
     {
@@ -1880,8 +1880,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_images_unsplash",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "unsplash()"
     },
     {
@@ -1891,8 +1891,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "frontend_src_lib_images_by_model_cart",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "by_model_cart"
     },
     {
@@ -1902,8 +1902,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "frontend_src_lib_images_by_model",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "by_model"
     },
     {
@@ -1913,8 +1913,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "frontend_src_lib_images_by_category",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "by_category"
     },
     {
@@ -1924,8 +1924,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "frontend_src_lib_images_shoeimage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "shoeimage()"
     },
     {
@@ -1935,8 +1935,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "frontend_src_lib_images_hero_image",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "hero_image"
     },
     {
@@ -2001,8 +2001,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "frontend_src_lib_types_orderstatus",
-      "community": 2,
-      "community_name": "useAuth",
+      "community": 1,
+      "community_name": "types.ts",
       "norm_label": "orderstatus"
     },
     {
@@ -3068,8 +3068,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_config_firebase",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "firebase.ts"
     },
     {
@@ -3079,8 +3079,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_config_firebase_loadserviceaccount",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "loadserviceaccount()"
     },
     {
@@ -3090,8 +3090,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_config_firebase_firestore",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "firestore"
     },
     {
@@ -3101,8 +3101,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_config_firebase_collections",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "collections"
     },
     {
@@ -3178,8 +3178,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_cart_controller",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cart.controller.ts"
     },
     {
@@ -3200,8 +3200,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_checkout_controller",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 7,
+      "community_name": "express",
       "norm_label": "checkout.controller.ts"
     },
     {
@@ -3244,8 +3244,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_webhook_controller",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 7,
+      "community_name": "express",
       "norm_label": "webhook.controller.ts"
     },
     {
@@ -3255,8 +3255,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_controllers_webhook_controller_verifymercadopagosignature",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 7,
+      "community_name": "express",
       "norm_label": "verifymercadopagosignature()"
     },
     {
@@ -3266,8 +3266,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_controllers_webhook_controller_mapeventtostatus",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 7,
+      "community_name": "express",
       "norm_label": "mapeventtostatus()"
     },
     {
@@ -3277,8 +3277,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "src_controllers_webhook_controller_extractpaypalorderid",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 7,
+      "community_name": "express",
       "norm_label": "extractpaypalorderid()"
     },
     {
@@ -3365,8 +3365,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_cart_model_cartitem",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cartitem"
     },
     {
@@ -3398,8 +3398,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_order_model",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "order.model.ts"
     },
     {
@@ -3409,8 +3409,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_order_model_orderstatus",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "orderstatus"
     },
     {
@@ -3420,8 +3420,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_models_order_model_paymentprovider",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "paymentprovider"
     },
     {
@@ -3431,8 +3431,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_models_order_model_order",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "order"
     },
     {
@@ -3442,8 +3442,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_shoe_model",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoe.model.ts"
     },
     {
@@ -3453,8 +3453,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_shoe_model_shoestockvariant",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoestockvariant"
     },
     {
@@ -3464,8 +3464,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_models_shoe_model_shoegender",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoegender"
     },
     {
@@ -3475,8 +3475,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_models_shoe_model_shoe",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoe"
     },
     {
@@ -3486,8 +3486,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_models_shoe_model_shoecreateinput",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoecreateinput"
     },
     {
@@ -3497,8 +3497,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_models_shoe_model_shoeupdateinput",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoeupdateinput"
     },
     {
@@ -3794,8 +3794,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_scripts_seed_admin",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "seed-admin.ts"
     },
     {
@@ -3805,8 +3805,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_scripts_seed_admin_main",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "main()"
     },
     {
@@ -3816,8 +3816,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_scripts_seed",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "seed.ts"
     },
     {
@@ -3827,8 +3827,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_scripts_seed_sampleshoes",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "sampleshoes"
     },
     {
@@ -3838,8 +3838,8 @@
       "source_location": "L1526",
       "_origin": "ast",
       "id": "src_scripts_seed_wipeshoes",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "wipeshoes()"
     },
     {
@@ -3849,8 +3849,8 @@
       "source_location": "L1542",
       "_origin": "ast",
       "id": "src_scripts_seed_main",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "main()"
     },
     {
@@ -3860,8 +3860,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_cart_service",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cart.service.ts"
     },
     {
@@ -3871,8 +3871,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_services_cart_service_cartscollection",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cartscollection()"
     },
     {
@@ -3882,8 +3882,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_services_cart_service_recalcsubtotal",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "recalcsubtotal()"
     },
     {
@@ -3893,8 +3893,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_services_cart_service_cartservice",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cartservice"
     },
     {
@@ -4014,64 +4014,163 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_order_service",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "order.service.ts"
-    },
-    {
-      "label": "ordersCollection()",
-      "file_type": "code",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "src_services_order_service_orderscollection",
-      "community": 0,
-      "community_name": "order.service.ts",
-      "norm_label": "orderscollection()"
-    },
-    {
-      "label": "mapMercadoPagoStatus()",
-      "file_type": "code",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "src_services_order_service_mapmercadopagostatus",
-      "community": 0,
-      "community_name": "order.service.ts",
-      "norm_label": "mapmercadopagostatus()"
-    },
-    {
-      "label": "fulfillOrder()",
-      "file_type": "code",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "src_services_order_service_fulfillorder",
-      "community": 0,
-      "community_name": "order.service.ts",
-      "norm_label": "fulfillorder()"
-    },
-    {
-      "label": "releaseOrderReservations()",
-      "file_type": "code",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L52",
-      "_origin": "ast",
-      "id": "src_services_order_service_releaseorderreservations",
-      "community": 0,
-      "community_name": "order.service.ts",
-      "norm_label": "releaseorderreservations()"
     },
     {
       "label": "orderService",
       "file_type": "code",
       "source_file": "src/services/order.service.ts",
-      "source_location": "L62",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_services_order_service_orderservice",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "orderservice"
+    },
+    {
+      "label": "order.fulfillment.ts",
+      "file_type": "code",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_services_order_order_fulfillment",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "order.fulfillment.ts"
+    },
+    {
+      "label": "fulfillOrder()",
+      "file_type": "code",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_services_order_order_fulfillment_fulfillorder",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "fulfillorder()"
+    },
+    {
+      "label": "releaseOrderReservations()",
+      "file_type": "code",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "src_services_order_order_fulfillment_releaseorderreservations",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "releaseorderreservations()"
+    },
+    {
+      "label": "notifyOrderCompleted()",
+      "file_type": "code",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "src_services_order_order_fulfillment_notifyordercompleted",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "notifyordercompleted()"
+    },
+    {
+      "label": "cleanupPendingOrders()",
+      "file_type": "code",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "src_services_order_order_fulfillment_cleanuppendingorders",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "cleanuppendingorders()"
+    },
+    {
+      "label": "order.mercadopago.ts",
+      "file_type": "code",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_services_order_order_mercadopago",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "order.mercadopago.ts"
+    },
+    {
+      "label": "mapMercadoPagoStatus()",
+      "file_type": "code",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_services_order_order_mercadopago_mapmercadopagostatus",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "mapmercadopagostatus()"
+    },
+    {
+      "label": "mercadoPagoOrders",
+      "file_type": "code",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "src_services_order_order_mercadopago_mercadopagoorders",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "mercadopagoorders"
+    },
+    {
+      "label": "order.paypal.ts",
+      "file_type": "code",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_services_order_order_paypal",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "order.paypal.ts"
+    },
+    {
+      "label": "paypalOrders",
+      "file_type": "code",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_services_order_order_paypal_paypalorders",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "paypalorders"
+    },
+    {
+      "label": "order.repository.ts",
+      "file_type": "code",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_services_order_order_repository",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "order.repository.ts"
+    },
+    {
+      "label": "ordersCollection()",
+      "file_type": "code",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_services_order_order_repository_orderscollection",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "orderscollection()"
+    },
+    {
+      "label": "orderRepository",
+      "file_type": "code",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_services_order_order_repository_orderrepository",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "orderrepository"
     },
     {
       "label": "paypal.service.ts",
@@ -4124,8 +4223,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_services_paypal_service_paypalservice",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 7,
+      "community_name": "express",
       "norm_label": "paypalservice"
     },
     {
@@ -4146,8 +4245,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_shoe_service",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoe.service.ts"
     },
     {
@@ -4157,8 +4256,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_services_shoe_service_shoescollection",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoescollection()"
     },
     {
@@ -4168,8 +4267,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_services_shoe_service_shoeservice",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoeservice"
     },
     {
@@ -4514,6 +4613,17 @@
       "norm_label": "environment variables"
     },
     {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "claude_graphify",
+      "community": 11,
+      "community_name": "Architecture",
+      "norm_label": "graphify"
+    },
+    {
       "label": "AGENTS.md",
       "file_type": "document",
       "source_file": "frontend/AGENTS.md",
@@ -4707,8 +4817,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_config_firebase_firebaseadmin",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "firebaseadmin"
     }
   ],
@@ -10105,11 +10215,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L4",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_config_env",
       "confidence_score": 1.0
     },
@@ -10249,11 +10359,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L4",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_config_env_env",
       "confidence_score": 1.0
     },
@@ -10438,11 +10548,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L2",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_repository",
       "target": "src_config_firebase",
       "confidence_score": 1.0
     },
@@ -10498,11 +10608,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L2",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_repository",
       "target": "src_config_firebase_firestore",
       "confidence_score": 1.0
     },
@@ -10546,11 +10656,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L2",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_repository",
       "target": "src_config_firebase_collections",
       "confidence_score": 1.0
     },
@@ -11426,11 +11536,47 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_models_order_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_models_order_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_models_order_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_repository",
       "target": "src_models_order_model",
       "confidence_score": 1.0
     },
@@ -11438,11 +11584,35 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
+      "source_file": "src/services/order/order.mercadopago.ts",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_models_order_model_orderstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_models_order_model_orderstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_repository",
       "target": "src_models_order_model_orderstatus",
       "confidence_score": 1.0
     },
@@ -11498,11 +11668,47 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_models_order_model_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_models_order_model_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_models_order_model_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_repository",
       "target": "src_models_order_model_order",
       "confidence_score": 1.0
     },
@@ -12200,11 +12406,35 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L5",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_cart_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_cart_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
       "target": "src_services_cart_service",
       "confidence_score": 1.0
     },
@@ -12212,11 +12442,35 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L5",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_cart_service_cartservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_cart_service_cartservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
       "target": "src_services_cart_service_cartservice",
       "confidence_score": 1.0
     },
@@ -12279,11 +12533,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L13",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_fulfillment",
       "target": "src_services_email_service",
       "confidence_score": 1.0
     },
@@ -12351,11 +12605,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L13",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_fulfillment",
       "target": "src_services_email_service_emailservice",
       "confidence_score": 1.0
     },
@@ -12396,11 +12650,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L7",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_services_mercadopago_service",
       "confidence_score": 1.0
     },
@@ -12408,11 +12662,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L7",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_services_mercadopago_service_mercadopagobrickformdata",
       "confidence_score": 1.0
     },
@@ -12420,11 +12674,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L7",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_services_mercadopago_service_mercadopagopaymentresult",
       "confidence_score": 1.0
     },
@@ -12432,52 +12686,115 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L7",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_services_mercadopago_service_mercadopagoservice",
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/order.service.ts",
-      "source_location": "L37",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_order_service",
-      "target": "src_services_order_service_fulfillorder",
+      "target": "src_services_order_order_fulfillment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_fulfillment_cleanuppendingorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_mercadopago",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_mercadopago_mercadopagoorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_paypal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_paypal_paypalorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order.service.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_service",
+      "target": "src_services_order_order_repository_orderrepository",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/order.service.ts",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_order_service",
-      "target": "src_services_order_service_mapmercadopagostatus",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_order_service",
-      "target": "src_services_order_service_orderscollection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L62",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_order_service",
@@ -12487,47 +12804,80 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L52",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
-      "target": "src_services_order_service_releaseorderreservations",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_order_order_fulfillment_cleanuppendingorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_order_order_fulfillment_fulfillorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_order_order_fulfillment_notifyordercompleted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_order_order_fulfillment_releaseorderreservations",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L6",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
-      "target": "src_services_paypal_service",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_order_order_repository",
       "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L6",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
-      "target": "src_services_paypal_service_paypalservice",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_order_order_repository_orderrepository",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
-      "source_location": "L12",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_fulfillment",
       "target": "src_services_shoe_service",
       "confidence_score": 1.0
     },
@@ -12535,12 +12885,259 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/order.service.ts",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment",
+      "target": "src_services_shoe_service_shoeservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_services_order_service",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_fulfillment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_order_order_fulfillment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_fulfillment_fulfillorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_order_order_fulfillment_fulfillorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.fulfillment.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_fulfillment_cleanuppendingorders",
+      "target": "src_services_order_order_fulfillment_releaseorderreservations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_fulfillment_releaseorderreservations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_fulfillment_notifyordercompleted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_order_order_fulfillment_notifyordercompleted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_mercadopago_mapmercadopagostatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_mercadopago_mercadopagoorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_order_order_repository_orderrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
+      "target": "src_services_shoe_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.mercadopago.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_mercadopago",
       "target": "src_services_shoe_service_shoeservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_order_order_paypal_paypalorders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_order_order_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_order_order_repository_orderrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_paypal_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.paypal.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_paypal",
+      "target": "src_services_paypal_service_paypalservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_repository",
+      "target": "src_services_order_order_repository_orderrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/order/order.repository.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_services_order_order_repository",
+      "target": "src_services_order_order_repository_orderscollection",
       "confidence_score": 1.0
     },
     {
@@ -12898,6 +13495,17 @@
       "_origin": "ast",
       "source": "claude_claude_md",
       "target": "claude_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_claude_md",
+      "target": "claude_graphify",
       "confidence_score": 1.0
     },
     {

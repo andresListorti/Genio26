@@ -96,7 +96,9 @@
       "Bash(powershell -NoProfile -Command \"Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess\" 2>&1)",
       "Bash(powershell -NoProfile -Command \"Stop-Process -Id 19644 -Force\")",
       "PowerShell(fsutil fsinfo *)",
-      "PowerShell(attrib *)"
+      "PowerShell(attrib *)",
+      "Bash(npx vitest *)",
+      "Bash(start *)"
     ]
   }
 }

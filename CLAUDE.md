@@ -9,6 +9,8 @@ npm run dev          # Start with ts-node-dev (hot reload)
 npm run build        # Compile TypeScript → dist/
 npm run start        # Run compiled output (production)
 npm run typecheck    # Type-check without emitting
+npm run test         # Vitest unit tests (run once)
+npm run test:watch   # Vitest in watch mode
 
 npm run seed         # Populate Firestore with sample shoes
 npm run seed:admin   # Create admin user in Firestore
@@ -19,7 +21,11 @@ npm run check:mercadopago
 npm run check:mercadopago:payment
 ```
 
-No test suite exists — `npm run verify` runs `typecheck` + all three check scripts.
+`npm run verify` runs `typecheck` + `test` + all three check scripts.
+
+### Testing
+
+Vitest unit tests live next to the code as `*.test.ts`. Firestore is never hit for real — `src/test-utils/fakeFirestore.ts` is an in-memory stand-in for the collection/doc/transaction surface the services use, mocked in place of `src/config/firebase.ts` via `vi.mock`. Cross-service dependencies (e.g. `order.paypal.ts` calling `paypalService`) are mocked at the module boundary with `vi.hoisted` + `vi.mock`. Coverage today: `order/*`, `cart.service`, `shoe.service` (the payment/stock-critical path). Controllers, `paypal.service`/`mercadopago.service` themselves, and `email.service` are not yet covered — the sandbox `check:*` scripts are the closest thing to integration coverage for the payment SDKs.
 
 ## Architecture
 
