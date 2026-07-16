@@ -1,7 +1,7 @@
 import { firebaseAdmin, firestore } from '../config/firebase';
 
 const ADMIN_EMAIL = 'admin@genaro.com';
-const ADMIN_PASSWORD = '123456';
+const ADMIN_PASSWORD = 'Tanito_1957';
 
 async function main() {
   console.log('[seed-admin] Starting...');

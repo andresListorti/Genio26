@@ -10,7 +10,7 @@ import { OrderStatus } from '../models/order.model';
 // Signed string: id:<paymentId>;request-id:<x-request-id>;ts:<ts>
 // Secret: MERCADOPAGO_WEBHOOK_SECRET from the MP developer panel.
 
-function verifyMercadoPagoSignature(
+export function verifyMercadoPagoSignature(
   signatureHeader: string,
   requestId: string,
   paymentId: string,
@@ -134,13 +134,12 @@ export const webhookController = {
         return res.status(200).json({ received: true, applied: false });
       }
 
-      // Verify HMAC signature when a secret is configured
+      // Verify HMAC signature when a secret is configured. Always call this —
+      // it must reject a missing header just as it rejects a wrong one, or an
+      // attacker can bypass verification simply by omitting x-signature.
       const signatureHeader = String(req.headers['x-signature'] ?? '');
       const requestId = String(req.headers['x-request-id'] ?? '');
-      if (
-        signatureHeader &&
-        !verifyMercadoPagoSignature(signatureHeader, requestId, paymentId)
-      ) {
+      if (!verifyMercadoPagoSignature(signatureHeader, requestId, paymentId)) {
         return res.status(400).json({ error: 'Invalid MP webhook signature' });
       }
 

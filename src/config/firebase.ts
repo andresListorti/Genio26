@@ -32,4 +32,5 @@ export const collections = {
   shoes: 'shoes',
   carts: 'carts',
   orders: 'orders',
+  users: 'users',
 } as const;
