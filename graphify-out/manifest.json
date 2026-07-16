@@ -210,13 +210,13 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784182059.0259979,
-    "ast_hash": "dd51e4d31c9e627226361bebac103b7e",
+    "mtime": 1784183972.915272,
+    "ast_hash": "ca2de9677540567740ca36b059dffc2d",
     "semantic_hash": ""
   },
   "src/config/env.ts": {
-    "mtime": 1784180079.1805909,
-    "ast_hash": "be708766ebab6d866ce88d08fe6d75f5",
+    "mtime": 1784183993.6572592,
+    "ast_hash": "08910dc13eb3cb1ac102cfcf82f8f810",
     "semantic_hash": ""
   },
   "src/config/firebase.ts": {
@@ -255,13 +255,13 @@
     "semantic_hash": ""
   },
   "src/index.ts": {
-    "mtime": 1784180092.4264,
-    "ast_hash": "4285ac47586cc837f4aaa16b7abf85bf",
+    "mtime": 1784184023.925558,
+    "ast_hash": "bfc1ae756b01fcea4bd35e5a49e1202b",
     "semantic_hash": ""
   },
   "src/middlewares/error.middleware.ts": {
-    "mtime": 1779840628.6947029,
-    "ast_hash": "697b08c16d06390b22168288a32f4452",
+    "mtime": 1784184214.4023738,
+    "ast_hash": "c156ad37ed0a47e28ced0ddd7174363d",
     "semantic_hash": ""
   },
   "src/models/cart.model.ts": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "src/scripts/seed-admin.ts": {
-    "mtime": 1780596334.6696167,
-    "ast_hash": "650beb23db28d24a695b572323f783a7",
+    "mtime": 1784183746.0578623,
+    "ast_hash": "21708e77c3f90ccd5f24a652399672ee",
     "semantic_hash": ""
   },
   "src/scripts/seed.ts": {
@@ -365,8 +365,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784182559.5574186,
-    "ast_hash": "7f9e54a2f9863b215f78cb87a1ca1417",
+    "mtime": 1784184029.8250606,
+    "ast_hash": "6e72676518b564834aad8b016093b9ec",
     "semantic_hash": ""
   },
   "frontend/AGENTS.md": {
@@ -1442,6 +1442,11 @@
   "src/middlewares/auth.middleware.ts": {
     "mtime": 1784183377.0121698,
     "ast_hash": "c067e2b424b4169d889a34ea014ecd0b",
+    "semantic_hash": ""
+  },
+  "src/middlewares/error.middleware.test.ts": {
+    "mtime": 1784184223.3697083,
+    "ast_hash": "c46284b755e497c794078a240234e11c",
     "semantic_hash": ""
   }
 }

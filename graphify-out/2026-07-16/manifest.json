@@ -1,7 +1,7 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1784182233.888193,
-    "ast_hash": "ef5908c5f2cc3741941c526bf6be573a",
+    "mtime": 1784182798.3171887,
+    "ast_hash": "d1eb6e33446ede8f0d36baa8d16cc59d",
     "semantic_hash": ""
   },
   "frontend/eslint.config.mjs": {
@@ -210,18 +210,18 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784182059.0259979,
-    "ast_hash": "dd51e4d31c9e627226361bebac103b7e",
+    "mtime": 1784183972.915272,
+    "ast_hash": "ca2de9677540567740ca36b059dffc2d",
     "semantic_hash": ""
   },
   "src/config/env.ts": {
-    "mtime": 1784180079.1805909,
-    "ast_hash": "be708766ebab6d866ce88d08fe6d75f5",
+    "mtime": 1784183993.6572592,
+    "ast_hash": "08910dc13eb3cb1ac102cfcf82f8f810",
     "semantic_hash": ""
   },
   "src/config/firebase.ts": {
-    "mtime": 1779840478.70548,
-    "ast_hash": "dbf7ce3382356d4187d372261fd2d668",
+    "mtime": 1784183370.0245352,
+    "ast_hash": "0ae036bf489073bd554292810bb6f49c",
     "semantic_hash": ""
   },
   "src/config/mercadopago.ts": {
@@ -250,13 +250,13 @@
     "semantic_hash": ""
   },
   "src/controllers/webhook.controller.ts": {
-    "mtime": 1781040799.6449046,
-    "ast_hash": "575de9a27250dd36194b7fbb71c602a3",
+    "mtime": 1784183402.9235287,
+    "ast_hash": "e03e7b8d58e6c70f1ea67790308084db",
     "semantic_hash": ""
   },
   "src/index.ts": {
-    "mtime": 1784180092.4264,
-    "ast_hash": "4285ac47586cc837f4aaa16b7abf85bf",
+    "mtime": 1784184023.925558,
+    "ast_hash": "bfc1ae756b01fcea4bd35e5a49e1202b",
     "semantic_hash": ""
   },
   "src/middlewares/error.middleware.ts": {
@@ -295,8 +295,8 @@
     "semantic_hash": ""
   },
   "src/routes/shoe.routes.ts": {
-    "mtime": 1779840610.1951168,
-    "ast_hash": "d4a027017a3da9698ffc02b7e7853a8f",
+    "mtime": 1784183382.2516215,
+    "ast_hash": "feda383b224d22729bd489a3731893e1",
     "semantic_hash": ""
   },
   "src/routes/webhook.routes.ts": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "src/scripts/seed-admin.ts": {
-    "mtime": 1780596334.6696167,
-    "ast_hash": "650beb23db28d24a695b572323f783a7",
+    "mtime": 1784183746.0578623,
+    "ast_hash": "21708e77c3f90ccd5f24a652399672ee",
     "semantic_hash": ""
   },
   "src/scripts/seed.ts": {
@@ -365,8 +365,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784182559.5574186,
-    "ast_hash": "7f9e54a2f9863b215f78cb87a1ca1417",
+    "mtime": 1784184029.8250606,
+    "ast_hash": "6e72676518b564834aad8b016093b9ec",
     "semantic_hash": ""
   },
   "frontend/AGENTS.md": {
@@ -1420,13 +1420,28 @@
     "semantic_hash": ""
   },
   "src/test-utils/fakeFirestore.ts": {
-    "mtime": 1784182078.2594566,
-    "ast_hash": "a336f41dc0fcb1198bd066fc37f1ea00",
+    "mtime": 1784183471.815231,
+    "ast_hash": "1c5d89f9f3cc3db4e7252ad1441e1b9b",
     "semantic_hash": ""
   },
   "vitest.config.ts": {
     "mtime": 1784182054.3068063,
     "ast_hash": "055f1f040e0b411dbbb0230037f4358b",
+    "semantic_hash": ""
+  },
+  "src/controllers/webhook.controller.test.ts": {
+    "mtime": 1784183435.443862,
+    "ast_hash": "09b045ed61edac31e43ee53ea0af7591",
+    "semantic_hash": ""
+  },
+  "src/middlewares/auth.middleware.test.ts": {
+    "mtime": 1784183453.5430346,
+    "ast_hash": "59b4f55cc9c9f23f8e3032190ec1e291",
+    "semantic_hash": ""
+  },
+  "src/middlewares/auth.middleware.ts": {
+    "mtime": 1784183377.0121698,
+    "ast_hash": "c067e2b424b4169d889a34ea014ecd0b",
     "semantic_hash": ""
   }
 }

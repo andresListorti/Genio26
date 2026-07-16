@@ -74,6 +74,7 @@ PAYPAL_CLIENT_ID / PAYPAL_CLIENT_SECRET / PAYPAL_WEBHOOK_ID / PAYPAL_MODE / PAYP
 MERCADOPAGO_ACCESS_TOKEN / MERCADOPAGO_PUBLIC_KEY / MERCADOPAGO_WEBHOOK_SECRET
 RESEND_API_KEY / RESEND_FROM_EMAIL / RESEND_ADMIN_EMAIL
 SENTRY_DSN
+CORS_ORIGINS   # optional, comma-separated. Defaults to [FRONTEND_URL]
 ```
 
 `FIREBASE_SERVICE_ACCOUNT_FILE` is optional — defaults to the local `sun-66f-firebase-adminsdk-*.json` file when present (dev), otherwise reads the three FIREBASE_* vars (Render).

@@ -11,16 +11,26 @@ function required(name: string, fallback?: string): string {
   return value;
 }
 
+const frontendUrl = (process.env.FRONTEND_URL ?? 'http://localhost:3001').replace(
+  /\/$/,
+  '',
+);
+
 export const env = {
   port: parseInt(process.env.PORT ?? '3000', 10),
   nodeEnv: process.env.NODE_ENV ?? 'development',
 
   // Public URL of the Genaro storefront (Next.js). Used to build Mercado Pago
   // back_urls so the buyer returns to the right page after the redirect flow.
-  frontendUrl: (process.env.FRONTEND_URL ?? 'http://localhost:3001').replace(
-    /\/$/,
-    '',
-  ),
+  frontendUrl,
+
+  // Browser origins allowed to call this API (CORS). Defaults to just the
+  // configured frontend. Add Vercel preview domains etc. via a comma-separated
+  // CORS_ORIGINS env var. Does not affect server-to-server calls (webhooks,
+  // curl) — CORS is a browser-enforced restriction only.
+  corsOrigins: process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',').map((o) => o.trim())
+    : [frontendUrl],
 
   firebase: {
     projectId: required('FIREBASE_PROJECT_ID'),
