@@ -60,7 +60,32 @@
       "Bash(curl -s http://localhost:3000/api/shoes)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3001/resources/img/mujer/30%20colmar.png\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3001/resources/img/mujer/16%20-%20Bota%20Ziggy.png\")",
-      "Bash(curl -s http://localhost:3001/collections/women -o /tmp/women.html -w \"http_status=%{http_code}\\\\n\")"
+      "Bash(curl -s http://localhost:3001/collections/women -o /tmp/women.html -w \"http_status=%{http_code}\\\\n\")",
+      "Bash(uv --version)",
+      "Bash(pipx --version)",
+      "Bash(pip --version)",
+      "Bash(pip install *)",
+      "Bash(command -v render)",
+      "Bash(command -v vercel)",
+      "Bash(curl -s http://localhost:3000/api/health)",
+      "Bash(disown)",
+      "Bash(echo \"started pid $!\")",
+      "Bash(powershell -NoProfile -Command 'Get-Process -Name node -ErrorAction SilentlyContinue | Where-Object { $_.Path -and \\(Get-CimInstance Win32_Process -Filter \"ProcessId=$\\($_.Id\\)\"\\).CommandLine -match '\\\\''ts-node-dev'\\\\'' } | Stop-Process -Force')",
+      "Bash(curl -s -o /dev/null -w \"health check after stop: %{http_code}\\\\n\" http://localhost:3000/api/health --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"backend health: %{http_code}\\\\n\" http://localhost:3000/api/health --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"frontend: %{http_code}\\\\n\" http://localhost:3001 --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"shoes: %{http_code}\\\\n\" http://localhost:3000/api/shoes)",
+      "Bash(curl -s -o /dev/null -w \"frontend root: %{http_code}\\\\n\" http://localhost:3001 --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"frontend /login: %{http_code}\\\\n\" http://localhost:3001/login --max-time 3)",
+      "Bash(curl -s http://localhost:3001/login --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"frontend /register: %{http_code}\\\\n\" http://localhost:3001/register --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"frontend /cart: %{http_code}\\\\n\" http://localhost:3001/cart --max-time 3)",
+      "Bash(powershell -NoProfile -Command \"Get-NetTCPConnection -LocalPort 3001 -State Listen | Select-Object -ExpandProperty OwningProcess\" 2>&1)",
+      "Bash(powershell -NoProfile -Command \"Get-CimInstance Win32_Process -Filter 'ProcessId=27856' | Select-Object CommandLine, ProcessId, ParentProcessId | Format-List\" 2>&1)",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 27856 -Force\")",
+      "Bash(rm -rf /f/Code/frontend/.next)",
+      "Bash(curl -s http://localhost:3001/login -o /dev/null -w \"login: %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:3001/register -o /dev/null -w \"register: %{http_code}\\\\n\")"
     ]
   }
 }

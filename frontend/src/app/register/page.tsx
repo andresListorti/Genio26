@@ -178,6 +178,7 @@ export default function RegisterPage() {
           src="/resources/pagina%20de%20acceso.jpg"
           alt="Zapatería Genaro"
           fill
+          sizes="50vw"
           className="object-cover"
           priority
         />

@@ -1,0 +1,1342 @@
+{
+  ".claude/settings.local.json": {
+    "mtime": 1784176728.520798,
+    "ast_hash": "94745f1776d548d3d63cd65f85db5f9a",
+    "semantic_hash": ""
+  },
+  "frontend/eslint.config.mjs": {
+    "mtime": 1779842741.4655151,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": ""
+  },
+  "frontend/next.config.ts": {
+    "mtime": 1780598006.8783512,
+    "ast_hash": "f4ec645fb0f9993d7491f78fefa61ebb",
+    "semantic_hash": ""
+  },
+  "frontend/package.json": {
+    "mtime": 1780593595.717114,
+    "ast_hash": "67ace3498b9a15aa93c128f162be9cfd",
+    "semantic_hash": ""
+  },
+  "frontend/postcss.config.mjs": {
+    "mtime": 1779842741.4776008,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/admin/archive/page.tsx": {
+    "mtime": 1781037326.7664661,
+    "ast_hash": "3e561df5a65fabe6edc0ebb39969291f",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/admin/orders/page.tsx": {
+    "mtime": 1781040847.8187146,
+    "ast_hash": "1010f0207ef819303ccbd4d51c4f84d9",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/admin/page.tsx": {
+    "mtime": 1781031713.2032359,
+    "ast_hash": "7ee1c7d5ce33470c0766032af46d2adf",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/cart/page.tsx": {
+    "mtime": 1781037268.4134886,
+    "ast_hash": "eb8976f0181f9d7626bd618c1e974e43",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/checkout/failure/page.tsx": {
+    "mtime": 1780356959.6535542,
+    "ast_hash": "c756f276b45ac99936bbf5cdff517ecf",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/checkout/pending/page.tsx": {
+    "mtime": 1780356962.7129583,
+    "ast_hash": "0b2b3fcf40973afd759a7fb30ab0c19f",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/checkout/success/page.tsx": {
+    "mtime": 1780356956.5591452,
+    "ast_hash": "47a1b4f0d62e709461b0fb2c12a8fe7d",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/collections/men/page.tsx": {
+    "mtime": 1780599380.2820125,
+    "ast_hash": "9b4a2e66d0e691829cdaf87b58cef22d",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/collections/women/page.tsx": {
+    "mtime": 1780599385.9459388,
+    "ast_hash": "ca43ebf847bc1da3376a3e6d61485ce6",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/layout.tsx": {
+    "mtime": 1780599357.519288,
+    "ast_hash": "c28c3251b02b7fbacc7227ad4f227dc2",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/login/page.tsx": {
+    "mtime": 1780593640.4881406,
+    "ast_hash": "b3a5fc9cb2aef0d56723164b1ce1829a",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/page.tsx": {
+    "mtime": 1779844182.4300036,
+    "ast_hash": "b44305b92bf32f556966d7ecef7c1a6b",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/products/[id]/page.tsx": {
+    "mtime": 1782337290.2219298,
+    "ast_hash": "f17c2cebdc34964ffbfef0c3f6dec13f",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/profile/page.tsx": {
+    "mtime": 1781040865.2501266,
+    "ast_hash": "2a830d19e7a20975eaa6e1ea7ab3df8b",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/register/page.tsx": {
+    "mtime": 1780593659.071186,
+    "ast_hash": "ccfd68d3bb5c6766c2a7aba7c7aaa76a",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/AdminNav.tsx": {
+    "mtime": 1781037274.9728658,
+    "ast_hash": "45438782468d2c51d854b803bc7c613d",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/CartSidebar.tsx": {
+    "mtime": 1780348650.506794,
+    "ast_hash": "24dab62a3043ec855cf267c57e28e111",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/CatalogClient.tsx": {
+    "mtime": 1779844177.0451453,
+    "ast_hash": "57a39b2f92a817b71d973acd32e542b3",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/CheckoutResult.tsx": {
+    "mtime": 1780598854.266644,
+    "ast_hash": "5fcfdeca19286168f2c642109f04659d",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/CollectionView.tsx": {
+    "mtime": 1780348091.4642098,
+    "ast_hash": "5652b60a6eeda2dd29382073bd167276",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/Footer.tsx": {
+    "mtime": 1779844078.8095837,
+    "ast_hash": "98fa5d8ad7dbdfe200d1a91d5ae9f8fb",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/Hero.tsx": {
+    "mtime": 1781031688.747352,
+    "ast_hash": "d01ee163970c08fbe7022a03c5956079",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/MercadoPagoBrick.tsx": {
+    "mtime": 1781040853.135968,
+    "ast_hash": "e3ae989b95c30010eb66b1a809e72797",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/Navbar.tsx": {
+    "mtime": 1780600626.1527035,
+    "ast_hash": "5af56651eef2bd18e15be2574f960624",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/ProductCard.tsx": {
+    "mtime": 1780599390.5195453,
+    "ast_hash": "1042ac3498a4e85cfc7d92717d54dbea",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/ProductDetailClient.tsx": {
+    "mtime": 1781040874.3570993,
+    "ast_hash": "fb340607334183ba5437a95cd5199018",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/ProfileRequiredModal.tsx": {
+    "mtime": 1781037176.3067734,
+    "ast_hash": "24242d82c39fde7cbea02e9b16522d09",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/SearchBar.tsx": {
+    "mtime": 1779845181.6778023,
+    "ast_hash": "b3f46cbaa32eb5ee13f9e4875828d492",
+    "semantic_hash": ""
+  },
+  "frontend/src/context/AuthContext.tsx": {
+    "mtime": 1780598021.982792,
+    "ast_hash": "f9db263e22a95f00a11cf21e2c4f8cc1",
+    "semantic_hash": ""
+  },
+  "frontend/src/context/CartContext.tsx": {
+    "mtime": 1780356916.1285462,
+    "ast_hash": "ae10ccdb0f17694aa131420c83dbaa9d",
+    "semantic_hash": ""
+  },
+  "frontend/src/lib/api.ts": {
+    "mtime": 1780598826.4464471,
+    "ast_hash": "3ab918953138e310a78fa6fce69c8f18",
+    "semantic_hash": ""
+  },
+  "frontend/src/lib/firebase.ts": {
+    "mtime": 1780593600.7906258,
+    "ast_hash": "1eb70929727fde71ebd0890abecb2071",
+    "semantic_hash": ""
+  },
+  "frontend/src/lib/format.ts": {
+    "mtime": 1780348606.5032654,
+    "ast_hash": "9efccd03b29f4080a0fd6d5a42bab8a1",
+    "semantic_hash": ""
+  },
+  "frontend/src/lib/images.ts": {
+    "mtime": 1784083963.464149,
+    "ast_hash": "e4c9ecbe9b167502115a64dc17ff44e2",
+    "semantic_hash": ""
+  },
+  "frontend/src/lib/types.ts": {
+    "mtime": 1782337271.416631,
+    "ast_hash": "a8ba7a1ba79084108d735d0f86231829",
+    "semantic_hash": ""
+  },
+  "frontend/tsconfig.json": {
+    "mtime": 1779842741.710019,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": ""
+  },
+  "frontend/vercel.json": {
+    "mtime": 1780600630.849156,
+    "ast_hash": "3816a300f195d721bdde20bf3cd81718",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1781040641.78027,
+    "ast_hash": "3b88f8ea672a51f8057a8890c06c806b",
+    "semantic_hash": ""
+  },
+  "src/config/env.ts": {
+    "mtime": 1781040660.5827475,
+    "ast_hash": "cb50c4b979d7358991743ca7780da5b3",
+    "semantic_hash": ""
+  },
+  "src/config/firebase.ts": {
+    "mtime": 1779840478.70548,
+    "ast_hash": "dbf7ce3382356d4187d372261fd2d668",
+    "semantic_hash": ""
+  },
+  "src/config/mercadopago.ts": {
+    "mtime": 1780349284.9920516,
+    "ast_hash": "90d154bab12fa3980062b4ee4dd5cfbc",
+    "semantic_hash": ""
+  },
+  "src/config/paypal.ts": {
+    "mtime": 1779840484.1532483,
+    "ast_hash": "ac151ca61ade0ea0687ec60445823bcb",
+    "semantic_hash": ""
+  },
+  "src/controllers/cart.controller.ts": {
+    "mtime": 1781037157.284836,
+    "ast_hash": "abbcb10476a5d8b8bd8d1dfffd614813",
+    "semantic_hash": ""
+  },
+  "src/controllers/checkout.controller.ts": {
+    "mtime": 1781037164.4024704,
+    "ast_hash": "12aa099374832da65f25053471a60d28",
+    "semantic_hash": ""
+  },
+  "src/controllers/shoe.controller.ts": {
+    "mtime": 1780347901.8827207,
+    "ast_hash": "fad14223324ed2e745cfc4d06358d208",
+    "semantic_hash": ""
+  },
+  "src/controllers/webhook.controller.ts": {
+    "mtime": 1781040799.6449046,
+    "ast_hash": "575de9a27250dd36194b7fbb71c602a3",
+    "semantic_hash": ""
+  },
+  "src/index.ts": {
+    "mtime": 1780004212.725521,
+    "ast_hash": "a90651819356677c2c153baa45c0681d",
+    "semantic_hash": ""
+  },
+  "src/middlewares/error.middleware.ts": {
+    "mtime": 1779840628.6947029,
+    "ast_hash": "697b08c16d06390b22168288a32f4452",
+    "semantic_hash": ""
+  },
+  "src/models/cart.model.ts": {
+    "mtime": 1779840498.445734,
+    "ast_hash": "50837dc3d7fa0724f799f2652d648a20",
+    "semantic_hash": ""
+  },
+  "src/models/order.model.ts": {
+    "mtime": 1781040650.9398835,
+    "ast_hash": "02f0688ef06bfb54d369df15e50f0807",
+    "semantic_hash": ""
+  },
+  "src/models/shoe.model.ts": {
+    "mtime": 1782337268.9177558,
+    "ast_hash": "226282be59c2406a4c52881dd03a1f1f",
+    "semantic_hash": ""
+  },
+  "src/routes/cart.routes.ts": {
+    "mtime": 1779840614.3693008,
+    "ast_hash": "00ded0765e43ab006a3cb890bbe7e816",
+    "semantic_hash": ""
+  },
+  "src/routes/checkout.routes.ts": {
+    "mtime": 1780598810.7569504,
+    "ast_hash": "3e533e042aad5c129168f30efff761cf",
+    "semantic_hash": ""
+  },
+  "src/routes/index.ts": {
+    "mtime": 1780004219.4107292,
+    "ast_hash": "cf3e60928f717d5d2eaeca2ce8a9d819",
+    "semantic_hash": ""
+  },
+  "src/routes/shoe.routes.ts": {
+    "mtime": 1779840610.1951168,
+    "ast_hash": "d4a027017a3da9698ffc02b7e7853a8f",
+    "semantic_hash": ""
+  },
+  "src/routes/webhook.routes.ts": {
+    "mtime": 1780356827.2554312,
+    "ast_hash": "96b38b5a9483d99d1ece97fd11735ef8",
+    "semantic_hash": ""
+  },
+  "src/scripts/check-mercadopago-payment.ts": {
+    "mtime": 1780357337.409514,
+    "ast_hash": "58ee696ea277025cf9405a9d302a8534",
+    "semantic_hash": ""
+  },
+  "src/scripts/check-mercadopago.ts": {
+    "mtime": 1780354282.3111846,
+    "ast_hash": "564181aef805e3a7d3344d56dd2c8946",
+    "semantic_hash": ""
+  },
+  "src/scripts/check-paypal.ts": {
+    "mtime": 1779844108.7071288,
+    "ast_hash": "83869884f82c41fd39fdb1447992b43c",
+    "semantic_hash": ""
+  },
+  "src/scripts/seed-admin.ts": {
+    "mtime": 1780596334.6696167,
+    "ast_hash": "650beb23db28d24a695b572323f783a7",
+    "semantic_hash": ""
+  },
+  "src/scripts/seed.ts": {
+    "mtime": 1784083953.249164,
+    "ast_hash": "dde4f63052aaedc5a705a135006b09da",
+    "semantic_hash": ""
+  },
+  "src/services/cart.service.ts": {
+    "mtime": 1779840534.8154974,
+    "ast_hash": "4328dc9b143dc68400ab05ccae19d2d7",
+    "semantic_hash": ""
+  },
+  "src/services/email.service.ts": {
+    "mtime": 1781040694.9594893,
+    "ast_hash": "d3d9ed5c54a556a66a068100cc72036b",
+    "semantic_hash": ""
+  },
+  "src/services/mercadopago.service.ts": {
+    "mtime": 1781040812.7260728,
+    "ast_hash": "a0d956082f62f9d345ac2e1c86807705",
+    "semantic_hash": ""
+  },
+  "src/services/order.service.ts": {
+    "mtime": 1784177496.9475346,
+    "ast_hash": "49c0763d59c1dd0f95986584b0ef3b24",
+    "semantic_hash": ""
+  },
+  "src/services/paypal.service.ts": {
+    "mtime": 1780349731.9983034,
+    "ast_hash": "7bb99d19801eeca035d068a2b7f1f991",
+    "semantic_hash": ""
+  },
+  "src/services/shoe.service.ts": {
+    "mtime": 1782337616.3738832,
+    "ast_hash": "d80c0da94bc1a311c92887767e17aba5",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1779840708.3165412,
+    "ast_hash": "9609a15ec41bc816f90f31fc20ffe8c9",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1784090088.8662965,
+    "ast_hash": "da08152c50c17290cc8a6f69a7a1b714",
+    "semantic_hash": ""
+  },
+  "frontend/AGENTS.md": {
+    "mtime": 1779842766.4376597,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": ""
+  },
+  "frontend/CLAUDE.md": {
+    "mtime": 1782350350.1169367,
+    "ast_hash": "dfdae47083bb4c7da16d7b9ae6d53c4f",
+    "semantic_hash": ""
+  },
+  "frontend/README.md": {
+    "mtime": 1779842741.455959,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": ""
+  },
+  "frontend/public/file.svg": {
+    "mtime": 1779842741.4821186,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "frontend/public/globe.svg": {
+    "mtime": 1779842741.4891698,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "frontend/public/next.svg": {
+    "mtime": 1779842741.4933734,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/IaDama.jpeg": {
+    "mtime": 1725890491.352576,
+    "ast_hash": "2ff8ec6d11c187a6e09d94ff56006696",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/Men.jpg": {
+    "mtime": 1725890491.3814478,
+    "ast_hash": "51c4bb59db6ebc7c988d7cd551b48bdb",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/business-2049312_1280.jpg": {
+    "mtime": 1725890491.353577,
+    "ast_hash": "7327099e280ce98e1854c699e215cc67",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/fashion-1284496_1280.jpg": {
+    "mtime": 1725890491.355179,
+    "ast_hash": "740c66fedbeec9e572252fbe3e1b00ad",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/footwear-1838767_1920.jpg": {
+    "mtime": 1725890491.3697574,
+    "ast_hash": "a82bd4bb81caf0399b88611f583021c3",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/hombremoca.jpg": {
+    "mtime": 1725890491.371594,
+    "ast_hash": "a592f8a1b9ff08593b088e2e8f9ff0de",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/iaHombre.jpeg": {
+    "mtime": 1725890491.3735797,
+    "ast_hash": "56fa8e0a55703897d50aae0c79e48a71",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/iadama2.jpeg": {
+    "mtime": 1725890491.3745806,
+    "ast_hash": "1d9b7668637e9882d22045b4fbf14e09",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/iahombrefondo.jpeg": {
+    "mtime": 1725890491.375581,
+    "ast_hash": "fe0c99d57b43dc8104d75fa1fcf63752",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/1 - Zueco Chicago 1.png": {
+    "mtime": 1782334925.6985478,
+    "ast_hash": "7db9b85527ff358f3011dcd0ad8838a3",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/1 - Zueco Chicago 2.png": {
+    "mtime": 1782336031.4391444,
+    "ast_hash": "e47a1608de545d950c09d9cdea5eab40",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/1 - Zueco Chicago cart.png": {
+    "mtime": 1782333068.5683844,
+    "ast_hash": "25e4d3368c4633f8d2df6e8b58478960",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/10 - Zapato Palermo 1.png": {
+    "mtime": 1782334453.8424108,
+    "ast_hash": "69dc58dd26b207d3d2144ca16cc909d3",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/11 - Zapato Paris 1.png": {
+    "mtime": 1782330582.3729367,
+    "ast_hash": "f7f9d247de3b5adf71188dc89a642e42",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/11 - Zapato Paris 2.png": {
+    "mtime": 1782333464.4630985,
+    "ast_hash": "ba2cc7712a240744e56741357b127c03",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/12 - Bota Yale 1.png": {
+    "mtime": 1782334533.9718215,
+    "ast_hash": "91e75f6bb9798ce7c7c0054601abc08d",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/13 - Zapatilla Kripton 1.png": {
+    "mtime": 1782334663.8396585,
+    "ast_hash": "89f1f28d9693cfe408ceeacff7636e20",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/14 - Zapatilla Neon 1.png": {
+    "mtime": 1782334752.1863914,
+    "ast_hash": "528b82e5862cc778e6d4a9734646cdba",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/15 - Zapatilla Zamario 1.png": {
+    "mtime": 1782334837.6374912,
+    "ast_hash": "a9c9b712b52dbd010b78c7a74c6144d8",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/2 - Zapatilla Tempo 1.png": {
+    "mtime": 1782335240.8006933,
+    "ast_hash": "f1578d9914b79a0066b9530ba1a01c10",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/2 - Zapatilla Tempo 2.png": {
+    "mtime": 1782336141.436524,
+    "ast_hash": "3c3455a6d68ca7d4d61ec7fcdce9a75a",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/2 - Zapatilla Tempo cart.png": {
+    "mtime": 1782333118.1624599,
+    "ast_hash": "62cf88e64877192991277f68538ff6fe",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/3 - Zapato Doha Acordonado 1.png": {
+    "mtime": 1782335328.7142177,
+    "ast_hash": "bd3d8d14a826973fa0e666695fc16748",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/3 - Zapato Doha Acordonado 2.png": {
+    "mtime": 1782336254.839204,
+    "ast_hash": "9640ba8969bdd15172ea13a76ee25550",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/3 - Zapato Doha Acordonado cart.png": {
+    "mtime": 1782333671.7022116,
+    "ast_hash": "a4aa3f9d6ea4df92afba836275908b64",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/4 - Mocasin Doha 1.png": {
+    "mtime": 1782335418.276083,
+    "ast_hash": "cb2b06e1800e202ddabaca416cab690e",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/4 - Mocasin Doha cart.png": {
+    "mtime": 1782333248.80036,
+    "ast_hash": "d825a87a5994605d048681749a63b4bc",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/5 - Bota Dust 1.png": {
+    "mtime": 1782333749.889935,
+    "ast_hash": "190d95a7a0da5be49f5383f98b5de4b2",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/6 - Bota Murat 1.png": {
+    "mtime": 1782333933.5481253,
+    "ast_hash": "a8480ab95e8b12e363376150bed1bfed",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/7 - Mocasin Wales 1.png": {
+    "mtime": 1782334060.1093526,
+    "ast_hash": "8860f9ded127f9a7200ea0cfa8d415da",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/8 - Zapato Alamo 1.png": {
+    "mtime": 1782334118.6047168,
+    "ast_hash": "1b00af8dc0f35685ae217d67dc144fb5",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/9 - Zapato Pamplona 1.png": {
+    "mtime": 1782334334.2153056,
+    "ast_hash": "d73cbed00e637e86c8da350f03a8ac5a",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/16 - Bota Ziggy arriba.png": {
+    "mtime": 1784083897.365256,
+    "ast_hash": "b4c70350d4efb0adfa358631397a8aea",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/16 - Bota Ziggy cuarta.png": {
+    "mtime": 1784083897.376361,
+    "ast_hash": "b25381f38acefd0a978ee055707a864a",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/16 - Bota Ziggy.png": {
+    "mtime": 1784083897.3859603,
+    "ast_hash": "75fe2a14af6715350b7eb406d33bdb61",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/16- Bota Ziggy lateral.png": {
+    "mtime": 1784083897.3954968,
+    "ast_hash": "cc04836875a0c1220552dcc81858a39e",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/17 - Bota Ride  2.png": {
+    "mtime": 1784083897.4040895,
+    "ast_hash": "c5a45bd6444d960849e018b76635dd34",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/17 - Bota Ride 1.png": {
+    "mtime": 1784083897.41286,
+    "ast_hash": "d794a26e21220e911d6719fa2c630c34",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/17 - Bota Ride Arriba.png": {
+    "mtime": 1784083897.422546,
+    "ast_hash": "880b3e8b03a75484a86c5bb52a1c7310",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/17- Bota Ride  3.png": {
+    "mtime": 1784083897.4311285,
+    "ast_hash": "261b3bae27fa33d7079ff9da39d03706",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/18 - Bota Jefrey 1.png": {
+    "mtime": 1784083897.4405196,
+    "ast_hash": "61a8c8b9f2522c4f6bcb382d2e603df8",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/18 - Bota Jefrey 4.png": {
+    "mtime": 1784083897.449477,
+    "ast_hash": "1c8c0371dff8239ee7ebe8379dfe2442",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/18 - Bota Jefry 2.png": {
+    "mtime": 1784083897.4596417,
+    "ast_hash": "ce46e9e7f62a3127d2952828d55d697c",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/18 - Bota Jefry cart.png": {
+    "mtime": 1784083897.4682896,
+    "ast_hash": "8db0c9d063170e35d1a4fbdb3cc39685",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/19 - Mocasin Talbot 1.png": {
+    "mtime": 1784083897.4773872,
+    "ast_hash": "d947256048031f6b86ddd5dff7c31be3",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/19 - Mocasin Talbot 2.png": {
+    "mtime": 1784083897.4846244,
+    "ast_hash": "e489db36cb21295498b2d4f63dbb9b98",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/19 - Mocasin Talbot 3.png": {
+    "mtime": 1784083897.4925475,
+    "ast_hash": "6a4823364dc544ede8f42e5b7ff32e13",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/19 - Mocasin Talbot 4.png": {
+    "mtime": 1784083897.49979,
+    "ast_hash": "8db1f0e35db2ae495bceb40843cb869c",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/20 - Bota Nevil 2.png": {
+    "mtime": 1784083897.5065749,
+    "ast_hash": "90766cfbc21844bb34f14c969087c2b4",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/20 - Bota Nevil 3.png": {
+    "mtime": 1784083897.5135758,
+    "ast_hash": "838da5e60116352f3156c364529482cb",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/20 - Bota Nevil cart.png": {
+    "mtime": 1784083897.5196853,
+    "ast_hash": "4e5a0f614e29e562b98d982bae3a230c",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/20 - Botal Nevil 1.png": {
+    "mtime": 1784083897.5272841,
+    "ast_hash": "fb1b248c3f6ac29d28c27f922f4f8f40",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/21 - Zapato Ara 3.png": {
+    "mtime": 1784083897.5339315,
+    "ast_hash": "a1d4ae6982f56f76ebf2346c2f970363",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/21 Zaparto Ara 1.png": {
+    "mtime": 1784083897.5410173,
+    "ast_hash": "ec38f30196bdfa6e527348e45146f69e",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/21- Zapato ARA cart.png": {
+    "mtime": 1784083897.5472422,
+    "ast_hash": "663d6b3a5d7bf922af683ea4ede2c5d1",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/22 - Zapato Burma 2.png": {
+    "mtime": 1784083897.554487,
+    "ast_hash": "a5b2feac2d945b5ec2552a3ff3c72834",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/22 - Zapato Burma Cart.png": {
+    "mtime": 1784083897.561233,
+    "ast_hash": "f96f7af1a093a8d70b867b3d42fb88c6",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/22 Zapato Burma 3.png": {
+    "mtime": 1784083897.567349,
+    "ast_hash": "8b5cbb4f6344618511a69caeb8abaae9",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/22 Zapato Burma Arriba.png": {
+    "mtime": 1784083897.5748043,
+    "ast_hash": "b847b14c4041ac50f6790244fd8acddb",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/23 - Mocasin Sandro arriba.png": {
+    "mtime": 1784083897.5885317,
+    "ast_hash": "5f4f61171621e043b29cb4272f79c5d5",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/23 - Mocasin sandro 2.png": {
+    "mtime": 1784083897.5814164,
+    "ast_hash": "d2b5a85d8ee85b1bf0a2f5ad072b207a",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/23 - Mocasin sandro.png": {
+    "mtime": 1784083897.5952618,
+    "ast_hash": "6b02c729b96f3eb5037af24c4895b577",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/23- Mocasin sandro cart.png": {
+    "mtime": 1784083897.6013348,
+    "ast_hash": "7de327da024c1e2832014361c4b162d5",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/24 Bota Casia 2.png": {
+    "mtime": 1784083897.6086445,
+    "ast_hash": "25414d44c427ee6aca19037a58376211",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/24 Bota Casia cart.png": {
+    "mtime": 1784083897.6152408,
+    "ast_hash": "90d4bdf860fbd7b5d60259e583763858",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/24 Casia arriba.png": {
+    "mtime": 1784083897.6224315,
+    "ast_hash": "507b82a69cecf25e9848aa771e1311b3",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/25 Lujan cart.png": {
+    "mtime": 1784083897.6426857,
+    "ast_hash": "e54d70f893d98631d96eebe65cbc19d9",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/25 Lujan.png": {
+    "mtime": 1784083897.6491811,
+    "ast_hash": "542cf7b499e0e831956e57fba218eef5",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/25 lujan 2.png": {
+    "mtime": 1784083897.6285214,
+    "ast_hash": "f32c4363fccae81a11bbbe4c6eaaabaa",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/25 lujan arriba.png": {
+    "mtime": 1784083897.636101,
+    "ast_hash": "5e5b056e97ca15e66c776eed5bf8a544",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/26 Cardif 1.png": {
+    "mtime": 1784083897.656242,
+    "ast_hash": "e1bc78059759daf82d66c02626f9eb32",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/26 Cardif Arriba.png": {
+    "mtime": 1784083897.6628194,
+    "ast_hash": "b89fb8b145279d96e9ca467c8c1bfa71",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/26 Cardif cart.png": {
+    "mtime": 1784083897.670369,
+    "ast_hash": "644657679920d2bd3fef9bf7ac32d5c6",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/26 Cardif.png": {
+    "mtime": 1784083897.6769319,
+    "ast_hash": "02ce2f1ce7ee43f21d0a7053afb4465b",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/27 - Camil arriba.png": {
+    "mtime": 1784083897.6841955,
+    "ast_hash": "2d0abe673c5d9f6145e3271b1972a24f",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/27 - Camil cart.png": {
+    "mtime": 1784083897.6914968,
+    "ast_hash": "f0423a48d993c31455fe8fc1ec032dfb",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/27 - Camil.png": {
+    "mtime": 1784083897.6980567,
+    "ast_hash": "fef8e50ecd36e71fc60cb31e3f3d51b2",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/28 Bruna 4.png": {
+    "mtime": 1784083897.7047906,
+    "ast_hash": "6fee953e7d2de12600effb7fa5985ffa",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/28 Bruna Arriba.png": {
+    "mtime": 1784083897.7124984,
+    "ast_hash": "fe602af8d99b8c9ce0e96c635f298a02",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/28 Bruna cart.png": {
+    "mtime": 1784083897.7197049,
+    "ast_hash": "a55c6e34aa521d4a2a7af3e18a874e01",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/28 Bruna.png": {
+    "mtime": 1784083897.727543,
+    "ast_hash": "4cf35506ef5ad55987653e3c1feb9157",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/29 Zipper cart.png": {
+    "mtime": 1784083897.7417562,
+    "ast_hash": "1f4bf0b0e5f66875cdebf188b40abddb",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/29 zipper 2.png": {
+    "mtime": 1784083897.735193,
+    "ast_hash": "b177eacc152b0d4933b1b8c826ceb4ff",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/29 zipper.png": {
+    "mtime": 1784083897.7488337,
+    "ast_hash": "e49ec74f2756bbebb663bf331220033d",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/30 Colmar cart.png": {
+    "mtime": 1784083897.7559538,
+    "ast_hash": "e3c5ce63f02a1115710c4cba988a9af0",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/30 colmar.png": {
+    "mtime": 1784083897.7625244,
+    "ast_hash": "d48f8d7d93444267515e8d4530330330",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/img/mujer/Mujer 15.png": {
+    "mtime": 1784083897.7700908,
+    "ast_hash": "0b04d95f0d75e2501ae596a1731d66ef",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/pagina de acceso.jpg": {
+    "mtime": 1725890491.3775826,
+    "ast_hash": "46fff9ebccba3df9bedb0a8f4f21b2d4",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/shoes-756616_1280.jpg": {
+    "mtime": 1725890491.3790839,
+    "ast_hash": "7069562c7d03ad9524c62a442b672a53",
+    "semantic_hash": ""
+  },
+  "frontend/public/resources/woman-2179062_1920.jpg": {
+    "mtime": 1725890491.389655,
+    "ast_hash": "d7af8751cc803d1f84e3ed8dee95813c",
+    "semantic_hash": ""
+  },
+  "frontend/public/vercel.svg": {
+    "mtime": 1779842741.4980311,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "frontend/public/window.svg": {
+    "mtime": 1779842741.502161,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "resources/IaDama.jpeg": {
+    "mtime": 1725890491.352576,
+    "ast_hash": "2ff8ec6d11c187a6e09d94ff56006696",
+    "semantic_hash": ""
+  },
+  "resources/Men.jpg": {
+    "mtime": 1725890491.3814478,
+    "ast_hash": "51c4bb59db6ebc7c988d7cd551b48bdb",
+    "semantic_hash": ""
+  },
+  "resources/business-2049312_1280.jpg": {
+    "mtime": 1725890491.353577,
+    "ast_hash": "7327099e280ce98e1854c699e215cc67",
+    "semantic_hash": ""
+  },
+  "resources/fashion-1284496_1280.jpg": {
+    "mtime": 1725890491.355179,
+    "ast_hash": "740c66fedbeec9e572252fbe3e1b00ad",
+    "semantic_hash": ""
+  },
+  "resources/footwear-1838767_1920.jpg": {
+    "mtime": 1725890491.3697574,
+    "ast_hash": "a82bd4bb81caf0399b88611f583021c3",
+    "semantic_hash": ""
+  },
+  "resources/hombremoca.jpg": {
+    "mtime": 1725890491.371594,
+    "ast_hash": "a592f8a1b9ff08593b088e2e8f9ff0de",
+    "semantic_hash": ""
+  },
+  "resources/iaHombre.jpeg": {
+    "mtime": 1725890491.3735797,
+    "ast_hash": "56fa8e0a55703897d50aae0c79e48a71",
+    "semantic_hash": ""
+  },
+  "resources/iadama2.jpeg": {
+    "mtime": 1725890491.3745806,
+    "ast_hash": "1d9b7668637e9882d22045b4fbf14e09",
+    "semantic_hash": ""
+  },
+  "resources/iahombrefondo.jpeg": {
+    "mtime": 1725890491.375581,
+    "ast_hash": "fe0c99d57b43dc8104d75fa1fcf63752",
+    "semantic_hash": ""
+  },
+  "resources/img/1 - Zueco Chicago 1.png": {
+    "mtime": 1782334925.6985478,
+    "ast_hash": "7db9b85527ff358f3011dcd0ad8838a3",
+    "semantic_hash": ""
+  },
+  "resources/img/1 - Zueco Chicago 2.png": {
+    "mtime": 1782336031.4391444,
+    "ast_hash": "e47a1608de545d950c09d9cdea5eab40",
+    "semantic_hash": ""
+  },
+  "resources/img/1 - Zueco Chicago cart.png": {
+    "mtime": 1782333068.5683844,
+    "ast_hash": "25e4d3368c4633f8d2df6e8b58478960",
+    "semantic_hash": ""
+  },
+  "resources/img/10 - Zapato Palermo 1.png": {
+    "mtime": 1782334453.8424108,
+    "ast_hash": "69dc58dd26b207d3d2144ca16cc909d3",
+    "semantic_hash": ""
+  },
+  "resources/img/11 - Zapato Paris 1.png": {
+    "mtime": 1782330582.3729367,
+    "ast_hash": "f7f9d247de3b5adf71188dc89a642e42",
+    "semantic_hash": ""
+  },
+  "resources/img/11 - Zapato Paris 2.png": {
+    "mtime": 1782333464.4630985,
+    "ast_hash": "ba2cc7712a240744e56741357b127c03",
+    "semantic_hash": ""
+  },
+  "resources/img/12 - Bota Yale 1.png": {
+    "mtime": 1782334533.9718215,
+    "ast_hash": "91e75f6bb9798ce7c7c0054601abc08d",
+    "semantic_hash": ""
+  },
+  "resources/img/13 - Zapatilla Kripton 1.png": {
+    "mtime": 1782334663.8396585,
+    "ast_hash": "89f1f28d9693cfe408ceeacff7636e20",
+    "semantic_hash": ""
+  },
+  "resources/img/14 - Zapatilla Neon 1.png": {
+    "mtime": 1782334752.1863914,
+    "ast_hash": "528b82e5862cc778e6d4a9734646cdba",
+    "semantic_hash": ""
+  },
+  "resources/img/15 - Zapatilla Zamario 1.png": {
+    "mtime": 1782334837.6374912,
+    "ast_hash": "a9c9b712b52dbd010b78c7a74c6144d8",
+    "semantic_hash": ""
+  },
+  "resources/img/2 - Zapatilla Tempo 1.png": {
+    "mtime": 1782335240.8006933,
+    "ast_hash": "f1578d9914b79a0066b9530ba1a01c10",
+    "semantic_hash": ""
+  },
+  "resources/img/2 - Zapatilla Tempo 2.png": {
+    "mtime": 1782336141.436524,
+    "ast_hash": "3c3455a6d68ca7d4d61ec7fcdce9a75a",
+    "semantic_hash": ""
+  },
+  "resources/img/2 - Zapatilla Tempo cart.png": {
+    "mtime": 1782333118.1624599,
+    "ast_hash": "62cf88e64877192991277f68538ff6fe",
+    "semantic_hash": ""
+  },
+  "resources/img/3 - Zapato Doha Acordonado 1.png": {
+    "mtime": 1782335328.7142177,
+    "ast_hash": "bd3d8d14a826973fa0e666695fc16748",
+    "semantic_hash": ""
+  },
+  "resources/img/3 - Zapato Doha Acordonado 2.png": {
+    "mtime": 1782336254.839204,
+    "ast_hash": "9640ba8969bdd15172ea13a76ee25550",
+    "semantic_hash": ""
+  },
+  "resources/img/3 - Zapato Doha Acordonado cart.png": {
+    "mtime": 1782333671.7022116,
+    "ast_hash": "a4aa3f9d6ea4df92afba836275908b64",
+    "semantic_hash": ""
+  },
+  "resources/img/4 - Mocasin Doha 1.png": {
+    "mtime": 1782335418.276083,
+    "ast_hash": "cb2b06e1800e202ddabaca416cab690e",
+    "semantic_hash": ""
+  },
+  "resources/img/4 - Mocasin Doha cart.png": {
+    "mtime": 1782333248.80036,
+    "ast_hash": "d825a87a5994605d048681749a63b4bc",
+    "semantic_hash": ""
+  },
+  "resources/img/5 - Bota Dust 1.png": {
+    "mtime": 1782333749.889935,
+    "ast_hash": "190d95a7a0da5be49f5383f98b5de4b2",
+    "semantic_hash": ""
+  },
+  "resources/img/6 - Bota Murat 1.png": {
+    "mtime": 1782333933.5481253,
+    "ast_hash": "a8480ab95e8b12e363376150bed1bfed",
+    "semantic_hash": ""
+  },
+  "resources/img/7 - Mocasin Wales 1.png": {
+    "mtime": 1782334060.1093526,
+    "ast_hash": "8860f9ded127f9a7200ea0cfa8d415da",
+    "semantic_hash": ""
+  },
+  "resources/img/8 - Zapato Alamo 1.png": {
+    "mtime": 1782334118.6047168,
+    "ast_hash": "1b00af8dc0f35685ae217d67dc144fb5",
+    "semantic_hash": ""
+  },
+  "resources/img/9 - Zapato Pamplona 1.png": {
+    "mtime": 1782334334.2153056,
+    "ast_hash": "d73cbed00e637e86c8da350f03a8ac5a",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/16 - Bota Ziggy arriba.png": {
+    "mtime": 1784078645.2805524,
+    "ast_hash": "b4c70350d4efb0adfa358631397a8aea",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/16 - Bota Ziggy cuarta.png": {
+    "mtime": 1784078870.669595,
+    "ast_hash": "b25381f38acefd0a978ee055707a864a",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/16 - Bota Ziggy.png": {
+    "mtime": 1784078567.70889,
+    "ast_hash": "75fe2a14af6715350b7eb406d33bdb61",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/16- Bota Ziggy lateral.png": {
+    "mtime": 1784078780.0053446,
+    "ast_hash": "cc04836875a0c1220552dcc81858a39e",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/17 - Bota Ride  2.png": {
+    "mtime": 1784078967.7837093,
+    "ast_hash": "c5a45bd6444d960849e018b76635dd34",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/17 - Bota Ride 1.png": {
+    "mtime": 1784078948.2032816,
+    "ast_hash": "d794a26e21220e911d6719fa2c630c34",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/17 - Bota Ride Arriba.png": {
+    "mtime": 1784079147.2237945,
+    "ast_hash": "880b3e8b03a75484a86c5bb52a1c7310",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/17- Bota Ride  3.png": {
+    "mtime": 1784079024.5935166,
+    "ast_hash": "261b3bae27fa33d7079ff9da39d03706",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/18 - Bota Jefrey 1.png": {
+    "mtime": 1784079443.6290095,
+    "ast_hash": "61a8c8b9f2522c4f6bcb382d2e603df8",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/18 - Bota Jefrey 4.png": {
+    "mtime": 1784079373.3053093,
+    "ast_hash": "1c8c0371dff8239ee7ebe8379dfe2442",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/18 - Bota Jefry 2.png": {
+    "mtime": 1784079301.330179,
+    "ast_hash": "ce46e9e7f62a3127d2952828d55d697c",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/18 - Bota Jefry cart.png": {
+    "mtime": 1784079230.4584093,
+    "ast_hash": "8db0c9d063170e35d1a4fbdb3cc39685",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/19 - Mocasin Talbot 1.png": {
+    "mtime": 1784079500.5643368,
+    "ast_hash": "d947256048031f6b86ddd5dff7c31be3",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/19 - Mocasin Talbot 2.png": {
+    "mtime": 1784079548.7289283,
+    "ast_hash": "e489db36cb21295498b2d4f63dbb9b98",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/19 - Mocasin Talbot 3.png": {
+    "mtime": 1784079601.414924,
+    "ast_hash": "6a4823364dc544ede8f42e5b7ff32e13",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/19 - Mocasin Talbot 4.png": {
+    "mtime": 1784079659.5438926,
+    "ast_hash": "8db1f0e35db2ae495bceb40843cb869c",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/20 - Bota Nevil 2.png": {
+    "mtime": 1784079763.0011458,
+    "ast_hash": "90766cfbc21844bb34f14c969087c2b4",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/20 - Bota Nevil 3.png": {
+    "mtime": 1784079802.964758,
+    "ast_hash": "838da5e60116352f3156c364529482cb",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/20 - Bota Nevil cart.png": {
+    "mtime": 1784079825.4238286,
+    "ast_hash": "4e5a0f614e29e562b98d982bae3a230c",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/20 - Botal Nevil 1.png": {
+    "mtime": 1784079717.0444825,
+    "ast_hash": "fb1b248c3f6ac29d28c27f922f4f8f40",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/21 - Zapato Ara 3.png": {
+    "mtime": 1784080106.4993584,
+    "ast_hash": "a1d4ae6982f56f76ebf2346c2f970363",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/21 Zaparto Ara 1.png": {
+    "mtime": 1784080027.1757476,
+    "ast_hash": "ec38f30196bdfa6e527348e45146f69e",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/21- Zapato ARA cart.png": {
+    "mtime": 1784079916.533439,
+    "ast_hash": "663d6b3a5d7bf922af683ea4ede2c5d1",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/22 - Zapato Burma 2.png": {
+    "mtime": 1784080251.307311,
+    "ast_hash": "a5b2feac2d945b5ec2552a3ff3c72834",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/22 - Zapato Burma Cart.png": {
+    "mtime": 1784080192.8309872,
+    "ast_hash": "f96f7af1a093a8d70b867b3d42fb88c6",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/22 Zapato Burma 3.png": {
+    "mtime": 1784080313.9627497,
+    "ast_hash": "8b5cbb4f6344618511a69caeb8abaae9",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/22 Zapato Burma Arriba.png": {
+    "mtime": 1784080333.1870873,
+    "ast_hash": "b847b14c4041ac50f6790244fd8acddb",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/23 - Mocasin Sandro arriba.png": {
+    "mtime": 1784080570.3427975,
+    "ast_hash": "5f4f61171621e043b29cb4272f79c5d5",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/23 - Mocasin sandro 2.png": {
+    "mtime": 1784080466.482638,
+    "ast_hash": "d2b5a85d8ee85b1bf0a2f5ad072b207a",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/23 - Mocasin sandro.png": {
+    "mtime": 1784080521.8308792,
+    "ast_hash": "6b02c729b96f3eb5037af24c4895b577",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/23- Mocasin sandro cart.png": {
+    "mtime": 1784080391.4885707,
+    "ast_hash": "7de327da024c1e2832014361c4b162d5",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/24 Bota Casia 2.png": {
+    "mtime": 1784080668.216812,
+    "ast_hash": "25414d44c427ee6aca19037a58376211",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/24 Bota Casia cart.png": {
+    "mtime": 1784080621.3760557,
+    "ast_hash": "90d4bdf860fbd7b5d60259e583763858",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/24 Casia arriba.png": {
+    "mtime": 1784080733.5025556,
+    "ast_hash": "507b82a69cecf25e9848aa771e1311b3",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/25 Lujan cart.png": {
+    "mtime": 1784080774.0280058,
+    "ast_hash": "e54d70f893d98631d96eebe65cbc19d9",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/25 Lujan.png": {
+    "mtime": 1784080822.497319,
+    "ast_hash": "542cf7b499e0e831956e57fba218eef5",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/25 lujan 2.png": {
+    "mtime": 1784080866.0315561,
+    "ast_hash": "f32c4363fccae81a11bbbe4c6eaaabaa",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/25 lujan arriba.png": {
+    "mtime": 1784080900.2033446,
+    "ast_hash": "5e5b056e97ca15e66c776eed5bf8a544",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/26 Cardif 1.png": {
+    "mtime": 1784081002.929363,
+    "ast_hash": "e1bc78059759daf82d66c02626f9eb32",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/26 Cardif Arriba.png": {
+    "mtime": 1784081041.83688,
+    "ast_hash": "b89fb8b145279d96e9ca467c8c1bfa71",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/26 Cardif cart.png": {
+    "mtime": 1784080942.2729452,
+    "ast_hash": "644657679920d2bd3fef9bf7ac32d5c6",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/26 Cardif.png": {
+    "mtime": 1784081089.3486083,
+    "ast_hash": "02ce2f1ce7ee43f21d0a7053afb4465b",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/27 - Camil arriba.png": {
+    "mtime": 1784081448.4422662,
+    "ast_hash": "2d0abe673c5d9f6145e3271b1972a24f",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/27 - Camil cart.png": {
+    "mtime": 1784081258.2898726,
+    "ast_hash": "f0423a48d993c31455fe8fc1ec032dfb",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/27 - Camil.png": {
+    "mtime": 1784081322.9401994,
+    "ast_hash": "fef8e50ecd36e71fc60cb31e3f3d51b2",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/28 Bruna 4.png": {
+    "mtime": 1784082090.6858,
+    "ast_hash": "6fee953e7d2de12600effb7fa5985ffa",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/28 Bruna Arriba.png": {
+    "mtime": 1784082049.2763126,
+    "ast_hash": "fe602af8d99b8c9ce0e96c635f298a02",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/28 Bruna cart.png": {
+    "mtime": 1784081961.5354044,
+    "ast_hash": "a55c6e34aa521d4a2a7af3e18a874e01",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/28 Bruna.png": {
+    "mtime": 1784082008.0576544,
+    "ast_hash": "4cf35506ef5ad55987653e3c1feb9157",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/29 Zipper cart.png": {
+    "mtime": 1784082250.9278784,
+    "ast_hash": "1f4bf0b0e5f66875cdebf188b40abddb",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/29 zipper 2.png": {
+    "mtime": 1784082451.257929,
+    "ast_hash": "b177eacc152b0d4933b1b8c826ceb4ff",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/29 zipper.png": {
+    "mtime": 1784082320.7405589,
+    "ast_hash": "e49ec74f2756bbebb663bf331220033d",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/30 Colmar cart.png": {
+    "mtime": 1784082570.705382,
+    "ast_hash": "e3c5ce63f02a1115710c4cba988a9af0",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/30 colmar.png": {
+    "mtime": 1784082685.939479,
+    "ast_hash": "d48f8d7d93444267515e8d4530330330",
+    "semantic_hash": ""
+  },
+  "resources/img/mujer/Mujer 15.png": {
+    "mtime": 1782940822.8830595,
+    "ast_hash": "0b04d95f0d75e2501ae596a1731d66ef",
+    "semantic_hash": ""
+  },
+  "resources/pagina de acceso.jpg": {
+    "mtime": 1725890491.3775826,
+    "ast_hash": "46fff9ebccba3df9bedb0a8f4f21b2d4",
+    "semantic_hash": ""
+  },
+  "resources/shoes-756616_1280.jpg": {
+    "mtime": 1725890491.3790839,
+    "ast_hash": "7069562c7d03ad9524c62a442b672a53",
+    "semantic_hash": ""
+  },
+  "resources/woman-2179062_1920.jpg": {
+    "mtime": 1725890491.389655,
+    "ast_hash": "d7af8751cc803d1f84e3ed8dee95813c",
+    "semantic_hash": ""
+  },
+  "resources/shoes_-_11284 (720p) (1).mp4": {
+    "mtime": 1725890491.388344,
+    "ast_hash": "7da5f89124708b5dc54b2873ee54bc41",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1784090088.869918,
+    "ast_hash": "f234d62d03c34ea8ee2d6f54cc222300",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.fulfillment.ts": {
+    "mtime": 1784177456.5034847,
+    "ast_hash": "50d2fe9e3e23e2008ad8ee7987208868",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.mercadopago.ts": {
+    "mtime": 1784177493.0194209,
+    "ast_hash": "3a2251e62c947c62f8ceebb829294499",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.paypal.ts": {
+    "mtime": 1784177464.5506577,
+    "ast_hash": "3a90bbda6cc6d3145f915b09a21bfcdb",
+    "semantic_hash": ""
+  },
+  "src/services/order/order.repository.ts": {
+    "mtime": 1784177450.0517924,
+    "ast_hash": "33fe1e892ef36d4ac4fafb60fcb2c922",
+    "semantic_hash": ""
+  }
+}
