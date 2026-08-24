@@ -2,93 +2,41 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Commands
+## Repo layout
 
-```bash
-npm run dev          # Start with ts-node-dev (hot reload)
-npm run build        # Compile TypeScript → dist/
-npm run start        # Run compiled output (production)
-npm run typecheck    # Type-check without emitting
-npm run test         # Vitest unit tests (run once)
-npm run test:watch   # Vitest in watch mode
+This is a two-project repo, each with its own `CLAUDE.md` — read the relevant one when working
+inside it:
 
-npm run seed         # Populate Firestore with sample shoes
-npm run seed:admin   # Create admin user in Firestore
-
-# Payment provider diagnostics (hit real sandbox APIs)
-npm run check:paypal
-npm run check:mercadopago
-npm run check:mercadopago:payment
-```
-
-`npm run verify` runs `typecheck` + `test` + all three check scripts.
-
-### Testing
-
-Vitest unit tests live next to the code as `*.test.ts`. Firestore is never hit for real — `src/test-utils/fakeFirestore.ts` is an in-memory stand-in for the collection/doc/transaction surface the services use, mocked in place of `src/config/firebase.ts` via `vi.mock`. Cross-service dependencies (e.g. `order.paypal.ts` calling `paypalService`) are mocked at the module boundary with `vi.hoisted` + `vi.mock`. Coverage today: `order/*`, `cart.service`, `shoe.service` (the payment/stock-critical path). Controllers, `paypal.service`/`mercadopago.service` themselves, and `email.service` are not yet covered — the sandbox `check:*` scripts are the closest thing to integration coverage for the payment SDKs.
-
-## Architecture
-
-Express 5 + TypeScript backend for Zapatería Genaro (shoe e-commerce). Deployed on Render. The frontend (Next.js/Vercel) is a separate repo.
-
-**Request flow:** `src/index.ts` → routes → controllers → services → Firestore
-
-The `/webhooks` route is mounted **before** `express.json()` so it receives the raw body in `req.rawBody` (needed for PayPal and Mercado Pago signature verification). All other routes go through `/api`.
-
-### Layers
-
-| Layer | Path | Role |
+| Path | What | Docs |
 |---|---|---|
-| Config | `src/config/` | `env.ts` validates required env vars at startup; `firebase.ts` initializes Admin SDK (prefers local JSON file, falls back to env vars for Render); `paypal.ts` / `mercadopago.ts` expose singleton clients |
-| Models | `src/models/` | TypeScript interfaces only — no ORM, documents are written directly to Firestore |
-| Routes | `src/routes/` | `index.ts` mounts `/shoes`, `/carts`, `/checkout`; `webhook.routes.ts` handles `/webhooks/paypal` and `/webhooks/mercadopago` |
-| Controllers | `src/controllers/` | Thin HTTP layer — validate request shape, delegate to a service, forward errors via `next(err)` |
-| Services | `src/services/` | All business logic and external API calls |
+| `functions/` | Backend — Express + TypeScript, deployed as a Vercel Node.js backend (own Vercel project, `zapateria-genaro-api`) | `functions/CLAUDE.md` |
+| `frontend/` | Frontend — Next.js 16 (React 19, Tailwind v4), deployed on Vercel (`genio26` project → genarozapateria.vercel.app) | `frontend/CLAUDE.md` |
 
-### Firestore collections
+Root-level `package.json` only has passthrough scripts (`npm run dev`, `npm run test`, etc.)
+that delegate to `functions/` via `npm --prefix functions run ...`, so the usual commands still
+work from the repo root.
 
-`shoes` · `carts` · `orders` — collection names are constants in `src/config/firebase.ts`.
+## Deployment
 
-### Payment flows
+- **Backend**: `vercel deploy --prod` from `functions/`. Separate Vercel project
+  (`zapateria-genaro-api`), same account as the frontend, own domain
+  (`zapateria-genaro-api.vercel.app`).
+- **Frontend**: Vercel (`genio26` project), auto-deploys from git.
 
-**PayPal** (redirect): `POST /api/checkout/orders` → create PayPal order → return `approveUrl` → buyer redirected back → `POST /api/checkout/orders/:orderId/capture`.
-
-**Mercado Pago** (two paths):
-1. *Checkout Bricks (seamless)*: `POST /api/checkout/mercadopago` → create preference → frontend renders Brick → `POST /api/checkout/mercadopago/process` with form data.
-2. *Redirect flow*: same preference creation → buyer redirected to MP → returns to `back_url` → frontend calls `POST /api/checkout/mercadopago/confirm` with `paymentId`.
-
-Both paths call the same `orderService.applyMercadoPagoPayment()`, which is idempotent — stock is decremented only once on the `CREATED → COMPLETED` transition.
-
-### Stock reservation model
-
-Mercado Pago orders reserve stock (`ShoeStockVariant.reserved`) at order creation to prevent overselling during in-flight payments. Available stock = `stock − reserved`. On COMPLETED, `decrementStock()` reduces `stock` and clears the reservation. On FAILED/REFUNDED, `releaseReservation()` frees the hold.
-
-PayPal does not reserve stock — stock is decremented only on successful capture.
-
-### Environment variables
-
-```
-PORT / NODE_ENV / FRONTEND_URL
-FIREBASE_PROJECT_ID / FIREBASE_CLIENT_EMAIL / FIREBASE_PRIVATE_KEY
-PAYPAL_CLIENT_ID / PAYPAL_CLIENT_SECRET / PAYPAL_WEBHOOK_ID / PAYPAL_MODE / PAYPAL_ARS_PER_USD
-MERCADOPAGO_ACCESS_TOKEN / MERCADOPAGO_PUBLIC_KEY / MERCADOPAGO_WEBHOOK_SECRET
-RESEND_API_KEY / RESEND_FROM_EMAIL / RESEND_ADMIN_EMAIL
-SENTRY_DSN
-CORS_ORIGINS   # optional, comma-separated. Defaults to [FRONTEND_URL]
-```
-
-`FIREBASE_SERVICE_ACCOUNT_FILE` is optional — defaults to the local `sun-66f-firebase-adminsdk-*.json` file when present (dev), otherwise reads the three FIREBASE_* vars (Render).
-
-`MERCADOPAGO_ACCESS_TOKEN` being empty disables all MP endpoints (returns 503). MP webhook signature verification is skipped when `MERCADOPAGO_WEBHOOK_SECRET` is empty (dev only).
-
-PayPal does not natively support ARS; `PAYPAL_ARS_PER_USD` controls the conversion rate when currency is unsupported.
+Backend used to run on Render (free tier); migrated to Vercel in 2026-08 to eliminate the
+free-tier cold start (30-50s spin-down → ~1s), which was surfacing to users as "Failed to
+fetch" errors on first interaction (e.g. add-to-cart) after idle periods. A Firebase Cloud
+Functions migration was attempted first but abandoned — Firebase requires the paid Blaze plan
+for any Cloud Function at all, which wasn't acceptable, so the backend moved to Vercel's
+Hobby plan instead (no billing method required). Firestore is still the database — only the
+compute/hosting layer changed.
 
 ## graphify
 
-This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+This project has a knowledge graph at `graphify-out/` with god nodes, community structure, and cross-file relationships.
 
 Rules:
-- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
-- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
-- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- For codebase questions, first run `graphify query "<question>"` when `graphify-out/graph.json` exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- If `graphify-out/wiki/index.md` exists, use it for broad navigation instead of raw source browsing.
+- Read `graphify-out/GRAPH_REPORT.md` only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

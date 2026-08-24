@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { firestore, collections } from '../config/firebase';
 import {
   Shoe,
@@ -11,7 +11,7 @@ const shoesCollection = () => firestore.collection(collections.shoes);
 
 export const shoeService = {
   async create(input: ShoeCreateInput): Promise<Shoe> {
-    const id = uuidv4();
+    const id = randomUUID();
     const now = new Date().toISOString();
     const shoe: Shoe = {
       id,

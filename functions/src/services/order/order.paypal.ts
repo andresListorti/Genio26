@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { Order, OrderStatus } from '../../models/order.model';
 import { cartService } from '../cart.service';
 import { paypalService } from '../paypal.service';
@@ -16,7 +16,7 @@ export const paypalOrders = {
 
     const paypalOrder = await paypalService.createOrder(cart);
 
-    const id = uuidv4();
+    const id = randomUUID();
     const now = new Date().toISOString();
     const order: Order = {
       id,

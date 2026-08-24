@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { env } from '../../config/env';
 import { Order, OrderStatus } from '../../models/order.model';
 import { cartService } from '../cart.service';
@@ -66,7 +66,7 @@ export const mercadoPagoOrders = {
       );
     }
 
-    const id = uuidv4();
+    const id = randomUUID();
     const now = new Date().toISOString();
     const order: Order = {
       id,

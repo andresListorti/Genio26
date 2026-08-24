@@ -32,10 +32,13 @@ export const env = {
     ? process.env.CORS_ORIGINS.split(',').map((o) => o.trim())
     : [frontendUrl],
 
+  // Optional — only needed for local dev without the service account file, or
+  // for hosts outside the sun-66f GCP project. Deployed Cloud Functions get
+  // credentials for the project automatically (see config/firebase.ts).
   firebase: {
-    projectId: required('FIREBASE_PROJECT_ID'),
-    clientEmail: required('FIREBASE_CLIENT_EMAIL'),
-    privateKey: required('FIREBASE_PRIVATE_KEY').replace(/\\n/g, '\n'),
+    projectId: process.env.FIREBASE_PROJECT_ID ?? '',
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL ?? '',
+    privateKey: (process.env.FIREBASE_PRIVATE_KEY ?? '').replace(/\\n/g, '\n'),
     serviceAccountFile:
       process.env.FIREBASE_SERVICE_ACCOUNT_FILE ??
       'sun-66f-firebase-adminsdk-fbsvc-ef0b5a5ff9.json',

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { firestore, collections } from '../config/firebase';
 import { Cart, CartItem, AddCartItemInput } from '../models/cart.model';
 import { shoeService } from './shoe.service';
@@ -15,7 +15,7 @@ function recalcSubtotal(items: CartItem[]): number {
 
 export const cartService = {
   async create(userId?: string): Promise<Cart> {
-    const id = uuidv4();
+    const id = randomUUID();
     const now = new Date().toISOString();
     const cart: Cart = {
       id,

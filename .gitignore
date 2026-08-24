@@ -4,3 +4,5 @@ dist/
 *.log
 *-firebase-adminsdk-*.json
 .DS_Store
+resources/novedades/*.env
+resources/novedades/*.token

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { env, isMercadoPagoConfigured } from '../config/env';
 import { mercadoPagoService } from '../services/mercadopago.service';
 import { Order } from '../models/order.model';
@@ -106,7 +106,7 @@ async function main() {
   // 2. Run the real payment through the same service the /process endpoint uses.
   const now = new Date().toISOString();
   const order: Order = {
-    id: `smoke-${uuidv4()}`,
+    id: `smoke-${randomUUID()}`,
     cartId: 'smoke-cart',
     items: [],
     subtotal: 100,

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { getMercadoPago } from '../config/mercadopago';
 import { env } from '../config/env';
 import { Cart } from '../models/cart.model';
@@ -112,7 +112,7 @@ export const mercadoPagoService = {
           identification: formData.payer?.identification,
         },
       },
-      requestOptions: { idempotencyKey: `${order.id}-${uuidv4()}` },
+      requestOptions: { idempotencyKey: `${order.id}-${randomUUID()}` },
     });
 
     return {

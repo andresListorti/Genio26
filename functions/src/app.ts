@@ -12,10 +12,15 @@ import {
   notFoundHandler,
 } from './middlewares/error.middleware';
 
-const app = express();
+export const app = express();
+// Recognized entrypoint filename for Vercel's zero-config Node backend
+// detection (searches app/index/server/main under src/) — this default
+// export is what Vercel deploys as the function.
+export default app;
 
-// Render (and most PaaS) sit behind a single reverse proxy hop — trust it so
-// express-rate-limit and req.ip see the real client IP instead of the proxy's.
+// Render (and most PaaS/Cloud Run) sit behind a single reverse proxy hop —
+// trust it so express-rate-limit and req.ip see the real client IP instead
+// of the proxy's.
 app.set('trust proxy', 1);
 
 app.use(helmet());
@@ -37,15 +42,7 @@ const apiRateLimit = rateLimit({
   message: { error: 'Too many requests, please try again later.' },
 });
 
-app.use(
-  '/webhooks',
-  express.json({
-    verify: (req: any, _res, buf) => {
-      req.rawBody = buf.toString('utf8');
-    },
-  }),
-  webhookRoutes,
-);
+app.use('/webhooks', express.json(), webhookRoutes);
 
 app.use(express.json());
 
@@ -62,9 +59,3 @@ app.use('/api', apiRateLimit, apiRoutes);
 app.use(notFoundHandler);
 Sentry.setupExpressErrorHandler(app);
 app.use(errorHandler);
-
-app.listen(env.port, () => {
-  console.log(
-    `Zapateria Genaro API listening on http://localhost:${env.port} (${env.nodeEnv})`,
-  );
-});

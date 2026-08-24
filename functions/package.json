@@ -1,0 +1,53 @@
+{
+  "name": "zapateria-genaro-api",
+  "version": "1.0.0",
+  "description": "Shoe e-commerce API (Zapateria Genaro) — Express + Firebase + PayPal",
+  "main": "dist/server.js",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "seed": "ts-node-dev --transpile-only src/scripts/seed.ts",
+    "seed:admin": "ts-node-dev --transpile-only src/scripts/seed-admin.ts",
+    "check:paypal": "ts-node-dev --transpile-only src/scripts/check-paypal.ts",
+    "check:mercadopago": "ts-node-dev --transpile-only src/scripts/check-mercadopago.ts",
+    "check:mercadopago:payment": "ts-node-dev --transpile-only src/scripts/check-mercadopago-payment.ts",
+    "verify": "npm run typecheck && npm run test && npm run check:paypal && npm run check:mercadopago && npm run check:mercadopago:payment",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "ecommerce",
+    "shoes",
+    "express",
+    "firebase",
+    "paypal"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@sentry/node": "^10.65.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "firebase-admin": "^13.10.0",
+    "helmet": "^8.3.0",
+    "mercadopago": "^3.0.0",
+    "resend": "^6.12.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.1",
+    "@types/paypal__checkout-server-sdk": "^1.0.8",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}
