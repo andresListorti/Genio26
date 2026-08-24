@@ -34,10 +34,8 @@ pago real corren contra el backend nuevo en Vercel.
 
 ## Sobre Render
 
-Dejalo prendido unos días como red de contención por si aparece algo raro. Recién cuando hayas
-actualizado los dos webhooks de arriba y confirmes que todo anda bien en producción real (no
-solo en las pruebas sandbox que hice yo), andá a Render Dashboard → tu servicio → **Suspend**
-(no borrar, por si hay que volver atrás rápido).
+**Suspendido** (Settings → Suspend Web Service). Nada borrado — env vars, código y logs siguen
+ahí por si alguna vez hace falta volver atrás con "Resume".
 
 ## Nota de seguridad
 
