@@ -67,6 +67,15 @@ NEXT_PUBLIC_FIREBASE_*        # Firebase client config keys
 NEXT_PUBLIC_SENTRY_DSN        # Sentry error tracking — leave empty to disable
 ```
 
+### Security headers
+
+`vercel.json` sets the security headers. The CSP is split: `frame-ancestors`, `object-src` and
+`base-uri` are enforced; the full allowlist (Mercado Pago SDK/Bricks, Firebase Auth / Google
+sign-in, Sentry, backend API) is `Content-Security-Policy-Report-Only`. Before launch, open the
+site with checkout enabled, go through login + a test payment, check the console for CSP
+reports, then rename the header to `Content-Security-Policy`. Payment calls send the Firebase ID
+token (`authHeaders()` in `lib/api.ts`).
+
 ### Styling
 
 Tailwind CSS v4 via `@tailwindcss/postcss`. Fonts: `--font-inter` (body) and `--font-playfair` (display/headings), both loaded via `next/font/google` in the root layout. Allowed image domains: `images.unsplash.com`, `lh3.googleusercontent.com`.

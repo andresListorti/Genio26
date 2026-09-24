@@ -119,6 +119,29 @@ renewed production credentials are kept in the repo-root `.secrets/` folder for 
 browser-sent `transaction_amount`), and `applyMercadoPagoPayment` refuses to fulfill an approved
 payment that charged less than the order total (`FAILED` / `amount_mismatch`).
 
+**Who may pay.** `POST /api/checkout/mercadopago` and `/mercadopago/process` require a Firebase
+ID token (`requireUser`); the buyer is taken from the token and a user can only pay their own
+order. Public order responses (`GET /orders/:id`, `/confirm`, `/process`) go through
+`toPublicOrder()` — id, status, subtotal, currency only, never email/address/phone.
+
+**Stock reservations expire.** An unpaid MP order holds stock for `RESERVATION_TTL_MS` (30 min).
+`expireStaleMercadoPagoOrders()` runs lazily before each new checkout (releases the stock, marks
+the order `FAILED` / `expired`); the MP preference expires at the same moment, and only a fresh
+`CREATED` order can be charged (otherwise 409 via `HttpError`).
+
+**Firewall.** A Vercel WAF rule on this project limits `POST /api/checkout/mercadopago*` to 10 per
+minute per IP (managed in the Vercel dashboard → Firewall, not in code). The in-app
+`express-rate-limit` is per serverless instance, so treat it as a soft extra layer only.
+
+**Deploy hygiene.** `vercel deploy` does not read `.gitignore` — `functions/.vercelignore` keeps
+`.env*` and key files out of the upload. Keep `firebase-admin` on v13: v14 pulls ESM-only `jose`,
+which crashes under Vercel's Sentry require hook (ERR_REQUIRE_ESM). `config/firebase.ts` already
+uses the modular API, so the eventual upgrade only needs that crash solved.
+
+**Firestore rules** live in the repo root (`firestore.rules`, deploy with
+`firebase deploy --only firestore:rules`). The Admin SDK bypasses them; they only govern the
+browser (admin panel, profile, auth).
+
 **Secrets.** Real values live only in Vercel env vars and in the gitignored repo-root `.secrets/`
 folder (Firebase Admin JSON used by local dev via the default `serviceAccountFile` path, plus
 `*.env` files). Never inside `functions/` (the folder uploaded on deploy) and never in chat.
