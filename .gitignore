@@ -1,8 +1,19 @@
 node_modules/
 dist/
-.env
 *.log
-*-firebase-adminsdk-*.json
 .DS_Store
-resources/novedades/*.env
-resources/novedades/*.token
+
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*-firebase-adminsdk-*.json
+*service-account*.json
+*.token
+*.pem
+*.key
+.secrets/
+.vercel
+
+# Scratch screenshots
+resources/novedades/
