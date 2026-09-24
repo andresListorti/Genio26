@@ -205,13 +205,13 @@
     "semantic_hash": ""
   },
   "frontend/vercel.json": {
-    "mtime": 1780600630.849156,
-    "ast_hash": "3816a300f195d721bdde20bf3cd81718",
+    "mtime": 1790268428.6686325,
+    "ast_hash": "2fe5e7367d7756dfcd57b07abb68f997",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1787589289.569723,
-    "ast_hash": "63d0ffbbb1989f2ea82fb065ed7f06c8",
+    "mtime": 1790268776.6926532,
+    "ast_hash": "285aa76c79658467563a098fd46cb761",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -225,13 +225,13 @@
     "semantic_hash": ""
   },
   "frontend/CLAUDE.md": {
-    "mtime": 1790266537.9475307,
-    "ast_hash": "3debe732bd71d82606b9d9cc5aaa14c1",
+    "mtime": 1790268457.7035286,
+    "ast_hash": "2ff9e35b74f0635a6954fbb838629d30",
     "semantic_hash": ""
   },
   "frontend/README.md": {
-    "mtime": 1779842741.455959,
-    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "mtime": 1790268776.718187,
+    "ast_hash": "2fdd536f0ed918da46adb51d05ff1bec",
     "semantic_hash": ""
   },
   "frontend/public/file.svg": {
@@ -1350,8 +1350,8 @@
     "semantic_hash": ""
   },
   "functions/src/scripts/seed-admin.ts": {
-    "mtime": 1784183746.0578623,
-    "ast_hash": "21708e77c3f90ccd5f24a652399672ee",
+    "mtime": 1790268615.9541492,
+    "ast_hash": "2fa82ec409055b101bee6e8e4fae7a30",
     "semantic_hash": ""
   },
   "functions/src/scripts/seed.ts": {
@@ -1465,8 +1465,8 @@
     "semantic_hash": ""
   },
   "functions/CLAUDE.md": {
-    "mtime": 1790266537.9475307,
-    "ast_hash": "ab7705676aa055dd78fd634664276563",
+    "mtime": 1790268457.7035286,
+    "ast_hash": "653b7de78b74b98b37ffd13687121450",
     "semantic_hash": ""
   },
   "functions/src/controllers/paypal-disabled.test.ts": {
@@ -1497,6 +1497,11 @@
   "functions/src/controllers/checkout-auth.test.ts": {
     "mtime": 1790267559.6557872,
     "ast_hash": "b7a5ea16a20af0930846f85048eab60d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790268765.6204426,
+    "ast_hash": "0e14b36b43f48b7cfddd04faab9ae260",
     "semantic_hash": ""
   }
 }

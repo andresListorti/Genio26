@@ -39,5 +39,13 @@
   "37": "page.tsx",
   "38": "Migración del backend: Render → Vercel",
   "39": "order.paypal.test.ts",
-  "40": "vitest.config.ts"
+  "40": "vitest.config.ts",
+  "41": "package.json",
+  "42": "eslint-config-next",
+  "43": "jsdom",
+  "44": "@testing-library/jest-dom",
+  "45": "@types/react",
+  "46": "@types/react-dom",
+  "47": "typescript",
+  "48": "vitest"
 }

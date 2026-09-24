@@ -1,9 +1,16 @@
 import { firebaseAdmin, firestore } from '../config/firebase';
 
-const ADMIN_EMAIL = 'admin@genaro.com';
-const ADMIN_PASSWORD = 'Tanito_1957';
+// Credentials come from the local environment (functions/.env or the shell),
+// never from source: this repo is public.
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? '';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? '';
 
 async function main() {
+  if (!ADMIN_EMAIL || ADMIN_PASSWORD.length < 12) {
+    throw new Error(
+      'Set ADMIN_EMAIL and ADMIN_PASSWORD (12+ chars) in functions/.env before running seed:admin.',
+    );
+  }
   console.log('[seed-admin] Starting...');
 
   let uid: string;
@@ -41,7 +48,7 @@ async function main() {
   );
 
   console.log('[seed-admin] Firestore profile set with role: admin.');
-  console.log(`[seed-admin] Done. Login: ${ADMIN_EMAIL} / ${ADMIN_PASSWORD}`);
+  console.log(`[seed-admin] Done. Admin login: ${ADMIN_EMAIL}`);
 }
 
 main()

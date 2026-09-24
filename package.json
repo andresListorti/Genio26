@@ -1,7 +1,7 @@
 {
   "name": "zapateria-genaro",
   "private": true,
-  "description": "Zapateria Genaro — repo root. Backend lives in functions/ (Firebase Cloud Functions).",
+  "description": "Zapatería Genaro — repo root. Backend in functions/ (Express on Vercel), storefront in frontend/ (Next.js on Vercel).",
   "scripts": {
     "dev": "npm --prefix functions run dev",
     "build": "npm --prefix functions run build",
@@ -15,7 +15,6 @@
     "check:paypal": "npm --prefix functions run check:paypal",
     "check:mercadopago": "npm --prefix functions run check:mercadopago",
     "check:mercadopago:payment": "npm --prefix functions run check:mercadopago:payment",
-    "serve": "npm --prefix functions run serve",
-    "deploy": "firebase deploy --only functions"
+    "deploy": "cd functions && vercel deploy --prod"
   }
 }
