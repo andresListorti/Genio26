@@ -2,7 +2,30 @@ import { Request, Response, NextFunction } from 'express';
 import { firebaseAdmin, firestore, collections } from '../config/firebase';
 
 export interface AuthedRequest extends Request {
-  user?: { uid: string; role: string };
+  user?: { uid: string; role: string; email?: string };
+}
+
+/**
+ * Verifies a Firebase ID token (Authorization: Bearer <token>) for any signed-in
+ * user. Rejects with 401 when the token is missing or invalid.
+ */
+export async function requireUser(
+  req: AuthedRequest,
+  res: Response,
+  next: NextFunction,
+) {
+  const header = req.headers.authorization ?? '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : '';
+  if (!token) {
+    return res.status(401).json({ error: 'Iniciá sesión para continuar.' });
+  }
+  try {
+    const decoded = await firebaseAdmin.auth().verifyIdToken(token);
+    req.user = { uid: decoded.uid, role: 'user', email: decoded.email };
+    next();
+  } catch {
+    return res.status(401).json({ error: 'Tu sesión venció. Volvé a iniciar sesión.' });
+  }
 }
 
 /**

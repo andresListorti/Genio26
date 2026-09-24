@@ -85,7 +85,10 @@ export interface MercadoPagoPreference {
   publicKey: string;
 }
 
+/** What public checkout endpoints return about an order (no personal data). */
+export type PublicOrder = Pick<Order, "id" | "status" | "subtotal" | "currency">;
+
 export interface MercadoPagoProcessResult {
-  order: Order;
+  order: PublicOrder;
   status: OrderStatus;
 }

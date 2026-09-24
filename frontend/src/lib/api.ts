@@ -3,12 +3,19 @@ import type {
   CheckoutResponse,
   MercadoPagoPreference,
   MercadoPagoProcessResult,
-  Order,
+  PublicOrder,
   Shoe,
 } from "./types";
 
 export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:3000";
+
+/** Firebase ID token header for endpoints that require a signed-in buyer. */
+async function authHeaders(): Promise<Record<string, string>> {
+  const { auth } = await import("./firebase");
+  const token = await auth.currentUser?.getIdToken();
+  return token ? { Authorization: `Bearer ${token}` } : {};
+}
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE_URL}${path}`, {
@@ -72,7 +79,7 @@ export const api = {
       }),
     // Order lookup — used by the checkout result pages to confirm the outcome.
     getOrder: (orderId: string) =>
-      request<Order>(`/api/checkout/orders/${orderId}`),
+      request<PublicOrder>(`/api/checkout/orders/${orderId}`),
     // Mercado Pago (Checkout Bricks — seamless, in-app)
     mercadopago: {
       createPreference: (input: {
@@ -83,21 +90,27 @@ export const api = {
         shippingAddress?: string;
         shippingPhone?: string;
       }) =>
-        request<MercadoPagoPreference>("/api/checkout/mercadopago", {
-          method: "POST",
-          body: JSON.stringify(input),
-        }),
-      process: (orderId: string, formData: unknown) =>
-        request<MercadoPagoProcessResult>(
-          "/api/checkout/mercadopago/process",
-          {
+        authHeaders().then((headers) =>
+          request<MercadoPagoPreference>("/api/checkout/mercadopago", {
             method: "POST",
-            body: JSON.stringify({ orderId, formData }),
-          },
+            headers,
+            body: JSON.stringify(input),
+          }),
+        ),
+      process: (orderId: string, formData: unknown) =>
+        authHeaders().then((headers) =>
+          request<MercadoPagoProcessResult>(
+            "/api/checkout/mercadopago/process",
+            {
+              method: "POST",
+              headers,
+              body: JSON.stringify({ orderId, formData }),
+            },
+          ),
         ),
       // Called from the success/pending redirect URL to persist final status.
       confirm: (paymentId: string) =>
-        request<Order>("/api/checkout/mercadopago/confirm", {
+        request<PublicOrder>("/api/checkout/mercadopago/confirm", {
           method: "POST",
           body: JSON.stringify({ paymentId }),
         }),

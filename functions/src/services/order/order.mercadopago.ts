@@ -9,6 +9,7 @@ import {
   MercadoPagoPaymentResult,
 } from '../mercadopago.service';
 import { orderRepository } from './order.repository';
+import { HttpError } from '../../middlewares/error.middleware';
 import {
   fulfillOrder,
   releaseOrderReservations,
@@ -34,7 +35,37 @@ function mapMercadoPagoStatus(mpStatus: string): OrderStatus {
   }
 }
 
+/**
+ * How long a started-but-unpaid Mercado Pago order may hold stock. After this
+ * the reservation is released and the order marked FAILED / "expired"; the
+ * MP preference expires at the same moment so it can't be paid late.
+ */
+export const RESERVATION_TTL_MS = 30 * 60 * 1000;
+
 export const mercadoPagoOrders = {
+  /**
+   * Releases the stock held by Mercado Pago orders that were started but never
+   * paid within RESERVATION_TTL_MS. Runs lazily before each new checkout, so no
+   * scheduler is needed. APPROVED (in-bank / pending) orders are never touched.
+   */
+  async expireStaleMercadoPagoOrders(now: number = Date.now()): Promise<number> {
+    const stale = (await orderRepository.findByStatus('CREATED')).filter(
+      (o) =>
+        o.provider === 'mercadopago' &&
+        now - new Date(o.createdAt).getTime() > RESERVATION_TTL_MS,
+    );
+    for (const order of stale) {
+      await releaseOrderReservations(order);
+      await orderRepository.save({
+        ...order,
+        status: 'FAILED',
+        mpStatusDetail: 'expired',
+        updatedAt: new Date(now).toISOString(),
+      });
+    }
+    return stale.length;
+  },
+
   /**
    * Creates a Mercado Pago order + Checkout preference for the cart. The
    * returned preferenceId/publicKey drive the in-app Payment Brick.
@@ -55,6 +86,11 @@ export const mercadoPagoOrders = {
     const cart = await cartService.findById(cartId);
     if (!cart) throw new Error(`Cart ${cartId} not found`);
     if (cart.items.length === 0) throw new Error('Cart is empty');
+
+    // Free stock held by abandoned checkouts first, so it's available again.
+    await this.expireStaleMercadoPagoOrders().catch((err) =>
+      console.error('[mercadopago] expiring stale orders failed:', err),
+    );
 
     // Reserve stock before creating the order so we fail fast on unavailability
     for (const item of cart.items) {
@@ -105,11 +141,25 @@ export const mercadoPagoOrders = {
   async processMercadoPagoPayment(
     orderId: string,
     formData: MercadoPagoBrickFormData,
+    userId?: string,
   ): Promise<Order> {
     const order = await orderRepository.findById(orderId);
     if (!order) throw new Error(`Order ${orderId} not found`);
     if (order.provider !== 'mercadopago') {
       throw new Error(`Order ${orderId} is not a Mercado Pago order`);
+    }
+    if (userId !== undefined && order.userId !== userId) {
+      throw new HttpError(403, 'Este pedido no pertenece a tu cuenta.');
+    }
+    // Only a freshly started order can be charged: an expired, rejected or
+    // already-paid one must go back through the cart (new order + reservation).
+    const expired =
+      Date.now() - new Date(order.createdAt).getTime() > RESERVATION_TTL_MS;
+    if (order.status !== 'CREATED' || expired) {
+      throw new HttpError(
+        409,
+        'Este pedido ya no se puede pagar. Volvé al carrito para iniciar el pago de nuevo.',
+      );
     }
 
     const payment = await mercadoPagoService.createPayment(order, formData);

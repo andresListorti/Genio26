@@ -18,6 +18,11 @@ export const orderRepository = {
     return snap.docs[0].data() as Order;
   },
 
+  async findByStatus(status: OrderStatus): Promise<Order[]> {
+    const snap = await ordersCollection().where('status', '==', status).get();
+    return snap.docs.map((d) => d.data() as Order);
+  },
+
   async findByCartId(cartId: string): Promise<Order[]> {
     const snap = await ordersCollection().where('cartId', '==', cartId).get();
     return snap.docs.map((d) => d.data() as Order);

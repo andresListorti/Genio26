@@ -7,7 +7,7 @@ import { CheckCircle2, Clock3, Loader2, XCircle } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { api } from "@/lib/api";
 import { formatMoney } from "@/lib/format";
-import type { Order } from "@/lib/types";
+import type { PublicOrder } from "@/lib/types";
 
 export type CheckoutVariant = "success" | "failure" | "pending";
 
@@ -53,7 +53,7 @@ export default function CheckoutResult({ variant }: { variant: CheckoutVariant }
     params.get("external_reference") ?? params.get("order") ?? null;
   const paymentId = params.get("payment_id") ?? params.get("collection_id");
 
-  const [order, setOrder] = useState<Order | null>(null);
+  const [order, setOrder] = useState<PublicOrder | null>(null);
   const clearedRef = useRef(false);
 
   // On the success/pending redirect from Mercado Pago:

@@ -27,6 +27,9 @@ export interface MercadoPagoPaymentResult {
   transactionAmount?: number;
 }
 
+/** Keep in sync with RESERVATION_TTL_MS in order/order.mercadopago.ts. */
+const PREFERENCE_TTL_MS = 30 * 60 * 1000;
+
 export const mercadoPagoService = {
   /**
    * Creates a Checkout preference for the given order. The returned id feeds
@@ -73,6 +76,12 @@ export const mercadoPagoService = {
         // Allow up to 12 cuotas/installments (standard in Argentina)
         payment_methods: { installments: 12 },
         ...(isLocalFrontend ? {} : { auto_return: 'approved' }),
+        // Same lifetime as the stock reservation: the order can't be paid
+        // through the redirect flow after its reserved stock is released.
+        expires: true,
+        expiration_date_to: new Date(
+          new Date(order.createdAt).getTime() + PREFERENCE_TTL_MS,
+        ).toISOString(),
         ...(payerInfo?.email
           ? { payer: { name: payerInfo.name, email: payerInfo.email } }
           : {}),

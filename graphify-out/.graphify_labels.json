@@ -33,6 +33,11 @@
   "31": "AuthProvider",
   "32": "webhook.controller.ts",
   "33": "FakeDocSnapshot",
+  "34": "page.tsx",
+  "35": "page.tsx",
+  "36": "check-mercadopago-payment.ts",
+  "37": "page.tsx",
   "38": "Migración del backend: Render → Vercel",
+  "39": "order.paypal.test.ts",
   "40": "vitest.config.ts"
 }

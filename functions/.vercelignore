@@ -1,0 +1,11 @@
+# Never upload local secrets with `vercel deploy` (the CLI does not read .gitignore).
+# Production values live in Vercel Project env vars.
+.env
+.env.*
+.vercel
+*.token
+*.pem
+*.key
+*-firebase-adminsdk-*.json
+*service-account*.json
+*.log

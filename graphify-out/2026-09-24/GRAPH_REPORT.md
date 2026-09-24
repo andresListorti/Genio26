@@ -1,16 +1,16 @@
 # Graph Report - Code  (2026-09-24)
 
 ## Corpus Check
-- 111 files · ~10,356,096 words
+- 111 files · ~10,356,202 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 610 nodes · 1025 edges · 35 communities (27 shown, 8 thin omitted)
+- 611 nodes · 1027 edges · 36 communities (27 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9f548d4a`
+- Built from commit: `617bd476`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,6 +44,7 @@
 - shoeImage
 - AuthProvider
 - webhook.controller.ts
+- FakeDocSnapshot
 - Migración del backend: Render → Vercel
 
 ## God Nodes (most connected - your core abstractions)
@@ -73,7 +74,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (35 total, 8 thin omitted)
+## Communities (36 total, 9 thin omitted)
 
 ### Community 0 - "order.service.ts"
 Cohesion: 0.09
@@ -112,8 +113,8 @@ Cohesion: 0.10
 Nodes (21): cors, dotenv, express, express-rate-limit, firebase-admin, dependencies, cors, dotenv (+13 more)
 
 ### Community 9 - "layout.tsx"
-Cohesion: 0.19
-Nodes (7): AuthedRequest, requireAdmin(), { verifyIdToken }, collections, DocData, FakeDocSnapshot, firestore
+Cohesion: 0.23
+Nodes (7): { verifyIdToken }, { findShoeById }, shoe, collections, DocData, firestore, resetFakeFirestore()
 
 ### Community 10 - "Architecture"
 Cohesion: 0.17
@@ -132,37 +133,37 @@ Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
 ### Community 14 - "ProfileRequiredModal.tsx"
-Cohesion: 0.14
-Nodes (4): FakeCollection, FakeFirestore, FakeTransaction, resetFakeFirestore()
+Cohesion: 0.15
+Nodes (3): FakeCollection, FakeFirestore, FakeTransaction
 
 ### Community 20 - "order.mercadopago.ts"
-Cohesion: 0.16
-Nodes (7): {
+Cohesion: 0.09
+Nodes (18): cartController, {
   createMercadoPagoFromCart,
   processMercadoPagoPayment,
   handleMercadoPagoWebhook,
   findById,
-}, CHECKOUT_CLOSED, checkoutController, PAYPAL_DISABLED, { createFromCart, captureOrder, updateStatusByPaypalId }, { verifyWebhookSignature }, orderService
+}, CHECKOUT_CLOSED, checkoutController, PAYPAL_DISABLED, { createFromCart, captureOrder, updateStatusByPaypalId }, { verifyWebhookSignature }, shoeController (+10 more)
 
 ### Community 21 - "shoe.service.ts"
-Cohesion: 0.14
-Nodes (14): collections, firebaseAdmin, firestore, Shoe, ShoeCreateInput, ShoeGender, ShoeStockVariant, ShoeUpdateInput (+6 more)
+Cohesion: 0.24
+Nodes (9): Shoe, ShoeCreateInput, ShoeGender, ShoeStockVariant, ShoeUpdateInput, main(), sampleShoes, wipeShoes() (+1 more)
 
 ### Community 27 - "vitest.config.ts"
 Cohesion: 0.18
 Nodes (10): Architecture, CLAUDE.md (functions/), Commands, Environment variables (Vercel Project → Settings → Environment Variables), Firestore collections, graphify, Layers, Payment flows (+2 more)
 
 ### Community 28 - "fakeFirestore.ts"
-Cohesion: 0.28
-Nodes (7): cartController, shoeController, router, router, router, router, express
+Cohesion: 0.29
+Nodes (5): collections, firebaseAdmin, firestore, AuthedRequest, requireAdmin()
 
 ### Community 29 - ".runTransaction"
-Cohesion: 0.40
-Nodes (8): adminNotificationHtml(), confirmationHtml(), emailService, esc(), itemRows(), money(), order, { send }
+Cohesion: 0.36
+Nodes (9): adminNotificationHtml(), confirmationHtml(), emailService, esc(), itemRows(), money(), orderText(), order (+1 more)
 
 ### Community 32 - "webhook.controller.ts"
-Cohesion: 0.07
-Nodes (32): apiRateLimit, app, env, frontendUrl, isMercadoPagoConfigured(), getMercadoPago(), MercadoPagoClients, paypalClient (+24 more)
+Cohesion: 0.08
+Nodes (28): apiRateLimit, app, env, frontendUrl, isMercadoPagoConfigured(), getMercadoPago(), MercadoPagoClients, paypalClient (+20 more)
 
 ### Community 38 - "Migración del backend: Render → Vercel"
 Cohesion: 0.33
@@ -171,14 +172,14 @@ Nodes (5): Migración del backend: Render → Vercel, Nota de seguridad, Qué se
 ## Knowledge Gaps
 - **228 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+223 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `FakeDocSnapshot` connect `layout.tsx` to `useAuth`?**
+- **Why does `FakeDocSnapshot` connect `FakeDocSnapshot` to `layout.tsx`, `useAuth`?**
   _High betweenness centrality (0.220) - this node is a cross-community bridge._
-- **Why does `express` connect `fakeFirestore.ts` to `webhook.controller.ts`, `layout.tsx`, `order.mercadopago.ts`, `express`?**
+- **Why does `express` connect `order.mercadopago.ts` to `webhook.controller.ts`, `layout.tsx`, `fakeFirestore.ts`, `express`?**
   _High betweenness centrality (0.170) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
   _228 weakly-connected nodes found - possible documentation gaps or missing edges._

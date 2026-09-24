@@ -299,3 +299,60 @@ describe('mercadoPagoOrders.handleMercadoPagoWebhook', () => {
     expect(result).toBeNull();
   });
 });
+
+describe('mercadoPagoOrders — ownership and expiry', () => {
+  const minutesAgo = (m: number) => new Date(Date.now() - m * 60 * 1000).toISOString();
+
+  it('refuses to charge an order that belongs to another user', async () => {
+    await orderRepository.save(makeOrder({ id: 'o-owned', userId: 'alice' }));
+    await expect(
+      mercadoPagoOrders.processMercadoPagoPayment('o-owned', { payment_method_id: 'visa' }, 'mallory'),
+    ).rejects.toMatchObject({ status: 403 });
+    expect(createPayment).not.toHaveBeenCalled();
+  });
+
+  it('refuses to charge an order older than the reservation window', async () => {
+    await orderRepository.save(makeOrder({ id: 'o-old', userId: 'alice', createdAt: minutesAgo(31) }));
+    await expect(
+      mercadoPagoOrders.processMercadoPagoPayment('o-old', { payment_method_id: 'visa' }, 'alice'),
+    ).rejects.toMatchObject({ status: 409 });
+    expect(createPayment).not.toHaveBeenCalled();
+  });
+
+  it('refuses to charge an order that is no longer CREATED', async () => {
+    await orderRepository.save(makeOrder({ id: 'o-failed', userId: 'alice', status: 'FAILED' }));
+    await expect(
+      mercadoPagoOrders.processMercadoPagoPayment('o-failed', { payment_method_id: 'visa' }, 'alice'),
+    ).rejects.toMatchObject({ status: 409 });
+  });
+
+  it('expires stale CREATED Mercado Pago orders and releases their stock', async () => {
+    await orderRepository.save(makeOrder({ id: 'stale', createdAt: minutesAgo(45) }));
+    await orderRepository.save(makeOrder({ id: 'fresh', createdAt: minutesAgo(5) }));
+    await orderRepository.save(makeOrder({ id: 'pending', status: 'APPROVED', createdAt: minutesAgo(90) }));
+    await orderRepository.save(makeOrder({ id: 'pp', provider: 'paypal', createdAt: minutesAgo(90) }));
+
+    const expired = await mercadoPagoOrders.expireStaleMercadoPagoOrders();
+
+    expect(expired).toBe(1);
+    expect(releaseReservation).toHaveBeenCalledTimes(1);
+    expect(releaseReservation).toHaveBeenCalledWith('shoe-1', 38, 'marron', 2);
+    const stale = await orderRepository.findById('stale');
+    expect(stale).toMatchObject({ status: 'FAILED', mpStatusDetail: 'expired' });
+    expect((await orderRepository.findById('fresh'))?.status).toBe('CREATED');
+    expect((await orderRepository.findById('pending'))?.status).toBe('APPROVED');
+    expect((await orderRepository.findById('pp'))?.status).toBe('CREATED');
+  });
+
+  it('expires stale orders before reserving stock for a new checkout', async () => {
+    await orderRepository.save(makeOrder({ id: 'stale-2', cartId: 'other-cart', createdAt: minutesAgo(45) }));
+    findCartById.mockResolvedValue(cart);
+    reserveStock.mockResolvedValue(undefined);
+    createPreference.mockResolvedValue('pref-1');
+
+    await mercadoPagoOrders.createMercadoPagoFromCart('cart-1', { userId: 'alice' });
+
+    expect((await orderRepository.findById('stale-2'))?.mpStatusDetail).toBe('expired');
+    expect(reserveStock).toHaveBeenCalled();
+  });
+});
