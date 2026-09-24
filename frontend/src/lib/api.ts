@@ -61,6 +61,9 @@ export const api = {
       request<Cart>(`/api/carts/${id}`, { method: "DELETE" }),
   },
   checkout: {
+    // Whether the store is open for payments (backend CHECKOUT_ENABLED switch).
+    status: () =>
+      request<{ enabled: boolean; paypal: boolean }>("/api/checkout/status"),
     // PayPal
     createOrder: (cartId: string) =>
       request<CheckoutResponse>("/api/checkout/orders", {

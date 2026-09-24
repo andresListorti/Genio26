@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  Clock,
   Loader2,
   Minus,
   Plus,
@@ -26,13 +27,6 @@ import type {
   PaymentProvider,
 } from "@/lib/types";
 import MercadoPagoBrick from "@/components/MercadoPagoBrick";
-
-// PayPal stays hidden unless explicitly enabled (the backend rejects it too).
-const PAYPAL_ENABLED = process.env.NEXT_PUBLIC_PAYPAL_ENABLED === "true";
-const PAYMENT_OPTIONS: { id: PaymentProvider; label: string }[] = [
-  { id: "mercadopago", label: "Mercado Pago" },
-  ...(PAYPAL_ENABLED ? [{ id: "paypal" as const, label: "PayPal" }] : []),
-];
 
 export default function CartPage() {
   const router = useRouter();
@@ -57,6 +51,23 @@ export default function CartPage() {
     : !profile?.address?.trim() || !profile?.phone?.trim()
       ? "incomplete-profile"
       : null;
+
+  // The backend decides whether payments are open (CHECKOUT_ENABLED) and
+  // whether PayPal is offered. null = still asking; a failed check = closed.
+  const [checkoutStatus, setCheckoutStatus] = useState<{
+    enabled: boolean;
+    paypal: boolean;
+  } | null>(null);
+  useEffect(() => {
+    api.checkout
+      .status()
+      .then(setCheckoutStatus)
+      .catch(() => setCheckoutStatus({ enabled: false, paypal: false }));
+  }, []);
+  const paymentOptions: { id: PaymentProvider; label: string }[] = [
+    { id: "mercadopago", label: "Mercado Pago" },
+    ...(checkoutStatus?.paypal ? [{ id: "paypal" as const, label: "PayPal" }] : []),
+  ];
 
   // Dual payment: user picks Mercado Pago (Bricks, seamless) or PayPal.
   const [method, setMethod] = useState<PaymentProvider>("mercadopago");
@@ -284,13 +295,31 @@ export default function CartPage() {
                 </div>
               </div>
 
+              {checkoutStatus === null ? (
+                <div className="flex justify-center py-4 text-muted">
+                  <Loader2 className="animate-spin" size={18} />
+                </div>
+              ) : !checkoutStatus.enabled ? (
+                <div className="border border-line px-4 py-4 text-sm flex items-start gap-3">
+                  <Clock size={15} className="shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium mb-0.5">
+                      Estamos preparando la tienda
+                    </p>
+                    <p className="text-xs text-muted">
+                      Muy pronto vas a poder comprar online. Tu bolsa queda
+                      guardada para cuando habilitemos los pagos.
+                    </p>
+                  </div>
+                </div>
+              ) : (
               <>
                   {/* Payment method selector — only when there is a choice */}
-                  {PAYMENT_OPTIONS.length > 1 && (
+                  {paymentOptions.length > 1 && (
                     <div>
                       <p className="eyebrow mb-3">Medio de pago</p>
                       <div className="grid grid-cols-2 gap-2">
-                        {PAYMENT_OPTIONS.map((opt) => {
+                        {paymentOptions.map((opt) => {
                           const active = method === opt.id;
                           return (
                             <button
@@ -378,6 +407,7 @@ export default function CartPage() {
                     </li>
                   </ul>
               </>
+              )}
             </div>
           </aside>
         </div>

@@ -3,6 +3,8 @@ import { checkoutController } from '../controllers/checkout.controller';
 
 const router = Router();
 
+router.get('/status', checkoutController.status);
+
 // PayPal
 router.post('/orders', checkoutController.createOrder);
 router.post('/orders/:orderId/capture', checkoutController.capture);

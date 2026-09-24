@@ -20,6 +20,10 @@ export const env = {
   port: parseInt(process.env.PORT ?? '3000', 10),
   nodeEnv: process.env.NODE_ENV ?? 'development',
 
+  // Master payment switch. Closed unless CHECKOUT_ENABLED=true: every payment
+  // endpoint answers 503 and the storefront shows "tienda en preparación".
+  checkoutEnabled: process.env.CHECKOUT_ENABLED === 'true',
+
   // Public URL of the Genaro storefront (Next.js). Used to build Mercado Pago
   // back_urls so the buyer returns to the right page after the redirect flow.
   frontendUrl,

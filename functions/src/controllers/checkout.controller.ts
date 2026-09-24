@@ -3,11 +3,26 @@ import { orderService } from '../services/order.service';
 import { env, isMercadoPagoConfigured } from '../config/env';
 
 const PAYPAL_DISABLED = { error: 'PayPal no está disponible como medio de pago.' };
+const CHECKOUT_CLOSED = {
+  error: 'La tienda todavía no está habilitada para compras.',
+};
+
+const paypalAvailable = () => env.checkoutEnabled && env.paypal.enabled;
 
 export const checkoutController = {
+  /** Lets the storefront know whether it may offer checkout at all. */
+  status(_req: Request, res: Response) {
+    res.json({
+      data: {
+        enabled: env.checkoutEnabled && isMercadoPagoConfigured(),
+        paypal: paypalAvailable(),
+      },
+    });
+  },
+
   async createOrder(req: Request, res: Response, next: NextFunction) {
     try {
-      if (!env.paypal.enabled) return res.status(503).json(PAYPAL_DISABLED);
+      if (!paypalAvailable()) return res.status(503).json(PAYPAL_DISABLED);
       const { cartId, userId } = req.body ?? {};
       if (!cartId) {
         return res.status(400).json({ error: 'cartId is required' });
@@ -29,6 +44,7 @@ export const checkoutController = {
     next: NextFunction,
   ) {
     try {
+      if (!env.checkoutEnabled) return res.status(503).json(CHECKOUT_CLOSED);
       if (!isMercadoPagoConfigured()) {
         return res.status(503).json({
           error:
@@ -73,6 +89,7 @@ export const checkoutController = {
     next: NextFunction,
   ) {
     try {
+      if (!env.checkoutEnabled) return res.status(503).json(CHECKOUT_CLOSED);
       if (!isMercadoPagoConfigured()) {
         return res.status(503).json({
           error: 'Mercado Pago no está configurado.',
@@ -103,6 +120,7 @@ export const checkoutController = {
     next: NextFunction,
   ) {
     try {
+      if (!env.checkoutEnabled) return res.status(503).json(CHECKOUT_CLOSED);
       if (!isMercadoPagoConfigured()) {
         return res.status(503).json({
           error:
@@ -127,7 +145,7 @@ export const checkoutController = {
 
   async capture(req: Request, res: Response, next: NextFunction) {
     try {
-      if (!env.paypal.enabled) return res.status(503).json(PAYPAL_DISABLED);
+      if (!paypalAvailable()) return res.status(503).json(PAYPAL_DISABLED);
       const orderId = String(req.params.orderId);
       const order = await orderService.captureOrder(orderId);
       res.json({ data: order });
