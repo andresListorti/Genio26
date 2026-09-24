@@ -18,3 +18,6 @@ dist/
 # Scratch screenshots
 resources/novedades/
 .claude/settings.local.json
+
+# Instructivo interno de prelanzamiento (local, no se publica)
+INSTRUCTIVO-PRELANZAMIENTO.pdf
