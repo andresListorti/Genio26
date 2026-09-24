@@ -1,16 +1,16 @@
-# Graph Report - Code  (2026-07-16)
+# Graph Report - Code  (2026-09-24)
 
 ## Corpus Check
-- 104 files · ~10,353,918 words
+- 108 files · ~10,355,105 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 563 nodes · 962 edges · 36 communities (27 shown, 9 thin omitted)
+- 592 nodes · 991 edges · 41 communities (31 shown, 10 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.65)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0b76738f`
+- Built from commit: `a4759828`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -38,6 +38,7 @@
 - order.mercadopago.ts
 - FakeDocRef
 - register
+- vitest.config.ts
 - fakeFirestore.ts
 - .runTransaction
 - FakeQuery
@@ -46,18 +47,22 @@
 - AuthContext.tsx
 - page.tsx
 - page.tsx
+- FakeDocRef
+- FakeQuery
+- Migración del backend: Render → Vercel
+- FakeDocSnapshot
 
 ## God Nodes (most connected - your core abstractions)
 1. `useAuth()` - 23 edges
 2. `compilerOptions` - 16 edges
-3. `formatMoney()` - 15 edges
-4. `express` - 15 edges
-5. `env` - 15 edges
+3. `env` - 16 edges
+4. `formatMoney()` - 15 edges
+5. `express` - 15 edges
 6. `compilerOptions` - 15 edges
-7. `scripts` - 13 edges
-8. `Order` - 13 edges
-9. `useCart()` - 12 edges
-10. `shoeImage()` - 11 edges
+7. `scripts` - 15 edges
+8. `scripts` - 13 edges
+9. `Order` - 13 edges
+10. `useCart()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `AdminArchivePage()` --calls--> `useAuth()`  [EXTRACTED]
@@ -74,11 +79,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 9 thin omitted)
+## Communities (41 total, 10 thin omitted)
 
 ### Community 0 - "order.service.ts"
-Cohesion: 0.67
-Nodes (5): adminNotificationHtml(), confirmationHtml(), emailService, itemRows(), money()
+Cohesion: 0.09
+Nodes (33): AddCartItemInput, Cart, CartItem, Order, OrderStatus, PaymentProvider, cartService, adminNotificationHtml() (+25 more)
 
 ### Community 1 - "types.ts"
 Cohesion: 0.06
@@ -89,8 +94,8 @@ Cohesion: 0.24
 Nodes (8): AdminArchivePage(), ARCHIVE_STATUSES, ArchiveDashboard(), fmtDate(), STATUS_LABEL, STATUS_STYLE, AdminNav(), TABS
 
 ### Community 3 - "scripts"
-Cohesion: 0.05
-Nodes (41): author, description, devDependencies, ts-node-dev, @types/cors, @types/express, @types/node, @types/paypal__checkout-server-sdk (+33 more)
+Cohesion: 0.11
+Nodes (18): description, name, private, scripts, build, check:mercadopago, check:mercadopago:payment, check:paypal (+10 more)
 
 ### Community 4 - "devDependencies"
 Cohesion: 0.08
@@ -102,15 +107,15 @@ Nodes (28): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModu
 
 ### Community 6 - "compilerOptions"
 Cohesion: 0.09
-Nodes (21): dist, ES2020, src/**/*, compilerOptions, declaration, esModuleInterop, forceConsistentCasingInFileNames, ignoreDeprecations (+13 more)
+Nodes (21): compilerOptions, declaration, esModuleInterop, forceConsistentCasingInFileNames, ignoreDeprecations, lib, module, moduleResolution (+13 more)
 
 ### Community 7 - "express"
-Cohesion: 0.08
-Nodes (23): collections, firebaseAdmin, firestore, shoeController, AuthedRequest, requireAdmin(), { verifyIdToken }, Shoe (+15 more)
+Cohesion: 0.05
+Nodes (41): author, description, devDependencies, ts-node-dev, @types/cors, @types/express, @types/node, @types/paypal__checkout-server-sdk (+33 more)
 
 ### Community 8 - "dependencies"
-Cohesion: 0.09
-Nodes (23): cors, dotenv, express, express-rate-limit, firebase-admin, helmet, mercadopago, dependencies (+15 more)
+Cohesion: 0.10
+Nodes (21): cors, dotenv, express, express-rate-limit, firebase-admin, dependencies, cors, dotenv (+13 more)
 
 ### Community 9 - "layout.tsx"
 Cohesion: 0.18
@@ -132,8 +137,8 @@ Cohesion: 0.17
 Nodes (10): API client, Architecture, Commands, Environment variables, Important: Next.js version, Key directories, Pages, State management (+2 more)
 
 ### Community 11 - "Architecture"
-Cohesion: 0.18
-Nodes (9): Architecture, Commands, Environment variables, Firestore collections, graphify, Layers, Payment flows, Stock reservation model (+1 more)
+Cohesion: 0.40
+Nodes (3): Deployment, graphify, Repo layout
 
 ### Community 12 - "email.service.ts"
 Cohesion: 0.07
@@ -144,12 +149,20 @@ Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
 ### Community 14 - "ProfileRequiredModal.tsx"
+Cohesion: 0.24
+Nodes (9): Shoe, ShoeCreateInput, ShoeGender, ShoeStockVariant, ShoeUpdateInput, main(), sampleShoes, wipeShoes() (+1 more)
+
+### Community 20 - "order.mercadopago.ts"
 Cohesion: 0.15
 Nodes (3): FakeCollection, FakeFirestore, FakeTransaction
 
-### Community 20 - "order.mercadopago.ts"
-Cohesion: 0.07
-Nodes (45): isMercadoPagoConfigured(), getMercadoPago(), MercadoPagoClients, AddCartItemInput, Cart, CartItem, Order, OrderStatus (+37 more)
+### Community 21 - "FakeDocRef"
+Cohesion: 0.23
+Nodes (7): { verifyIdToken }, { findShoeById }, shoe, collections, DocData, firestore, resetFakeFirestore()
+
+### Community 27 - "vitest.config.ts"
+Cohesion: 0.18
+Nodes (10): Architecture, CLAUDE.md (functions/), Commands, Environment variables (Vercel Project → Settings → Environment Variables), Firestore collections, graphify, Layers, Payment flows (+2 more)
 
 ### Community 28 - "fakeFirestore.ts"
 Cohesion: 0.25
@@ -159,13 +172,17 @@ Nodes (7): AdminOrdersPage(), getErrorMessage(), LoginPage(), NAV_LINKS, Navbar(
 Cohesion: 0.31
 Nodes (8): EDITABLE_STATUSES, fmtCurrency(), fmtDate(), OrderEditForm, OrdersDashboard(), orderToForm(), STATUS_COLORS, STATUS_LABELS
 
+### Community 30 - "FakeQuery"
+Cohesion: 0.29
+Nodes (5): collections, firebaseAdmin, firestore, AuthedRequest, requireAdmin()
+
 ### Community 31 - "AuthProvider"
 Cohesion: 0.31
 Nodes (8): AdminDashboard(), AdminPage(), blankForm(), CATEGORIES, ProductForm, RESOURCE_IMAGES, shoeToForm(), ShoeStockVariant
 
 ### Community 32 - "webhook.controller.ts"
-Cohesion: 0.07
-Nodes (26): express, env, frontendUrl, paypalClient, cartController, checkoutController, { webhookSecret }, verifyMercadoPagoSignature() (+18 more)
+Cohesion: 0.05
+Nodes (44): apiRateLimit, app, env, frontendUrl, isMercadoPagoConfigured(), getMercadoPago(), MercadoPagoClients, paypalClient (+36 more)
 
 ### Community 33 - "AuthContext.tsx"
 Cohesion: 0.31
@@ -175,25 +192,29 @@ Nodes (7): AuthContext, AuthContextValue, ProfileUpdate, auth, db, firebaseConfi
 Cohesion: 0.38
 Nodes (6): fmtDate(), ProfileContent(), ProfilePage(), StatusBadge(), statusLabel(), UserProfile
 
+### Community 38 - "Migración del backend: Render → Vercel"
+Cohesion: 0.33
+Nodes (5): Migración del backend: Render → Vercel, Nota de seguridad, Qué se hizo, Sobre Render, Webhooks — hecho
+
 ## Knowledge Gaps
-- **197 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+192 more)
+- **219 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+214 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AuthProvider()` connect `layout.tsx` to `AuthContext.tsx`?**
-  _High betweenness centrality (0.247) - this node is a cross-community bridge._
-- **Why does `FakeDocSnapshot` connect `express` to `layout.tsx`?**
-  _High betweenness centrality (0.242) - this node is a cross-community bridge._
-- **Why does `express` connect `webhook.controller.ts` to `scripts`, `express`?**
-  _High betweenness centrality (0.179) - this node is a cross-community bridge._
+  _High betweenness centrality (0.222) - this node is a cross-community bridge._
+- **Why does `FakeDocSnapshot` connect `FakeDocSnapshot` to `layout.tsx`, `FakeDocRef`?**
+  _High betweenness centrality (0.218) - this node is a cross-community bridge._
+- **Why does `express` connect `webhook.controller.ts` to `FakeDocRef`, `FakeQuery`, `express`?**
+  _High betweenness centrality (0.159) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
-  _197 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _219 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `order.service.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.08735150244584207 - nodes in this community are weakly interconnected._
 - **Should `types.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.056150600454397924 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
-  _Cohesion score 0.047619047619047616 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._

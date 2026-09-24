@@ -210,163 +210,13 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784183972.915272,
-    "ast_hash": "ca2de9677540567740ca36b059dffc2d",
-    "semantic_hash": ""
-  },
-  "src/config/env.ts": {
-    "mtime": 1784183993.6572592,
-    "ast_hash": "08910dc13eb3cb1ac102cfcf82f8f810",
-    "semantic_hash": ""
-  },
-  "src/config/firebase.ts": {
-    "mtime": 1784183370.0245352,
-    "ast_hash": "0ae036bf489073bd554292810bb6f49c",
-    "semantic_hash": ""
-  },
-  "src/config/mercadopago.ts": {
-    "mtime": 1780349284.9920516,
-    "ast_hash": "90d154bab12fa3980062b4ee4dd5cfbc",
-    "semantic_hash": ""
-  },
-  "src/config/paypal.ts": {
-    "mtime": 1779840484.1532483,
-    "ast_hash": "ac151ca61ade0ea0687ec60445823bcb",
-    "semantic_hash": ""
-  },
-  "src/controllers/cart.controller.ts": {
-    "mtime": 1781037157.284836,
-    "ast_hash": "abbcb10476a5d8b8bd8d1dfffd614813",
-    "semantic_hash": ""
-  },
-  "src/controllers/checkout.controller.ts": {
-    "mtime": 1781037164.4024704,
-    "ast_hash": "12aa099374832da65f25053471a60d28",
-    "semantic_hash": ""
-  },
-  "src/controllers/shoe.controller.ts": {
-    "mtime": 1780347901.8827207,
-    "ast_hash": "fad14223324ed2e745cfc4d06358d208",
-    "semantic_hash": ""
-  },
-  "src/controllers/webhook.controller.ts": {
-    "mtime": 1784183402.9235287,
-    "ast_hash": "e03e7b8d58e6c70f1ea67790308084db",
-    "semantic_hash": ""
-  },
-  "src/index.ts": {
-    "mtime": 1784184023.925558,
-    "ast_hash": "bfc1ae756b01fcea4bd35e5a49e1202b",
-    "semantic_hash": ""
-  },
-  "src/middlewares/error.middleware.ts": {
-    "mtime": 1784184214.4023738,
-    "ast_hash": "c156ad37ed0a47e28ced0ddd7174363d",
-    "semantic_hash": ""
-  },
-  "src/models/cart.model.ts": {
-    "mtime": 1779840498.445734,
-    "ast_hash": "50837dc3d7fa0724f799f2652d648a20",
-    "semantic_hash": ""
-  },
-  "src/models/order.model.ts": {
-    "mtime": 1781040650.9398835,
-    "ast_hash": "02f0688ef06bfb54d369df15e50f0807",
-    "semantic_hash": ""
-  },
-  "src/models/shoe.model.ts": {
-    "mtime": 1782337268.9177558,
-    "ast_hash": "226282be59c2406a4c52881dd03a1f1f",
-    "semantic_hash": ""
-  },
-  "src/routes/cart.routes.ts": {
-    "mtime": 1779840614.3693008,
-    "ast_hash": "00ded0765e43ab006a3cb890bbe7e816",
-    "semantic_hash": ""
-  },
-  "src/routes/checkout.routes.ts": {
-    "mtime": 1780598810.7569504,
-    "ast_hash": "3e533e042aad5c129168f30efff761cf",
-    "semantic_hash": ""
-  },
-  "src/routes/index.ts": {
-    "mtime": 1780004219.4107292,
-    "ast_hash": "cf3e60928f717d5d2eaeca2ce8a9d819",
-    "semantic_hash": ""
-  },
-  "src/routes/shoe.routes.ts": {
-    "mtime": 1784183382.2516215,
-    "ast_hash": "feda383b224d22729bd489a3731893e1",
-    "semantic_hash": ""
-  },
-  "src/routes/webhook.routes.ts": {
-    "mtime": 1780356827.2554312,
-    "ast_hash": "96b38b5a9483d99d1ece97fd11735ef8",
-    "semantic_hash": ""
-  },
-  "src/scripts/check-mercadopago-payment.ts": {
-    "mtime": 1780357337.409514,
-    "ast_hash": "58ee696ea277025cf9405a9d302a8534",
-    "semantic_hash": ""
-  },
-  "src/scripts/check-mercadopago.ts": {
-    "mtime": 1780354282.3111846,
-    "ast_hash": "564181aef805e3a7d3344d56dd2c8946",
-    "semantic_hash": ""
-  },
-  "src/scripts/check-paypal.ts": {
-    "mtime": 1779844108.7071288,
-    "ast_hash": "83869884f82c41fd39fdb1447992b43c",
-    "semantic_hash": ""
-  },
-  "src/scripts/seed-admin.ts": {
-    "mtime": 1784183746.0578623,
-    "ast_hash": "21708e77c3f90ccd5f24a652399672ee",
-    "semantic_hash": ""
-  },
-  "src/scripts/seed.ts": {
-    "mtime": 1784083953.249164,
-    "ast_hash": "dde4f63052aaedc5a705a135006b09da",
-    "semantic_hash": ""
-  },
-  "src/services/cart.service.ts": {
-    "mtime": 1779840534.8154974,
-    "ast_hash": "4328dc9b143dc68400ab05ccae19d2d7",
-    "semantic_hash": ""
-  },
-  "src/services/email.service.ts": {
-    "mtime": 1781040694.9594893,
-    "ast_hash": "d3d9ed5c54a556a66a068100cc72036b",
-    "semantic_hash": ""
-  },
-  "src/services/mercadopago.service.ts": {
-    "mtime": 1781040812.7260728,
-    "ast_hash": "a0d956082f62f9d345ac2e1c86807705",
-    "semantic_hash": ""
-  },
-  "src/services/order.service.ts": {
-    "mtime": 1784177496.9475346,
-    "ast_hash": "49c0763d59c1dd0f95986584b0ef3b24",
-    "semantic_hash": ""
-  },
-  "src/services/paypal.service.ts": {
-    "mtime": 1780349731.9983034,
-    "ast_hash": "7bb99d19801eeca035d068a2b7f1f991",
-    "semantic_hash": ""
-  },
-  "src/services/shoe.service.ts": {
-    "mtime": 1782337616.3738832,
-    "ast_hash": "d80c0da94bc1a311c92887767e17aba5",
-    "semantic_hash": ""
-  },
-  "tsconfig.json": {
-    "mtime": 1779840708.3165412,
-    "ast_hash": "9609a15ec41bc816f90f31fc20ffe8c9",
+    "mtime": 1787589289.569723,
+    "ast_hash": "63d0ffbbb1989f2ea82fb065ed7f06c8",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784184029.8250606,
-    "ast_hash": "6e72676518b564834aad8b016093b9ec",
+    "mtime": 1787594495.1187057,
+    "ast_hash": "286a86342735f62c448c4997a80a4ffc",
     "semantic_hash": ""
   },
   "frontend/AGENTS.md": {
@@ -1319,26 +1169,6 @@
     "ast_hash": "f234d62d03c34ea8ee2d6f54cc222300",
     "semantic_hash": ""
   },
-  "src/services/order/order.fulfillment.ts": {
-    "mtime": 1784177456.5034847,
-    "ast_hash": "50d2fe9e3e23e2008ad8ee7987208868",
-    "semantic_hash": ""
-  },
-  "src/services/order/order.mercadopago.ts": {
-    "mtime": 1784177493.0194209,
-    "ast_hash": "3a2251e62c947c62f8ceebb829294499",
-    "semantic_hash": ""
-  },
-  "src/services/order/order.paypal.ts": {
-    "mtime": 1784177464.5506577,
-    "ast_hash": "3a90bbda6cc6d3145f915b09a21bfcdb",
-    "semantic_hash": ""
-  },
-  "src/services/order/order.repository.ts": {
-    "mtime": 1784177450.0517924,
-    "ast_hash": "33fe1e892ef36d4ac4fafb60fcb2c922",
-    "semantic_hash": ""
-  },
   "frontend/src/app/global-error.tsx": {
     "mtime": 1784180695.5369422,
     "ast_hash": "1d2c082143f01f9b35851f3def790a1b",
@@ -1384,69 +1214,259 @@
     "ast_hash": "b6047cb48430aab17d0c9a3cec1e4bb5",
     "semantic_hash": ""
   },
-  "src/config/sentry.ts": {
+  "functions/package.json": {
+    "mtime": 1787593885.7840233,
+    "ast_hash": "a1fe95bfa8805aa129e48ca207817e87",
+    "semantic_hash": ""
+  },
+  "functions/src/app.ts": {
+    "mtime": 1787593495.3445199,
+    "ast_hash": "09494a826f93e107826e63fb7fb977cd",
+    "semantic_hash": ""
+  },
+  "functions/src/config/env.ts": {
+    "mtime": 1790260870.162892,
+    "ast_hash": "aca044da64e82edcfa3c7494b2255812",
+    "semantic_hash": ""
+  },
+  "functions/src/config/firebase.ts": {
+    "mtime": 1787589229.0523102,
+    "ast_hash": "f71ee1146f005224a18b0ccc39aa593a",
+    "semantic_hash": ""
+  },
+  "functions/src/config/mercadopago.ts": {
+    "mtime": 1780349284.9920516,
+    "ast_hash": "90d154bab12fa3980062b4ee4dd5cfbc",
+    "semantic_hash": ""
+  },
+  "functions/src/config/paypal.ts": {
+    "mtime": 1779840484.1532483,
+    "ast_hash": "ac151ca61ade0ea0687ec60445823bcb",
+    "semantic_hash": ""
+  },
+  "functions/src/config/sentry.ts": {
     "mtime": 1784180203.3770554,
     "ast_hash": "ab4c0d28e5184c668f5e591ca79ae305",
     "semantic_hash": ""
   },
-  "src/services/cart.service.test.ts": {
-    "mtime": 1784182312.1145632,
-    "ast_hash": "387002782a81c686f4f93ff921884858",
+  "functions/src/controllers/cart.controller.ts": {
+    "mtime": 1781037157.284836,
+    "ast_hash": "abbcb10476a5d8b8bd8d1dfffd614813",
     "semantic_hash": ""
   },
-  "src/services/order/order.fulfillment.test.ts": {
-    "mtime": 1784182247.948187,
-    "ast_hash": "98d999813b84a2ef13b2b8e381482111",
+  "functions/src/controllers/checkout.controller.ts": {
+    "mtime": 1781037164.4024704,
+    "ast_hash": "12aa099374832da65f25053471a60d28",
     "semantic_hash": ""
   },
-  "src/services/order/order.mercadopago.test.ts": {
-    "mtime": 1784182263.8486583,
-    "ast_hash": "f0049a4421eaf4b1a161238bc7b33adc",
+  "functions/src/controllers/shoe.controller.ts": {
+    "mtime": 1780347901.8827207,
+    "ast_hash": "fad14223324ed2e745cfc4d06358d208",
     "semantic_hash": ""
   },
-  "src/services/order/order.paypal.test.ts": {
-    "mtime": 1784182255.417801,
-    "ast_hash": "8fe6eb14234ebecd71d05c6de78aaebd",
-    "semantic_hash": ""
-  },
-  "src/services/order/order.repository.test.ts": {
-    "mtime": 1784182096.5433826,
-    "ast_hash": "f33a46dd8377f5cccb93880e200a392b",
-    "semantic_hash": ""
-  },
-  "src/services/shoe.service.test.ts": {
-    "mtime": 1784182345.0940745,
-    "ast_hash": "c161127b60bc9d047d4d89a08503dc10",
-    "semantic_hash": ""
-  },
-  "src/test-utils/fakeFirestore.ts": {
-    "mtime": 1784183471.815231,
-    "ast_hash": "1c5d89f9f3cc3db4e7252ad1441e1b9b",
-    "semantic_hash": ""
-  },
-  "vitest.config.ts": {
-    "mtime": 1784182054.3068063,
-    "ast_hash": "055f1f040e0b411dbbb0230037f4358b",
-    "semantic_hash": ""
-  },
-  "src/controllers/webhook.controller.test.ts": {
+  "functions/src/controllers/webhook.controller.test.ts": {
     "mtime": 1784183435.443862,
     "ast_hash": "09b045ed61edac31e43ee53ea0af7591",
     "semantic_hash": ""
   },
-  "src/middlewares/auth.middleware.test.ts": {
+  "functions/src/controllers/webhook.controller.ts": {
+    "mtime": 1784183402.9235287,
+    "ast_hash": "e03e7b8d58e6c70f1ea67790308084db",
+    "semantic_hash": ""
+  },
+  "functions/src/middlewares/auth.middleware.test.ts": {
     "mtime": 1784183453.5430346,
     "ast_hash": "59b4f55cc9c9f23f8e3032190ec1e291",
     "semantic_hash": ""
   },
-  "src/middlewares/auth.middleware.ts": {
+  "functions/src/middlewares/auth.middleware.ts": {
     "mtime": 1784183377.0121698,
     "ast_hash": "c067e2b424b4169d889a34ea014ecd0b",
     "semantic_hash": ""
   },
-  "src/middlewares/error.middleware.test.ts": {
+  "functions/src/middlewares/error.middleware.test.ts": {
     "mtime": 1784184223.3697083,
     "ast_hash": "c46284b755e497c794078a240234e11c",
+    "semantic_hash": ""
+  },
+  "functions/src/middlewares/error.middleware.ts": {
+    "mtime": 1784184214.4023738,
+    "ast_hash": "c156ad37ed0a47e28ced0ddd7174363d",
+    "semantic_hash": ""
+  },
+  "functions/src/models/cart.model.ts": {
+    "mtime": 1779840498.445734,
+    "ast_hash": "50837dc3d7fa0724f799f2652d648a20",
+    "semantic_hash": ""
+  },
+  "functions/src/models/order.model.ts": {
+    "mtime": 1781040650.9398835,
+    "ast_hash": "02f0688ef06bfb54d369df15e50f0807",
+    "semantic_hash": ""
+  },
+  "functions/src/models/shoe.model.ts": {
+    "mtime": 1782337268.9177558,
+    "ast_hash": "226282be59c2406a4c52881dd03a1f1f",
+    "semantic_hash": ""
+  },
+  "functions/src/routes/cart.routes.ts": {
+    "mtime": 1779840614.3693008,
+    "ast_hash": "00ded0765e43ab006a3cb890bbe7e816",
+    "semantic_hash": ""
+  },
+  "functions/src/routes/checkout.routes.ts": {
+    "mtime": 1780598810.7569504,
+    "ast_hash": "3e533e042aad5c129168f30efff761cf",
+    "semantic_hash": ""
+  },
+  "functions/src/routes/index.ts": {
+    "mtime": 1780004219.4107292,
+    "ast_hash": "cf3e60928f717d5d2eaeca2ce8a9d819",
+    "semantic_hash": ""
+  },
+  "functions/src/routes/shoe.routes.ts": {
+    "mtime": 1784183382.2516215,
+    "ast_hash": "feda383b224d22729bd489a3731893e1",
+    "semantic_hash": ""
+  },
+  "functions/src/routes/webhook.routes.ts": {
+    "mtime": 1780356827.2554312,
+    "ast_hash": "96b38b5a9483d99d1ece97fd11735ef8",
+    "semantic_hash": ""
+  },
+  "functions/src/scripts/check-mercadopago-payment.ts": {
+    "mtime": 1787593877.2785347,
+    "ast_hash": "da1a0477b024f501555d3cc0a4b98bf8",
+    "semantic_hash": ""
+  },
+  "functions/src/scripts/check-mercadopago.ts": {
+    "mtime": 1780354282.3111846,
+    "ast_hash": "564181aef805e3a7d3344d56dd2c8946",
+    "semantic_hash": ""
+  },
+  "functions/src/scripts/check-paypal.ts": {
+    "mtime": 1779844108.7071288,
+    "ast_hash": "83869884f82c41fd39fdb1447992b43c",
+    "semantic_hash": ""
+  },
+  "functions/src/scripts/seed-admin.ts": {
+    "mtime": 1784183746.0578623,
+    "ast_hash": "21708e77c3f90ccd5f24a652399672ee",
+    "semantic_hash": ""
+  },
+  "functions/src/scripts/seed.ts": {
+    "mtime": 1784083953.249164,
+    "ast_hash": "dde4f63052aaedc5a705a135006b09da",
+    "semantic_hash": ""
+  },
+  "functions/src/server.ts": {
+    "mtime": 1787589198.8452568,
+    "ast_hash": "6d098b69929e1df1b3c2406fe66a543d",
+    "semantic_hash": ""
+  },
+  "functions/src/services/cart.service.test.ts": {
+    "mtime": 1784182312.1145632,
+    "ast_hash": "387002782a81c686f4f93ff921884858",
+    "semantic_hash": ""
+  },
+  "functions/src/services/cart.service.ts": {
+    "mtime": 1787593853.1449182,
+    "ast_hash": "778bd8b3f529120ff9fe4c553ddda6ae",
+    "semantic_hash": ""
+  },
+  "functions/src/services/email.service.ts": {
+    "mtime": 1781040694.9594893,
+    "ast_hash": "d3d9ed5c54a556a66a068100cc72036b",
+    "semantic_hash": ""
+  },
+  "functions/src/services/mercadopago.service.ts": {
+    "mtime": 1787593858.1550946,
+    "ast_hash": "c2a4b638cadcb054fe91369aaf835105",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order.service.ts": {
+    "mtime": 1784177496.9475346,
+    "ast_hash": "49c0763d59c1dd0f95986584b0ef3b24",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.fulfillment.test.ts": {
+    "mtime": 1784182247.948187,
+    "ast_hash": "98d999813b84a2ef13b2b8e381482111",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.fulfillment.ts": {
+    "mtime": 1784177456.5034847,
+    "ast_hash": "50d2fe9e3e23e2008ad8ee7987208868",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.mercadopago.test.ts": {
+    "mtime": 1784182263.8486583,
+    "ast_hash": "f0049a4421eaf4b1a161238bc7b33adc",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.mercadopago.ts": {
+    "mtime": 1787593864.4920392,
+    "ast_hash": "ae312163c67edbf61bf5c7148e1d5d42",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.paypal.test.ts": {
+    "mtime": 1784182255.417801,
+    "ast_hash": "8fe6eb14234ebecd71d05c6de78aaebd",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.paypal.ts": {
+    "mtime": 1787593870.4239893,
+    "ast_hash": "6431df6b4aefa705fc23b4fa0da944c5",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.repository.test.ts": {
+    "mtime": 1784182096.5433826,
+    "ast_hash": "f33a46dd8377f5cccb93880e200a392b",
+    "semantic_hash": ""
+  },
+  "functions/src/services/order/order.repository.ts": {
+    "mtime": 1784177450.0517924,
+    "ast_hash": "33fe1e892ef36d4ac4fafb60fcb2c922",
+    "semantic_hash": ""
+  },
+  "functions/src/services/paypal.service.ts": {
+    "mtime": 1780349731.9983034,
+    "ast_hash": "7bb99d19801eeca035d068a2b7f1f991",
+    "semantic_hash": ""
+  },
+  "functions/src/services/shoe.service.test.ts": {
+    "mtime": 1784182345.0940745,
+    "ast_hash": "c161127b60bc9d047d4d89a08503dc10",
+    "semantic_hash": ""
+  },
+  "functions/src/services/shoe.service.ts": {
+    "mtime": 1787593848.391131,
+    "ast_hash": "c02e42169efe21e490295a781e6d3b75",
+    "semantic_hash": ""
+  },
+  "functions/src/test-utils/fakeFirestore.ts": {
+    "mtime": 1784183471.815231,
+    "ast_hash": "1c5d89f9f3cc3db4e7252ad1441e1b9b",
+    "semantic_hash": ""
+  },
+  "functions/tsconfig.json": {
+    "mtime": 1779840708.3165412,
+    "ast_hash": "9609a15ec41bc816f90f31fc20ffe8c9",
+    "semantic_hash": ""
+  },
+  "functions/vitest.config.ts": {
+    "mtime": 1784182054.3068063,
+    "ast_hash": "055f1f040e0b411dbbb0230037f4358b",
+    "semantic_hash": ""
+  },
+  "MIGRACION_FIREBASE.md": {
+    "mtime": 1787605880.9643965,
+    "ast_hash": "7858ae7a6b0053c462f72c42a874a632",
+    "semantic_hash": ""
+  },
+  "functions/CLAUDE.md": {
+    "mtime": 1787594481.498156,
+    "ast_hash": "25f69cd2126a483e50ca6eb407c33c13",
     "semantic_hash": ""
   }
 }

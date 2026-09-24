@@ -34,5 +34,10 @@
   "32": "webhook.controller.ts",
   "33": "AuthContext.tsx",
   "34": "page.tsx",
-  "35": "page.tsx"
+  "35": "page.tsx",
+  "36": "FakeDocRef",
+  "37": "FakeQuery",
+  "38": "Migración del backend: Render → Vercel",
+  "39": "FakeDocSnapshot",
+  "40": "vitest.config.ts"
 }

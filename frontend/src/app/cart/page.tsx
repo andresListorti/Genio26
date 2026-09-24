@@ -27,6 +27,13 @@ import type {
 } from "@/lib/types";
 import MercadoPagoBrick from "@/components/MercadoPagoBrick";
 
+// PayPal stays hidden unless explicitly enabled (the backend rejects it too).
+const PAYPAL_ENABLED = process.env.NEXT_PUBLIC_PAYPAL_ENABLED === "true";
+const PAYMENT_OPTIONS: { id: PaymentProvider; label: string }[] = [
+  { id: "mercadopago", label: "Mercado Pago" },
+  ...(PAYPAL_ENABLED ? [{ id: "paypal" as const, label: "PayPal" }] : []),
+];
+
 export default function CartPage() {
   const router = useRouter();
   const {
@@ -278,36 +285,33 @@ export default function CartPage() {
               </div>
 
               <>
-                  {/* Payment method selector */}
-                  <div>
-                    <p className="eyebrow mb-3">Medio de pago</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {(
-                        [
-                          { id: "mercadopago", label: "Mercado Pago" },
-                          { id: "paypal", label: "PayPal" },
-                        ] as { id: PaymentProvider; label: string }[]
-                      ).map((opt) => {
-                        const active = method === opt.id;
-                        return (
-                          <button
-                            key={opt.id}
-                            type="button"
-                            role="radio"
-                            aria-checked={active}
-                            onClick={() => selectMethod(opt.id)}
-                            className={`py-3 text-xs uppercase tracking-[0.15em] border transition ${
-                              active
-                                ? "border-foreground bg-foreground text-background"
-                                : "border-line hover:border-foreground"
-                            }`}
-                          >
-                            {opt.label}
-                          </button>
-                        );
-                      })}
+                  {/* Payment method selector — only when there is a choice */}
+                  {PAYMENT_OPTIONS.length > 1 && (
+                    <div>
+                      <p className="eyebrow mb-3">Medio de pago</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {PAYMENT_OPTIONS.map((opt) => {
+                          const active = method === opt.id;
+                          return (
+                            <button
+                              key={opt.id}
+                              type="button"
+                              role="radio"
+                              aria-checked={active}
+                              onClick={() => selectMethod(opt.id)}
+                              className={`py-3 text-xs uppercase tracking-[0.15em] border transition ${
+                                active
+                                  ? "border-foreground bg-foreground text-background"
+                                  : "border-line hover:border-foreground"
+                              }`}
+                            >
+                              {opt.label}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {(error || mpError) && (
                     <p className="text-xs text-red-600">{error ?? mpError}</p>

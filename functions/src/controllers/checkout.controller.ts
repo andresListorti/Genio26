@@ -1,10 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import { orderService } from '../services/order.service';
-import { isMercadoPagoConfigured } from '../config/env';
+import { env, isMercadoPagoConfigured } from '../config/env';
+
+const PAYPAL_DISABLED = { error: 'PayPal no está disponible como medio de pago.' };
 
 export const checkoutController = {
   async createOrder(req: Request, res: Response, next: NextFunction) {
     try {
+      if (!env.paypal.enabled) return res.status(503).json(PAYPAL_DISABLED);
       const { cartId, userId } = req.body ?? {};
       if (!cartId) {
         return res.status(400).json({ error: 'cartId is required' });
@@ -124,6 +127,7 @@ export const checkoutController = {
 
   async capture(req: Request, res: Response, next: NextFunction) {
     try {
+      if (!env.paypal.enabled) return res.status(503).json(PAYPAL_DISABLED);
       const orderId = String(req.params.orderId);
       const order = await orderService.captureOrder(orderId);
       res.json({ data: order });

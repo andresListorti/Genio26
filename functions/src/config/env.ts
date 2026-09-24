@@ -44,6 +44,9 @@ export const env = {
   },
 
   paypal: {
+    // Off unless explicitly enabled. While PayPal runs against the sandbox,
+    // leaving it on would let anyone "pay" with a free test account.
+    enabled: process.env.PAYPAL_ENABLED === 'true',
     clientId: required('PAYPAL_CLIENT_ID'),
     clientSecret: required('PAYPAL_CLIENT_SECRET'),
     apiUrl: process.env.PAYPAL_API_URL ?? 'https://api-m.sandbox.paypal.com',

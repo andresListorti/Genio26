@@ -128,8 +128,23 @@ export const mercadoPagoOrders = {
     order: Order,
     payment: MercadoPagoPaymentResult,
   ): Promise<Order> {
-    const status = mapMercadoPagoStatus(payment.status);
+    let status = mapMercadoPagoStatus(payment.status);
+    let statusDetail = payment.statusDetail;
     const wasCompleted = order.status === 'COMPLETED';
+
+    // Never fulfill an underpaid order: an approved payment must cover the
+    // order total. Marked FAILED (visible in /admin/archive) for a refund.
+    const underpaid =
+      typeof payment.transactionAmount === 'number' &&
+      payment.transactionAmount + 0.01 < Number(order.subtotal);
+    if (status === 'COMPLETED' && !wasCompleted && underpaid) {
+      console.error(
+        `[mercadopago] payment ${payment.id} charged ${payment.transactionAmount} ` +
+          `but order ${order.id} totals ${order.subtotal} — not fulfilled`,
+      );
+      status = 'FAILED';
+      statusDetail = 'amount_mismatch';
+    }
 
     if (status === 'COMPLETED' && !wasCompleted) {
       // decrementStock also clears the matching reservation
@@ -145,7 +160,7 @@ export const mercadoPagoOrders = {
       ...order,
       status,
       mpPaymentId: payment.id || order.mpPaymentId,
-      mpStatusDetail: payment.statusDetail,
+      mpStatusDetail: statusDetail,
       payerEmail: payment.payerEmail ?? order.payerEmail,
       updatedAt: new Date().toISOString(),
     };

@@ -80,6 +80,10 @@ function extractPaypalOrderId(event: any): string | undefined {
 export const webhookController = {
   async handlePaypal(req: Request, res: Response, next: NextFunction) {
     try {
+      // 200 so PayPal stops retrying, but nothing is applied while disabled.
+      if (!env.paypal.enabled) {
+        return res.status(200).json({ received: true, applied: false });
+      }
       const verified = await paypalService.verifyWebhookSignature(
         req.headers,
         req.body,

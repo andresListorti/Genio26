@@ -142,6 +142,38 @@ describe('mercadoPagoOrders.applyMercadoPagoPayment', () => {
     expect(sendAdminNotification).toHaveBeenCalled();
   });
 
+  it('does not fulfill an approved payment that charged less than the order total', async () => {
+    const order = makeOrder({ status: 'CREATED', subtotal: 2000 });
+    await orderRepository.save(order);
+
+    const updated = await mercadoPagoOrders.applyMercadoPagoPayment(order, {
+      id: 'pay-1',
+      status: 'approved',
+      transactionAmount: 1,
+    });
+
+    expect(updated.status).toBe('FAILED');
+    expect(updated.mpStatusDetail).toBe('amount_mismatch');
+    expect(decrementStock).not.toHaveBeenCalled();
+    expect(clearCart).not.toHaveBeenCalled();
+    expect(sendOrderConfirmation).not.toHaveBeenCalled();
+    expect(releaseReservation).toHaveBeenCalledWith('shoe-1', 38, 'marron', 2);
+  });
+
+  it('fulfills an approved payment that charged exactly the order total', async () => {
+    const order = makeOrder({ status: 'CREATED', subtotal: 2000 });
+    await orderRepository.save(order);
+
+    const updated = await mercadoPagoOrders.applyMercadoPagoPayment(order, {
+      id: 'pay-1',
+      status: 'approved',
+      transactionAmount: 2000,
+    });
+
+    expect(updated.status).toBe('COMPLETED');
+    expect(decrementStock).toHaveBeenCalled();
+  });
+
   it('does not re-fulfill or re-notify when the order was already COMPLETED', async () => {
     const order = makeOrder({ status: 'COMPLETED' });
     await orderRepository.save(order);

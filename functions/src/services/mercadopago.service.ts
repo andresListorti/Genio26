@@ -23,6 +23,8 @@ export interface MercadoPagoPaymentResult {
   statusDetail?: string;
   payerEmail?: string;
   externalReference?: string;
+  /** Amount Mercado Pago actually charged — checked against the order total. */
+  transactionAmount?: number;
 }
 
 export const mercadoPagoService = {
@@ -91,14 +93,11 @@ export const mercadoPagoService = {
     formData: MercadoPagoBrickFormData,
   ): Promise<MercadoPagoPaymentResult> {
     const { payment } = getMercadoPago();
-    const amount =
-      typeof formData.transaction_amount === 'number'
-        ? formData.transaction_amount
-        : Number(order.subtotal);
-
+    // Always charge the server-side order total. formData.transaction_amount
+    // comes from the browser and must never decide how much gets charged.
     const result = await payment.create({
       body: {
-        transaction_amount: amount,
+        transaction_amount: Number(order.subtotal),
         token: formData.token,
         description: `Genaro · pedido ${order.id}`,
         installments: formData.installments ?? 1,
@@ -121,6 +120,7 @@ export const mercadoPagoService = {
       statusDetail: result.status_detail,
       payerEmail: result.payer?.email,
       externalReference: result.external_reference ?? undefined,
+      transactionAmount: result.transaction_amount ?? undefined,
     };
   },
 
@@ -137,6 +137,7 @@ export const mercadoPagoService = {
       statusDetail: result.status_detail,
       payerEmail: result.payer?.email,
       externalReference: result.external_reference ?? undefined,
+      transactionAmount: result.transaction_amount ?? undefined,
     };
   },
 };
