@@ -1,0 +1,56 @@
+rules_version = '2';
+
+// Security rules for the Genaro storefront (project sun-66f).
+// The backend uses the Admin SDK, which bypasses these rules entirely — they
+// only govern what the browser (Firebase client SDK) can do.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('role', 'user') == 'admin';
+    }
+
+    // Catalog: public to read, only admins edit it (admin panel).
+    match /shoes/{shoeId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Profiles: each user reads/edits only their own and can never grant
+    // themselves a role. Admins read any profile (order lists show buyers).
+    match /users/{uid} {
+      allow read: if (signedIn() && request.auth.uid == uid) || isAdmin();
+      allow create: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.data.get('role', 'user') == 'user';
+      allow update: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.data.get('role', 'user') == resource.data.get('role', 'user');
+      allow delete: if false;
+    }
+
+    // Orders: created and paid only by the backend. Buyers read their own;
+    // admins read all and update them (ship / edit / archive).
+    match /orders/{orderId} {
+      allow read: if isAdmin()
+        || (signedIn() && resource.data.userId == request.auth.uid);
+      allow update: if isAdmin();
+      allow create, delete: if false;
+    }
+
+    // Carts are managed exclusively by the backend.
+    match /carts/{cartId} {
+      allow read, write: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
