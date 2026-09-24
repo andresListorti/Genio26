@@ -76,7 +76,7 @@ export const env = {
     apiKey: process.env.RESEND_API_KEY ?? '',
     // Verified sender address (e.g. "Genaro <noreply@genaro.com.ar>").
     // Until a domain is verified in Resend, use "onboarding@resend.dev".
-    fromEmail: process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev',
+    fromEmail: process.env.RESEND_FROM_EMAIL ?? 'Zapatería Genaro <onboarding@resend.dev>',
     // Admin inbox that receives new-order notifications.
     adminEmail: process.env.RESEND_ADMIN_EMAIL ?? '',
   },

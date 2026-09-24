@@ -77,7 +77,7 @@ function adminNotificationHtml(order: Order): string {
   return `<!DOCTYPE html>
 <html lang="es">
 <body style="font-family:sans-serif;color:#111;max-width:560px;margin:0 auto;padding:24px">
-  <h2 style="font-size:18px;margin:0 0 16px">🛒 Nueva orden pagada — #${shortId}</h2>
+  <h2 style="font-size:18px;margin:0 0 16px">Nueva venta — pedido #${shortId}</h2>
 
   <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;margin-bottom:20px">
     <tr><td style="color:#888;padding:3px 0;width:130px">Cliente</td><td><strong>${esc(order.payerEmail ?? '—')}</strong></td></tr>
@@ -95,6 +95,25 @@ function adminNotificationHtml(order: Order): string {
 </html>`;
 }
 
+/** Plain-text alternative: spam filters trust HTML-only mail less. */
+function orderText(order: Order, intro: string): string {
+  const lines = order.items.map(
+    (i) =>
+      `- ${i.brand} ${i.model} · talle ${i.size} · ${i.color} · x${i.quantity} · ${money(i.unitPrice * i.quantity, order.currency)}`,
+  );
+  return [
+    intro,
+    '',
+    `Pedido #${order.id.slice(0, 8).toUpperCase()}`,
+    ...lines,
+    `Total: ${money(order.subtotal, order.currency)}`,
+    order.shippingAddress ? `Envío: ${order.shippingAddress}` : '',
+    order.shippingPhone ? `Teléfono: ${order.shippingPhone}` : '',
+  ]
+    .filter((l) => l !== '')
+    .join('\n');
+}
+
 export const emailService = {
   async sendOrderConfirmation(order: Order): Promise<void> {
     if (!resend || !order.payerEmail) return;
@@ -105,6 +124,10 @@ export const emailService = {
         to: order.payerEmail,
         subject: `¡Gracias por tu compra en Genaro! Pedido #${shortId}`,
         html: confirmationHtml(order),
+        text: orderText(
+          order,
+          '¡Gracias por tu compra! Tu compra fue realizada con éxito y ya estamos preparando tu pedido. Te vamos a avisar cuando lo despachemos.',
+        ),
         // Customer replies land in the store's inbox.
         ...(env.resend.adminEmail ? { replyTo: env.resend.adminEmail } : {}),
       })
@@ -123,8 +146,9 @@ export const emailService = {
       .send({
         from: env.resend.fromEmail,
         to: env.resend.adminEmail,
-        subject: `[Genaro] Nueva orden ${money(order.subtotal, order.currency)} — #${shortId}`,
+        subject: `Nueva venta en Genaro - pedido #${shortId}`,
         html: adminNotificationHtml(order),
+        text: orderText(order, `Nueva venta. Cliente: ${order.payerEmail ?? '-'}`),
       })
       .then(({ error }) => {
         if (error) console.error('[email] sendAdminNotification rejected:', error);

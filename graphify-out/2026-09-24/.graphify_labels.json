@@ -32,7 +32,6 @@
   "30": "shoeImage",
   "31": "AuthProvider",
   "32": "webhook.controller.ts",
-  "33": "AuthContext.tsx",
   "38": "Migración del backend: Render → Vercel",
   "40": "vitest.config.ts"
 }
