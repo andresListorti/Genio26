@@ -20,6 +20,7 @@
   "18": "postcss.config.mjs",
   "19": "vercel.json",
   "20": "order.mercadopago.ts",
+  "21": "shoe.service.ts",
   "22": "register",
   "23": "global-error.tsx",
   "24": "instrumentation-client.ts",
@@ -28,11 +29,10 @@
   "27": "vitest.config.ts",
   "28": "fakeFirestore.ts",
   "29": ".runTransaction",
+  "30": "shoeImage",
   "31": "AuthProvider",
   "32": "webhook.controller.ts",
   "33": "AuthContext.tsx",
-  "34": "page.tsx",
-  "35": "page.tsx",
   "38": "Migración del backend: Render → Vercel",
   "40": "vitest.config.ts"
 }

@@ -747,8 +747,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "page.tsx"
     },
     {
@@ -769,8 +769,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_ordertoform",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "ordertoform()"
     },
     {
@@ -780,8 +780,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_status_labels",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "status_labels"
     },
     {
@@ -791,8 +791,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_status_colors",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "status_colors"
     },
     {
@@ -802,8 +802,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_editable_statuses",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "editable_statuses"
     },
     {
@@ -813,8 +813,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_fmtdate",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "fmtdate()"
     },
     {
@@ -824,8 +824,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_fmtcurrency",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "fmtcurrency()"
     },
     {
@@ -835,8 +835,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_adminorderspage",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "adminorderspage()"
     },
     {
@@ -846,8 +846,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "frontend_src_app_admin_orders_page_ordersdashboard",
-      "community": 29,
-      "community_name": ".runTransaction",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "ordersdashboard()"
     },
     {
@@ -857,8 +857,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "page.tsx"
     },
     {
@@ -868,8 +868,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_resource_images",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "resource_images"
     },
     {
@@ -879,8 +879,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_categories",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "categories"
     },
     {
@@ -890,8 +890,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_productform",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "productform"
     },
     {
@@ -901,8 +901,8 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_blankform",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "blankform()"
     },
     {
@@ -912,8 +912,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_shoetoform",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "shoetoform()"
     },
     {
@@ -923,8 +923,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_adminpage",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "adminpage()"
     },
     {
@@ -934,8 +934,8 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "frontend_src_app_admin_page_admindashboard",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "admindashboard()"
     },
     {
@@ -945,30 +945,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_cart_page",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "page.tsx"
-    },
-    {
-      "label": "PAYMENT_OPTIONS",
-      "file_type": "code",
-      "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "frontend_src_app_cart_page_payment_options",
-      "community": 1,
-      "community_name": "types.ts",
-      "norm_label": "payment_options"
     },
     {
       "label": "CartPage()",
       "file_type": "code",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L37",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "frontend_src_app_cart_page_cartpage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartpage()"
     },
     {
@@ -978,8 +967,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_checkout_failure_page",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "page.tsx"
     },
     {
@@ -989,8 +978,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "frontend_src_app_checkout_failure_page_checkoutfailurepage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "checkoutfailurepage()"
     },
     {
@@ -1000,8 +989,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_checkout_pending_page",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "page.tsx"
     },
     {
@@ -1011,8 +1000,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "frontend_src_app_checkout_pending_page_checkoutpendingpage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "checkoutpendingpage()"
     },
     {
@@ -1022,8 +1011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_checkout_success_page",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "page.tsx"
     },
     {
@@ -1033,8 +1022,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "frontend_src_app_checkout_success_page_checkoutsuccesspage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "checkoutsuccesspage()"
     },
     {
@@ -1187,8 +1176,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_login_page",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "page.tsx"
     },
     {
@@ -1198,8 +1187,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "frontend_src_app_login_page_geterrormessage",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "geterrormessage()"
     },
     {
@@ -1209,8 +1198,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "frontend_src_app_login_page_googleicon",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "googleicon()"
     },
     {
@@ -1220,8 +1209,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "frontend_src_app_login_page_loginpage",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "loginpage()"
     },
     {
@@ -1253,8 +1242,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "page.tsx"
     },
     {
@@ -1264,8 +1253,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page_getshoe",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "getshoe"
     },
     {
@@ -1275,8 +1264,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page_generatemetadata",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "generatemetadata()"
     },
     {
@@ -1286,8 +1275,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "frontend_src_app_products_id_page_productpage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "productpage()"
     },
     {
@@ -1297,8 +1286,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_profile_page",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "page.tsx"
     },
     {
@@ -1308,8 +1297,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "frontend_src_app_profile_page_statuslabel",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "statuslabel()"
     },
     {
@@ -1319,8 +1308,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "frontend_src_app_profile_page_statusbadge",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "statusbadge()"
     },
     {
@@ -1330,8 +1319,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "frontend_src_app_profile_page_fmtdate",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "fmtdate()"
     },
     {
@@ -1341,8 +1330,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "frontend_src_app_profile_page_profilepage",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "profilepage()"
     },
     {
@@ -1352,8 +1341,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "frontend_src_app_profile_page_profilecontent",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "profilecontent()"
     },
     {
@@ -1363,8 +1352,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_app_register_page",
-      "community": 35,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "page.tsx"
     },
     {
@@ -1374,8 +1363,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "frontend_src_app_register_page_geterrormessage",
-      "community": 35,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "geterrormessage()"
     },
     {
@@ -1385,8 +1374,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "frontend_src_app_register_page_googleicon",
-      "community": 35,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "googleicon()"
     },
     {
@@ -1396,8 +1385,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "frontend_src_app_register_page_registerpage",
-      "community": 35,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "registerpage()"
     },
     {
@@ -1440,8 +1429,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_cartsidebar",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartsidebar.tsx"
     },
     {
@@ -1451,8 +1440,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "frontend_src_components_cartsidebar_cartsidebar",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartsidebar()"
     },
     {
@@ -1462,8 +1451,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_catalogclient",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "catalogclient.tsx"
     },
     {
@@ -1473,8 +1462,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "frontend_src_components_catalogclient_matches",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "matches()"
     },
     {
@@ -1484,8 +1473,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "frontend_src_components_catalogclient_catalogclient",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "catalogclient()"
     },
     {
@@ -1495,8 +1484,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_checkoutresult",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "checkoutresult.tsx"
     },
     {
@@ -1506,8 +1495,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "frontend_src_components_checkoutresult_checkoutvariant",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "checkoutvariant"
     },
     {
@@ -1517,8 +1506,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "frontend_src_components_checkoutresult_copy",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "copy"
     },
     {
@@ -1528,8 +1517,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "frontend_src_components_checkoutresult_checkoutresult",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "checkoutresult()"
     },
     {
@@ -1539,8 +1528,8 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "frontend_src_components_checkoutresult_checkoutresultfallback",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 31,
+      "community_name": "AuthProvider",
       "norm_label": "checkoutresultfallback()"
     },
     {
@@ -1638,8 +1627,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_mercadopagobrick",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 29,
+      "community_name": ".runTransaction",
       "norm_label": "mercadopagobrick.tsx"
     },
     {
@@ -1649,8 +1638,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "frontend_src_components_mercadopagobrick_window",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 29,
+      "community_name": ".runTransaction",
       "norm_label": "window"
     },
     {
@@ -1660,8 +1649,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "frontend_src_components_mercadopagobrick_loadmercadopagosdk",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 29,
+      "community_name": ".runTransaction",
       "norm_label": "loadmercadopagosdk()"
     },
     {
@@ -1671,8 +1660,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "frontend_src_components_mercadopagobrick_mercadopagobrickprops",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 29,
+      "community_name": ".runTransaction",
       "norm_label": "mercadopagobrickprops"
     },
     {
@@ -1682,8 +1671,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "frontend_src_components_mercadopagobrick_mercadopagobrick",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 29,
+      "community_name": ".runTransaction",
       "norm_label": "mercadopagobrick()"
     },
     {
@@ -1693,8 +1682,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_navbar",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 9,
+      "community_name": "layout.tsx",
       "norm_label": "navbar.tsx"
     },
     {
@@ -1704,8 +1693,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "frontend_src_components_navbar_nav_links",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 9,
+      "community_name": "layout.tsx",
       "norm_label": "nav_links"
     },
     {
@@ -1715,8 +1704,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "frontend_src_components_navbar_navbar",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 9,
+      "community_name": "layout.tsx",
       "norm_label": "navbar()"
     },
     {
@@ -1726,8 +1715,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_productcard",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "productcard.tsx"
     },
     {
@@ -1737,8 +1726,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "frontend_src_components_productcard_productcard",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "productcard()"
     },
     {
@@ -1748,8 +1737,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_productdetailclient",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "productdetailclient.tsx"
     },
     {
@@ -1759,8 +1748,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "frontend_src_components_productdetailclient_productdetailclient",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "productdetailclient()"
     },
     {
@@ -1770,8 +1759,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_profilerequiredmodal",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 33,
+      "community_name": "AuthContext.tsx",
       "norm_label": "profilerequiredmodal.tsx"
     },
     {
@@ -1781,8 +1770,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "frontend_src_components_profilerequiredmodal_props",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 33,
+      "community_name": "AuthContext.tsx",
       "norm_label": "props"
     },
     {
@@ -1792,8 +1781,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "frontend_src_components_profilerequiredmodal_profilerequiredmodal",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 33,
+      "community_name": "AuthContext.tsx",
       "norm_label": "profilerequiredmodal()"
     },
     {
@@ -1803,8 +1792,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_components_searchbar",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 9,
+      "community_name": "layout.tsx",
       "norm_label": "searchbar.tsx"
     },
     {
@@ -1814,8 +1803,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "frontend_src_components_searchbar_searchbar",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 9,
+      "community_name": "layout.tsx",
       "norm_label": "searchbar()"
     },
     {
@@ -1825,8 +1814,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_test",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "authcontext.test.tsx"
     },
     {
@@ -1836,8 +1825,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_test_onauthstatechangedmock_signinmock_signupmock_signinwithpopupmock_signoutmock_updateprofilemock_docmock_getdocmock_setdocmock_updatedocmock",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "{\n  onauthstatechangedmock,\n  signinmock,\n  signupmock,\n  signinwithpopupmock,\n  signoutmock,\n  updateprofilemock,\n  docmock,\n  getdocmock,\n  setdocmock,\n  updatedocmock,\n}"
     },
     {
@@ -1847,8 +1836,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_test_fakeuser",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "fakeuser"
     },
     {
@@ -1858,8 +1847,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "authcontext.tsx"
     },
     {
@@ -1869,8 +1858,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_userprofile",
-      "community": 34,
-      "community_name": "page.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "userprofile"
     },
     {
@@ -1880,8 +1869,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_profileupdate",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "profileupdate"
     },
     {
@@ -1891,8 +1880,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_authcontextvalue",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "authcontextvalue"
     },
     {
@@ -1902,8 +1891,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_authcontext",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "authcontext"
     },
     {
@@ -1913,8 +1902,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_authprovider",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "authprovider()"
     },
     {
@@ -1924,8 +1913,8 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "frontend_src_context_authcontext_useauth",
-      "community": 28,
-      "community_name": "fakeFirestore.ts",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "useauth()"
     },
     {
@@ -1935,8 +1924,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_test",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartcontext.test.tsx"
     },
     {
@@ -1946,8 +1935,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_test_cartcreate_cartget_cartadditem_cartremoveitem_cartclear_checkoutcreateorder",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "{ cartcreate, cartget, cartadditem, cartremoveitem, cartclear, checkoutcreateorder }"
     },
     {
@@ -1957,8 +1946,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_test_emptycart",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "emptycart()"
     },
     {
@@ -1968,8 +1957,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartcontext.tsx"
     },
     {
@@ -1990,8 +1979,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_cartcontext",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartcontext"
     },
     {
@@ -2001,8 +1990,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_cartprovider",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "cartprovider()"
     },
     {
@@ -2012,8 +2001,8 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "frontend_src_context_cartcontext_usecart",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "usecart()"
     },
     {
@@ -2100,8 +2089,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_firebase",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "firebase.ts"
     },
     {
@@ -2111,8 +2100,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "frontend_src_lib_firebase_firebaseconfig",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "firebaseconfig"
     },
     {
@@ -2122,8 +2111,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "frontend_src_lib_firebase_auth",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "auth"
     },
     {
@@ -2133,8 +2122,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "frontend_src_lib_firebase_db",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "db"
     },
     {
@@ -2144,8 +2133,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "frontend_src_lib_firebase_googleprovider",
-      "community": 33,
-      "community_name": "AuthContext.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "googleprovider"
     },
     {
@@ -2155,8 +2144,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_format",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "format.ts"
     },
     {
@@ -2166,8 +2155,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_format_locale_by_currency",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "locale_by_currency"
     },
     {
@@ -2177,8 +2166,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "frontend_src_lib_format_formatmoney",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 28,
+      "community_name": "fakeFirestore.ts",
       "norm_label": "formatmoney()"
     },
     {
@@ -2188,8 +2177,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_images",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "images.ts"
     },
     {
@@ -2199,8 +2188,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_images_unsplash",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "unsplash()"
     },
     {
@@ -2210,8 +2199,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "frontend_src_lib_images_by_model_cart",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "by_model_cart"
     },
     {
@@ -2221,8 +2210,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "frontend_src_lib_images_by_model",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "by_model"
     },
     {
@@ -2232,8 +2221,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "frontend_src_lib_images_by_category",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "by_category"
     },
     {
@@ -2243,8 +2232,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "frontend_src_lib_images_shoeimage",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "shoeimage()"
     },
     {
@@ -2254,8 +2243,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "frontend_src_lib_images_hero_image",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 30,
+      "community_name": "shoeImage",
       "norm_label": "hero_image"
     },
     {
@@ -2276,8 +2265,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "frontend_src_lib_types_shoestockvariant",
-      "community": 31,
-      "community_name": "AuthProvider",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": "shoestockvariant"
     },
     {
@@ -2320,8 +2309,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "frontend_src_lib_types_orderstatus",
-      "community": 1,
-      "community_name": "types.ts",
+      "community": 29,
+      "community_name": ".runTransaction",
       "norm_label": "orderstatus"
     },
     {
@@ -3024,8 +3013,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ref_express",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "express"
     },
     {
@@ -3549,7 +3538,7 @@
       "label": "isMercadoPagoConfigured()",
       "file_type": "code",
       "source_file": "functions/src/config/env.ts",
-      "source_location": "L87",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "functions_src_config_env_ismercadopagoconfigured",
       "community": 32,
@@ -3563,8 +3552,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_config_firebase",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "firebase.ts"
     },
     {
@@ -3574,8 +3563,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "functions_src_config_firebase_loadcredential",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "loadcredential()"
     },
     {
@@ -3585,8 +3574,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "functions_src_config_firebase_firestore",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "firestore"
     },
     {
@@ -3596,8 +3585,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "functions_src_config_firebase_collections",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "collections"
     },
     {
@@ -3684,8 +3673,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_controllers_cart_controller",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cart.controller.ts"
     },
     {
@@ -3695,9 +3684,53 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "functions_src_controllers_cart_controller_cartcontroller",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cartcontroller"
+    },
+    {
+      "label": "checkout-closed.test.ts",
+      "file_type": "code",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "functions_src_controllers_checkout_closed_test",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "checkout-closed.test.ts"
+    },
+    {
+      "label": "{\n  createMercadoPagoFromCart,\n  processMercadoPagoPayment,\n  handleMercadoPagoWebhook,\n  findById,\n}",
+      "file_type": "code",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "functions_src_controllers_checkout_closed_test_createmercadopagofromcart_processmercadopagopayment_handlemercadopagowebhook_findbyid",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "{\n  createmercadopagofromcart,\n  processmercadopagopayment,\n  handlemercadopagowebhook,\n  findbyid,\n}"
+    },
+    {
+      "label": "mockRes()",
+      "file_type": "code",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "functions_src_controllers_checkout_closed_test_mockres",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "mockres()"
+    },
+    {
+      "label": "req()",
+      "file_type": "code",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "functions_src_controllers_checkout_closed_test_req",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "req()"
     },
     {
       "label": "checkout.controller.ts",
@@ -3706,8 +3739,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_controllers_checkout_controller",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "checkout.controller.ts"
     },
     {
@@ -3717,19 +3750,41 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "functions_src_controllers_checkout_controller_paypal_disabled",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "paypal_disabled"
+    },
+    {
+      "label": "CHECKOUT_CLOSED",
+      "file_type": "code",
+      "source_file": "functions/src/controllers/checkout.controller.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "functions_src_controllers_checkout_controller_checkout_closed",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "checkout_closed"
+    },
+    {
+      "label": "paypalAvailable()",
+      "file_type": "code",
+      "source_file": "functions/src/controllers/checkout.controller.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "functions_src_controllers_checkout_controller_paypalavailable",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
+      "norm_label": "paypalavailable()"
     },
     {
       "label": "checkoutController",
       "file_type": "code",
       "source_file": "functions/src/controllers/checkout.controller.ts",
-      "source_location": "L7",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "functions_src_controllers_checkout_controller_checkoutcontroller",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "checkoutcontroller"
     },
     {
@@ -3739,8 +3794,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_controllers_paypal_disabled_test",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "paypal-disabled.test.ts"
     },
     {
@@ -3750,8 +3805,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_controllers_paypal_disabled_test_createfromcart_captureorder_updatestatusbypaypalid",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "{ createfromcart, captureorder, updatestatusbypaypalid }"
     },
     {
@@ -3761,8 +3816,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "functions_src_controllers_paypal_disabled_test_verifywebhooksignature",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "{ verifywebhooksignature }"
     },
     {
@@ -3772,8 +3827,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "functions_src_controllers_paypal_disabled_test_mockres",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "mockres()"
     },
     {
@@ -3783,8 +3838,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_controllers_shoe_controller",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoe.controller.ts"
     },
     {
@@ -3794,8 +3849,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_controllers_shoe_controller_shoecontroller",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoecontroller"
     },
     {
@@ -3805,8 +3860,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_test",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "webhook.controller.test.ts"
     },
     {
@@ -3816,8 +3871,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_test_webhooksecret",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "{ webhooksecret }"
     },
     {
@@ -3827,8 +3882,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_test_mercadopago",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "mercadopago()"
     },
     {
@@ -3838,8 +3893,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_test_sign",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "sign()"
     },
     {
@@ -3849,8 +3904,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "webhook.controller.ts"
     },
     {
@@ -3860,8 +3915,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_verifymercadopagosignature",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "verifymercadopagosignature()"
     },
     {
@@ -3871,8 +3926,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_mapeventtostatus",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "mapeventtostatus()"
     },
     {
@@ -3882,8 +3937,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_extractpaypalorderid",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "extractpaypalorderid()"
     },
     {
@@ -3893,8 +3948,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "functions_src_controllers_webhook_controller_webhookcontroller",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "webhookcontroller"
     },
     {
@@ -3948,8 +4003,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_middlewares_auth_middleware",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "auth.middleware.ts"
     },
     {
@@ -3959,8 +4014,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_middlewares_auth_middleware_authedrequest",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "authedrequest"
     },
     {
@@ -3970,8 +4025,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "functions_src_middlewares_auth_middleware_requireadmin",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "requireadmin()"
     },
     {
@@ -4135,8 +4190,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_models_shoe_model",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoe.model.ts"
     },
     {
@@ -4146,8 +4201,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_models_shoe_model_shoestockvariant",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoestockvariant"
     },
     {
@@ -4157,8 +4212,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "functions_src_models_shoe_model_shoegender",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoegender"
     },
     {
@@ -4168,8 +4223,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "functions_src_models_shoe_model_shoe",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoe"
     },
     {
@@ -4179,8 +4234,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "functions_src_models_shoe_model_shoecreateinput",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoecreateinput"
     },
     {
@@ -4190,8 +4245,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "functions_src_models_shoe_model_shoeupdateinput",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoeupdateinput"
     },
     {
@@ -4201,8 +4256,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_routes_cart_routes",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "cart.routes.ts"
     },
     {
@@ -4212,8 +4267,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_routes_cart_routes_router",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "router"
     },
     {
@@ -4223,8 +4278,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_routes_checkout_routes",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "checkout.routes.ts"
     },
     {
@@ -4234,8 +4289,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_routes_checkout_routes_router",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "router"
     },
     {
@@ -4245,8 +4300,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_routes_index",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "index.ts"
     },
     {
@@ -4256,8 +4311,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "functions_src_routes_index_router",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "router"
     },
     {
@@ -4267,8 +4322,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_routes_shoe_routes",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "shoe.routes.ts"
     },
     {
@@ -4278,8 +4333,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "functions_src_routes_shoe_routes_router",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "router"
     },
     {
@@ -4289,8 +4344,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_routes_webhook_routes",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "webhook.routes.ts"
     },
     {
@@ -4300,8 +4355,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "functions_src_routes_webhook_routes_router",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "router"
     },
     {
@@ -4487,8 +4542,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_scripts_seed_admin",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "seed-admin.ts"
     },
     {
@@ -4498,8 +4553,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "functions_src_scripts_seed_admin_main",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "main()"
     },
     {
@@ -4509,8 +4564,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_scripts_seed",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "seed.ts"
     },
     {
@@ -4520,8 +4575,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "functions_src_scripts_seed_sampleshoes",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "sampleshoes"
     },
     {
@@ -4531,8 +4586,8 @@
       "source_location": "L1526",
       "_origin": "ast",
       "id": "functions_src_scripts_seed_wipeshoes",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "wipeshoes()"
     },
     {
@@ -4542,8 +4597,8 @@
       "source_location": "L1542",
       "_origin": "ast",
       "id": "functions_src_scripts_seed_main",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "main()"
     },
     {
@@ -4641,8 +4696,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_services_email_service",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 32,
+      "community_name": "webhook.controller.ts",
       "norm_label": "email.service.ts"
     },
     {
@@ -4652,8 +4707,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "functions_src_services_email_service_money",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 32,
+      "community_name": "webhook.controller.ts",
       "norm_label": "money()"
     },
     {
@@ -4663,8 +4718,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "functions_src_services_email_service_itemrows",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 32,
+      "community_name": "webhook.controller.ts",
       "norm_label": "itemrows()"
     },
     {
@@ -4674,8 +4729,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "functions_src_services_email_service_confirmationhtml",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 32,
+      "community_name": "webhook.controller.ts",
       "norm_label": "confirmationhtml()"
     },
     {
@@ -4685,8 +4740,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "functions_src_services_email_service_adminnotificationhtml",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 32,
+      "community_name": "webhook.controller.ts",
       "norm_label": "adminnotificationhtml()"
     },
     {
@@ -4696,8 +4751,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "functions_src_services_email_service_emailservice",
-      "community": 0,
-      "community_name": "order.service.ts",
+      "community": 32,
+      "community_name": "webhook.controller.ts",
       "norm_label": "emailservice"
     },
     {
@@ -4795,8 +4850,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "functions_src_services_order_service_orderservice",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "orderservice"
     },
     {
@@ -5136,8 +5191,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_services_order_order_repository_test",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 0,
+      "community_name": "order.service.ts",
       "norm_label": "order.repository.test.ts"
     },
     {
@@ -5147,8 +5202,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "functions_src_services_order_order_repository_test_makeorder",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 0,
+      "community_name": "order.service.ts",
       "norm_label": "makeorder()"
     },
     {
@@ -5235,8 +5290,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "functions_src_services_paypal_service_paypalservice",
-      "community": 32,
-      "community_name": "webhook.controller.ts",
+      "community": 20,
+      "community_name": "order.mercadopago.ts",
       "norm_label": "paypalservice"
     },
     {
@@ -5257,8 +5312,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_services_shoe_service_test",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoe.service.test.ts"
     },
     {
@@ -5268,8 +5323,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "functions_src_services_shoe_service_test_makeshoe",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "makeshoe()"
     },
     {
@@ -5279,8 +5334,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "functions_src_services_shoe_service",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoe.service.ts"
     },
     {
@@ -5290,8 +5345,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "functions_src_services_shoe_service_shoescollection",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoescollection()"
     },
     {
@@ -5301,8 +5356,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "functions_src_services_shoe_service_shoeservice",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "shoeservice"
     },
     {
@@ -5367,8 +5422,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakedocsnapshot_data",
-      "community": 9,
-      "community_name": "layout.tsx",
+      "community": 2,
+      "community_name": "useAuth",
       "norm_label": ".data()"
     },
     {
@@ -5510,8 +5565,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakecollection",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "fakecollection"
     },
     {
@@ -5521,8 +5576,8 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakecollection_doc",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".doc()"
     },
     {
@@ -5532,8 +5587,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakecollection_where",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".where()"
     },
     {
@@ -5543,8 +5598,8 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakecollection_orderby",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".orderby()"
     },
     {
@@ -5554,8 +5609,8 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakecollection_get",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".get()"
     },
     {
@@ -5565,8 +5620,8 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakecollection_clear",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".clear()"
     },
     {
@@ -5576,8 +5631,8 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_faketransaction",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "faketransaction"
     },
     {
@@ -5587,8 +5642,8 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_faketransaction_get",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".get()"
     },
     {
@@ -5598,8 +5653,8 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_faketransaction_update",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".update()"
     },
     {
@@ -5609,8 +5664,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_faketransaction_set",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".set()"
     },
     {
@@ -5620,8 +5675,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakefirestore",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": "fakefirestore"
     },
     {
@@ -5631,8 +5686,8 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakefirestore_collection",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".collection()"
     },
     {
@@ -5642,8 +5697,8 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakefirestore_settings",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".settings()"
     },
     {
@@ -5653,8 +5708,8 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakefirestore_runtransaction",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".runtransaction()"
     },
     {
@@ -5664,8 +5719,8 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "functions_src_test_utils_fakefirestore_fakefirestore_reset",
-      "community": 20,
-      "community_name": "order.mercadopago.ts",
+      "community": 14,
+      "community_name": "ProfileRequiredModal.tsx",
       "norm_label": ".__reset()"
     },
     {
@@ -6610,8 +6665,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "functions_src_config_firebase_firebaseadmin",
-      "community": 14,
-      "community_name": "ProfileRequiredModal.tsx",
+      "community": 21,
+      "community_name": "shoe.service.ts",
       "norm_label": "firebaseadmin"
     }
   ],
@@ -8026,7 +8081,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L37",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8034,22 +8089,11 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "frontend_src_app_cart_page",
-      "target": "frontend_src_app_cart_page_payment_options",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8061,7 +8105,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8073,7 +8117,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8085,7 +8129,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8097,7 +8141,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8109,7 +8153,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8121,7 +8165,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8133,7 +8177,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8145,7 +8189,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8157,7 +8201,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8169,7 +8213,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8181,7 +8225,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8193,7 +8237,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8205,7 +8249,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8217,7 +8261,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page",
@@ -8230,7 +8274,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L49",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page_cartpage",
@@ -8242,7 +8286,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L48",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page_cartpage",
@@ -8254,7 +8298,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L207",
+      "source_location": "L218",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page_cartpage",
@@ -8266,7 +8310,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/app/cart/page.tsx",
-      "source_location": "L184",
+      "source_location": "L195",
       "weight": 1.0,
       "_origin": "ast",
       "source": "frontend_src_app_cart_page_cartpage",
@@ -11839,6 +11883,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_closed_test",
+      "target": "ref_express",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "functions/src/controllers/checkout.controller.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -12586,7 +12642,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "functions/src/config/env.ts",
-      "source_location": "L87",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
       "source": "functions_src_config_env",
@@ -13499,8 +13555,76 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_closed_test",
+      "target": "functions_src_controllers_checkout_closed_test_createmercadopagofromcart_processmercadopagopayment_handlemercadopagowebhook_findbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_closed_test",
+      "target": "functions_src_controllers_checkout_closed_test_mockres",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_closed_test",
+      "target": "functions_src_controllers_checkout_closed_test_req",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_closed_test",
+      "target": "functions_src_controllers_checkout_controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout-closed.test.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_closed_test",
+      "target": "functions_src_controllers_checkout_controller_checkoutcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "functions/src/controllers/checkout.controller.ts",
-      "source_location": "L7",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_controller",
+      "target": "functions_src_controllers_checkout_controller_checkout_closed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout.controller.ts",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "functions_src_controllers_checkout_controller",
@@ -13516,6 +13640,17 @@
       "_origin": "ast",
       "source": "functions_src_controllers_checkout_controller",
       "target": "functions_src_controllers_checkout_controller_paypal_disabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions/src/controllers/checkout.controller.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "functions_src_controllers_checkout_controller",
+      "target": "functions_src_controllers_checkout_controller_paypalavailable",
       "confidence_score": 1.0
     },
     {
@@ -18280,5 +18415,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f2e309a0e3b1b15cac65a827eac986103376b9b6"
+  "built_at_commit": "1f74eb0bd508dc08c20ee1c6d03b31a565c3e666"
 }

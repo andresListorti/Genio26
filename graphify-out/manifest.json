@@ -1375,8 +1375,8 @@
     "semantic_hash": ""
   },
   "functions/src/services/email.service.ts": {
-    "mtime": 1781040694.9594893,
-    "ast_hash": "d3d9ed5c54a556a66a068100cc72036b",
+    "mtime": 1790263327.9043245,
+    "ast_hash": "3d9dd2908da99d09e28dcb2d3f0740a2",
     "semantic_hash": ""
   },
   "functions/src/services/mercadopago.service.ts": {
@@ -1482,6 +1482,11 @@
   "functions/src/controllers/checkout-closed.test.ts": {
     "mtime": 1790262762.8469565,
     "ast_hash": "2fced66b3a6f0cc6ea5552df2b7aee77",
+    "semantic_hash": ""
+  },
+  "functions/src/services/email.service.test.ts": {
+    "mtime": 1790263341.513111,
+    "ast_hash": "80daa9c9d587db4e888bd39aaef7bfda",
     "semantic_hash": ""
   }
 }
