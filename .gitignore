@@ -17,3 +17,4 @@ dist/
 
 # Scratch screenshots
 resources/novedades/
+.claude/settings.local.json
