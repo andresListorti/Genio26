@@ -39,6 +39,14 @@ ahí por si alguna vez hace falta volver atrás con "Resume".
 
 ## Nota de seguridad
 
+**Actualización 2026-09-24 — resuelto.** Se rotaron todas las credenciales expuestas: token de
+Vercel revocado, clave de Firebase Admin reemplazada (la vieja borrada en Google Cloud), Resend
+con cuenta y API key nuevas, Mercado Pago con credenciales de producción renovadas y clave de
+webhook regenerada. PayPal (sandbox) quedó apagado. Los chats con los secretos se borraron. Los
+valores reales viven solo en Vercel y en la carpeta `.secrets/` (ignorada por git).
+
+Texto original:
+
 Para hacer esta migración con el mínimo de trabajo tuyo, tuviste que mostrarme en texto plano
 las credenciales de producción (export de Render, token de Vercel) — quedaron en el historial de
 esta conversación. Dijiste que más adelante querés ver de borrar esos rastros; para cuando

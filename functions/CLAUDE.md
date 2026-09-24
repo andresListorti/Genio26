@@ -98,6 +98,8 @@ PayPal does not reserve stock — stock is decremented only on successful captur
 All of these are plain Vercel env vars (Production + Preview as needed) — Vercel doesn't have
 a separate secrets-manager tier like Firebase did; everything is encrypted at rest uniformly:
 ```
+CHECKOUT_ENABLED   # master payment switch — unset/false = store closed (see below)
+PAYPAL_ENABLED     # PayPal switch — also needs CHECKOUT_ENABLED; off while PayPal is sandbox
 FRONTEND_URL / CORS_ORIGINS
 FIREBASE_PROJECT_ID / FIREBASE_CLIENT_EMAIL / FIREBASE_PRIVATE_KEY
 PAYPAL_CLIENT_ID / PAYPAL_CLIENT_SECRET / PAYPAL_API_URL / PAYPAL_FALLBACK_CURRENCY / PAYPAL_ARS_PER_USD
@@ -105,6 +107,21 @@ MERCADOPAGO_ACCESS_TOKEN / MERCADOPAGO_PUBLIC_KEY / MERCADOPAGO_WEBHOOK_SECRET
 RESEND_API_KEY / RESEND_FROM_EMAIL / RESEND_ADMIN_EMAIL
 SENTRY_DSN
 ```
+
+**Store closed for payments.** Unless `CHECKOUT_ENABLED=true`, every Mercado Pago checkout
+endpoint (`/mercadopago`, `/process`, `/confirm`) answers 503, and PayPal additionally needs
+`PAYPAL_ENABLED=true`. `GET /api/checkout/status` → `{ enabled, paypal }` is what the storefront
+reads to decide whether to show the pay button — flip the backend env var and redeploy, no
+frontend change needed. As of 2026-09 the store is closed and MP runs on **TEST** credentials;
+renewed production credentials are kept in the repo-root `.secrets/` folder for launch day.
+
+**Payment amount is always server-side.** `createPayment` charges `order.subtotal` (never the
+browser-sent `transaction_amount`), and `applyMercadoPagoPayment` refuses to fulfill an approved
+payment that charged less than the order total (`FAILED` / `amount_mismatch`).
+
+**Secrets.** Real values live only in Vercel env vars and in the gitignored repo-root `.secrets/`
+folder (Firebase Admin JSON used by local dev via the default `serviceAccountFile` path, plus
+`*.env` files). Never inside `functions/` (the folder uploaded on deploy) and never in chat.
 
 `MERCADOPAGO_ACCESS_TOKEN` being empty disables all MP endpoints (returns 503). MP webhook signature verification is skipped when `MERCADOPAGO_WEBHOOK_SECRET` is empty (dev only).
 

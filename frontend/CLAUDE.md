@@ -52,7 +52,7 @@ Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 frontend for Z
 | `/` | Home (Hero + catalog) |
 | `/collections/men` · `/collections/women` | Filtered catalog by gender |
 | `/products/[id]` | Product detail + add to cart |
-| `/cart` | Cart page |
+| `/cart` | Cart page — the only place payment happens. Asks the backend `GET /api/checkout/status`; while closed it shows "Estamos preparando la tienda" instead of the pay button, and PayPal is offered only if the backend says so |
 | `/checkout` | Checkout (MP Bricks or PayPal) |
 | `/checkout/success` · `/pending` · `/failure` | MP redirect landing pages |
 | `/login` · `/register` · `/profile` | Auth + profile |
