@@ -4,5 +4,6 @@
 export const INTEREST_FREE_INSTALLMENTS = 3;
 
 export function installmentAmount(price: number): number {
-  return Math.ceil(price / INTEREST_FREE_INSTALLMENTS);
+  // Exact to the cent, so N installments add back up to the price.
+  return Math.round((price / INTEREST_FREE_INSTALLMENTS) * 100) / 100;
 }
