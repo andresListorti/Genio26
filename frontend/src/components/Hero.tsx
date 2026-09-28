@@ -65,6 +65,19 @@ export default function Hero() {
             className="object-cover object-[72%_center]"
             sizes="(max-width: 1024px) 100vw, 58vw"
           />
+          {/* Animated version of the same shot; the image above stays as the
+              first paint and as the fallback for reduced-motion users. */}
+          <video
+            src="/videos/higgsfield/2026-09-28_kling-3-turbo_hero-pareja-mocasines.mp4"
+            poster="/assets/higgsfield/2026-09-28_nano-banana-2_hero-pareja-mocasines.png"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-[72%_center] motion-reduce:hidden"
+          />
           {/* Gradient blends image into the bg-surface text panel on mobile */}
           <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-transparent via-transparent to-surface/70 pointer-events-none" />
         </div>
