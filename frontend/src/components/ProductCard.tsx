@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Shoe } from "@/lib/types";
 import { shoeImage } from "@/lib/images";
 import { formatMoney } from "@/lib/format";
+import { INTEREST_FREE_INSTALLMENTS, installmentAmount } from "@/lib/payments";
 
 export default function ProductCard({ shoe }: { shoe: Shoe }) {
   const img = shoeImage({
@@ -38,6 +39,12 @@ export default function ProductCard({ shoe }: { shoe: Shoe }) {
           {formatMoney(shoe.price, shoe.currency)}
         </p>
       </div>
+      <p className="mt-1.5 text-xs text-muted">
+        {INTEREST_FREE_INSTALLMENTS} cuotas sin interés de{" "}
+        <span className="text-foreground/80">
+          {formatMoney(installmentAmount(shoe.price), shoe.currency)}
+        </span>
+      </p>
     </Link>
   );
 }

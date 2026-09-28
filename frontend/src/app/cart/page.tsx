@@ -161,7 +161,7 @@ export default function CartPage() {
         <div className="py-24 text-center border-t border-line">
           <p className="heading-display text-2xl mb-3">Tu bolsa está vacía</p>
           <p className="text-muted text-sm mb-8">
-            Descubrí la nueva colección Otoño / Invierno de Genaro.
+            Descubrí la nueva colección Primavera / Verano de Genaro.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link

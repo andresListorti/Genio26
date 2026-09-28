@@ -62,7 +62,7 @@ export default function CartSidebar() {
                 Tu bolsa está vacía
               </p>
               <p className="mt-2 text-sm">
-                Descubrí la nueva colección Otoño / Invierno.
+                Descubrí la nueva colección Primavera / Verano.
               </p>
             </div>
           ) : (

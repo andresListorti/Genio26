@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import CardBrands from "./CardBrands";
+import { INTEREST_FREE_INSTALLMENTS } from "@/lib/payments";
 
 export default function Hero() {
   return (
@@ -11,7 +13,7 @@ export default function Hero() {
       >
         {/* ── Left: editorial copy ────────────────────────────────────────── */}
         <div className="order-2 lg:order-1 flex flex-col justify-center lg:w-[42%] bg-surface px-8 sm:px-14 lg:px-16 xl:px-20 py-14 lg:py-0">
-          <p className="eyebrow mb-5">Colección Otoño · Invierno 2026</p>
+          <p className="eyebrow mb-5">Nueva colección · Primavera Verano 2026</p>
           <h1
             className="heading-display leading-[1.04] text-foreground"
             style={{ fontSize: "clamp(2.4rem, 4.5vw, 4rem)" }}
@@ -53,6 +55,10 @@ export default function Hero() {
               </Link>
             </div>
           </div>
+          <p className="mt-8 flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-foreground/60">
+            <span>{INTEREST_FREE_INSTALLMENTS} cuotas sin interés</span>
+            <CardBrands />
+          </p>
         </div>
 
         {/* ── Right: footwear image ───────────────────────────────────────── */}

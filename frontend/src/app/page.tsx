@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 import Hero from "@/components/Hero";
+import Benefits from "@/components/Benefits";
+import CategoryTiles from "@/components/CategoryTiles";
 import CatalogClient from "@/components/CatalogClient";
 import { api } from "@/lib/api";
 import type { Shoe } from "@/lib/types";
@@ -17,6 +19,8 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <Benefits />
+      <CategoryTiles />
       <Suspense fallback={null}>
         <CatalogClient shoes={shoes} />
       </Suspense>

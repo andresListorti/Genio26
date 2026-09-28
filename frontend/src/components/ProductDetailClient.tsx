@@ -6,6 +6,8 @@ import { Loader2, ShoppingBag, ShieldCheck, Truck } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
 import { formatMoney } from "@/lib/format";
+import { INTEREST_FREE_INSTALLMENTS, installmentAmount } from "@/lib/payments";
+import CardBrands from "./CardBrands";
 import type { Shoe } from "@/lib/types";
 import ProfileRequiredModal from "@/components/ProfileRequiredModal";
 
@@ -101,6 +103,15 @@ export default function ProductDetailClient({ shoe }: { shoe: Shoe }) {
           <span className="text-xs uppercase tracking-widest text-muted">
             {shoe.currency}
           </span>
+        </p>
+        <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
+          <span>
+            {INTEREST_FREE_INSTALLMENTS} cuotas sin interés de{" "}
+            <span className="text-foreground font-medium">
+              {formatMoney(installmentAmount(shoe.price), shoe.currency)}
+            </span>
+          </span>
+          <CardBrands />
         </p>
       </div>
 

@@ -40,7 +40,7 @@ export default function CatalogClient({ shoes }: { shoes: Shoe[] }) {
         </div>
         {!q && (
           <p className="text-muted max-w-md text-sm md:text-base">
-            Modelos seleccionados de nuestra colección Otoño Invierno. Hechos
+            Modelos seleccionados de nuestra colección Primavera Verano. Hechos
             para durar, pensados para el día a día.
           </p>
         )}

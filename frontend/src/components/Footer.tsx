@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MastercardMark, VisaMark } from "./CardBrands";
 import { INTEREST_FREE_INSTALLMENTS } from "@/lib/payments";
 
@@ -14,8 +15,8 @@ export default function Footer() {
         <div>
           <p className="eyebrow mb-3">Tienda</p>
           <ul className="space-y-2 text-foreground/80">
-            <li>Hombre</li>
-            <li>Mujer</li>
+            <li><Link href="/collections/men" className="hover:text-foreground transition-colors">Hombre</Link></li>
+            <li><Link href="/collections/women" className="hover:text-foreground transition-colors">Mujer</Link></li>
             <li>Niños</li>
             <li>Outlet</li>
           </ul>
