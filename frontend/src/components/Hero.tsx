@@ -58,11 +58,11 @@ export default function Hero() {
         {/* ── Right: footwear image ───────────────────────────────────────── */}
         <div className="order-1 lg:order-2 relative lg:flex-1 h-[58vw] sm:h-[52vw] lg:h-auto">
           <Image
-            src="/resources/footwear-1838767_1920.jpg"
-            alt="Calzado artesanal Genaro — colección 2026"
+            src="/assets/higgsfield/2026-09-28_nano-banana-2_hero-pareja-mocasines.png"
+            alt="Pareja caminando con los mocasines Genaro Doha y Talbot"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-[72%_center]"
             sizes="(max-width: 1024px) 100vw, 58vw"
           />
           {/* Gradient blends image into the bg-surface text panel on mobile */}
