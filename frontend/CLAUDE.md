@@ -22,7 +22,7 @@ Vitest + Testing Library, jsdom environment (`vitest.config.ts` + `vitest.setup.
 
 ## Architecture
 
-Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 frontend for Zapatería Genaro. Deployed on Vercel. Talks to the Express backend (default `http://localhost:3000`).
+Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 frontend for Zapatería Genaro. Deployed on Vercel (project `genio26` → `genarozapateria.vercel.app`, auto-deploys from git). Talks to the Express backend — locally `http://localhost:3000`, in production `https://zapateria-genaro-api.vercel.app` (separate Vercel project `zapateria-genaro-api`; the backend used to be on Render until 2026-08, now suspended — never point at it). A `.com.ar` domain via NIC Argentina is planned but not set up yet.
 
 ### Key directories
 

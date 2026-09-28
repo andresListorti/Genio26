@@ -18,7 +18,7 @@ export const app = express();
 // export is what Vercel deploys as the function.
 export default app;
 
-// Render (and most PaaS/Cloud Run) sit behind a single reverse proxy hop —
+// Vercel (like most PaaS) puts a single reverse proxy hop in front of us —
 // trust it so express-rate-limit and req.ip see the real client IP instead
 // of the proxy's.
 app.set('trust proxy', 1);

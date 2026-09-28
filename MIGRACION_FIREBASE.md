@@ -4,6 +4,10 @@
 plan Blaze con tarjeta cargada, sin excepción — no había forma de evitarlo). Vercel Hobby no pide
 tarjeta y el resultado es el mismo objetivo: se acabó el cold start de Render.
 
+> Documento histórico (agosto 2026). Estado actual del deploy — plan Hobby con pase a Vercel Pro
+> previsto para fines de septiembre de 2026, dominio `.com.ar` pendiente en NIC Argentina — en la
+> sección [Deploy del README](README.md#-deploy).
+
 ## Qué se hizo
 
 - Backend restructurado a `functions/` (Express intacto, sin cambios de lógica de negocio).

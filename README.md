@@ -51,6 +51,8 @@ Y los dos comparten la misma base de datos: **Firebase Firestore**.
 > 🧐 ¿Por qué la carpeta del backend se llama `functions/` si no usa Firebase Functions? Historia de amor
 > truncada: la idea era migrar a Cloud Functions, pero Firebase pide el plan pago (Blaze) hasta para
 > una sola función. Terminó en Vercel (plan gratuito, sin tarjeta) y el nombre quedó como recuerdo.
+> Antes de eso vivía en Render (plan gratis), que se dormía y tardaba 30-50 s en despertar: de ahí los
+> "Failed to fetch" al agregar a la bolsa. La mudanza a Vercel fue en agosto de 2026.
 
 ---
 
@@ -263,6 +265,21 @@ Que un pedido **ya salió** no es un estado: es el campo `shippedAt`, que se mar
 ---
 
 ## 🚀 Deploy
+
+| Pieza | Dónde corre | Cómo se despliega |
+|---|---|---|
+| Frontend (Next.js) | Vercel, proyecto `genio26` → `genarozapateria.vercel.app` | Solo, desde git |
+| Backend (Express) | Vercel, proyecto `zapateria-genaro-api` → `zapateria-genaro-api.vercel.app` | A mano: `vercel deploy --prod` desde `functions/` |
+| Base de datos | Firebase Firestore (proyecto `sun-66f`) | Las reglas, con `firebase deploy --only firestore:rules` |
+
+> 🗓️ **Lo que viene:**
+> - Los dos proyectos están en el plan **Hobby** de Vercel; el pase a **Vercel Pro** está previsto para
+>   **fines de septiembre de 2026**.
+> - **Dominio `.com.ar`** propio: se registra en **NIC Argentina** y se apunta a Vercel. Todavía no está
+>   hecho; hasta entonces, las direcciones `*.vercel.app` de arriba son las oficiales.
+>
+> 🕰️ Ni Render ni Firebase Cloud Functions se usan más: el backend se mudó de Render a Vercel en
+> agosto de 2026 (Render quedó suspendido). No despliegues ahí.
 
 - **Frontend:** se despliega solo en cada push a `main` (proyecto Vercel `genio26`).
 - **Backend:** a mano, desde `functions/`:

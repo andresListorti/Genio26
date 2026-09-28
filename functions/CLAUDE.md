@@ -5,7 +5,10 @@ Backend for Zapatería Genaro — Express + TypeScript, deployed as a **Vercel N
 Migrated off Render in 2026-08 to eliminate free-tier cold starts (30-50s → ~1s). A first
 attempt targeted Firebase Cloud Functions instead, but Firebase requires the paid Blaze plan
 for *any* Cloud Function (not just 2nd gen) — abandoned in favor of Vercel, which needs no
-billing method on the Hobby plan.
+billing method on the Hobby plan. Production URL: `https://zapateria-genaro-api.vercel.app`
+(a `.com.ar` domain via NIC Argentina is planned but not set up yet). Still on Hobby today;
+upgrade to Vercel Pro is planned for the end of September 2026. Render is suspended — do not
+deploy there, and `firebase deploy` is only used for Firestore rules, never for this backend.
 
 ## Commands
 

@@ -31,6 +31,14 @@ for any Cloud Function at all, which wasn't acceptable, so the backend moved to 
 Hobby plan instead (no billing method required). Firestore is still the database — only the
 compute/hosting layer changed.
 
+Upcoming (not done yet):
+- Both Vercel projects are on the Hobby plan today; upgrade to **Vercel Pro** is planned for the
+  end of September 2026.
+- A `.com.ar` domain will be registered at **NIC Argentina** and pointed at Vercel. Until then the
+  `*.vercel.app` domains above are the canonical URLs.
+
+Render (suspended) and Firebase Cloud Functions are no longer deploy targets — never deploy there.
+
 ## graphify
 
 This project has a knowledge graph at `graphify-out/` with god nodes, community structure, and cross-file relationships.
