@@ -1,3 +1,6 @@
+import { MastercardMark, VisaMark } from "./CardBrands";
+import { INTEREST_FREE_INSTALLMENTS } from "@/lib/payments";
+
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-line bg-surface">
@@ -46,8 +49,19 @@ export default function Footer() {
           </form>
         </div>
       </div>
-      <div className="border-t border-line py-5 text-center text-[11px] tracking-[0.2em] uppercase text-muted">
-        © {new Date().getFullYear()} Zapatería Genaro
+      <div className="border-t border-line">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-muted">
+          <p>© {new Date().getFullYear()} Zapatería Genaro</p>
+          <div className="flex items-center gap-3">
+            <span>
+              {INTEREST_FREE_INSTALLMENTS} cuotas sin interés
+            </span>
+            <span className="inline-flex items-center gap-2 bg-background border border-line px-2.5 py-1.5">
+              <VisaMark className="h-3.5 w-auto text-[#1A1F71]" />
+              <MastercardMark className="h-3.5 w-auto" />
+            </span>
+          </div>
+        </div>
       </div>
     </footer>
   );

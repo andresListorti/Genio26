@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { AuthProvider } from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
+import PromoBar from "@/components/PromoBar";
 import CartSidebar from "@/components/CartSidebar";
 import Footer from "@/components/Footer";
 
@@ -82,6 +83,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <AuthProvider>
           <CartProvider>
+            <PromoBar />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
