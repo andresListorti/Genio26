@@ -1,7 +1,10 @@
 import crypto from 'crypto';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-const { webhookSecret } = vi.hoisted(() => ({ webhookSecret: { value: '' } }));
+const { webhookSecret, nodeEnv } = vi.hoisted(() => ({
+  webhookSecret: { value: '' },
+  nodeEnv: { value: 'development' },
+}));
 
 vi.mock('../config/env', async () => {
   const actual = await vi.importActual<typeof import('../config/env')>('../config/env');
@@ -9,6 +12,9 @@ vi.mock('../config/env', async () => {
     ...actual,
     env: {
       ...actual.env,
+      get nodeEnv() {
+        return nodeEnv.value;
+      },
       get mercadopago() {
         return { ...actual.env.mercadopago, webhookSecret: webhookSecret.value };
       },
@@ -20,6 +26,7 @@ import { verifyMercadoPagoSignature } from './webhook.controller';
 
 beforeEach(() => {
   webhookSecret.value = '';
+  nodeEnv.value = 'development';
 });
 
 function sign(secret: string, paymentId: string, requestId: string, ts: string): string {
@@ -31,6 +38,23 @@ describe('verifyMercadoPagoSignature', () => {
   it('skips verification (returns true) when no secret is configured — dev mode', () => {
     webhookSecret.value = '';
     expect(verifyMercadoPagoSignature('', 'req-1', 'pay-1')).toBe(true);
+  });
+
+  // A missing MERCADOPAGO_WEBHOOK_SECRET in production must not mean
+  // "accept every notification" — fail closed, like PayPal's webhook check.
+  it('rejects everything when no secret is configured in production', () => {
+    nodeEnv.value = 'production';
+    webhookSecret.value = '';
+    expect(verifyMercadoPagoSignature('', 'req-1', 'pay-1')).toBe(false);
+    expect(verifyMercadoPagoSignature('ts=1;v1=abc', 'req-1', 'pay-1')).toBe(false);
+  });
+
+  it('still verifies normally in production when a secret is configured', () => {
+    nodeEnv.value = 'production';
+    webhookSecret.value = 'shh';
+    const ts = '1700000000';
+    const header = `ts=${ts};v1=${sign('shh', 'pay-1', 'req-1', ts)}`;
+    expect(verifyMercadoPagoSignature(header, 'req-1', 'pay-1')).toBe(true);
   });
 
   it('accepts a correctly signed header', () => {

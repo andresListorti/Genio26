@@ -149,7 +149,10 @@ browser (admin panel, profile, auth).
 folder (Firebase Admin JSON used by local dev via the default `serviceAccountFile` path, plus
 `*.env` files). Never inside `functions/` (the folder uploaded on deploy) and never in chat.
 
-`MERCADOPAGO_ACCESS_TOKEN` being empty disables all MP endpoints (returns 503). MP webhook signature verification is skipped when `MERCADOPAGO_WEBHOOK_SECRET` is empty (dev only).
+`MERCADOPAGO_ACCESS_TOKEN` being empty disables all MP endpoints (returns 503). MP webhook signature verification is skipped when `MERCADOPAGO_WEBHOOK_SECRET` is empty only
+outside production; with `NODE_ENV=production` a missing secret rejects every MP notification
+(fail closed, same as PayPal without `PAYPAL_WEBHOOK_ID`). The secret is set in the Vercel
+project (verified 2026-09-28: an unsigned POST to `/webhooks/mercadopago` gets 400).
 
 PayPal does not natively support ARS; `PAYPAL_ARS_PER_USD` controls the conversion rate when currency is unsupported.
 

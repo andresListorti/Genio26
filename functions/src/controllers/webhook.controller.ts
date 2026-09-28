@@ -16,7 +16,9 @@ export function verifyMercadoPagoSignature(
   paymentId: string,
 ): boolean {
   const secret = env.mercadopago.webhookSecret;
-  if (!secret) return true; // dev: skip when no secret is configured
+  // No secret: skip verification in dev, but fail closed in production so a
+  // missing env var never turns into "accept every notification".
+  if (!secret) return env.nodeEnv !== 'production';
 
   const parts: Record<string, string> = {};
   for (const segment of signatureHeader.split(';')) {
